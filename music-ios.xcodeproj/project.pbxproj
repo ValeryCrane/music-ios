@@ -12,6 +12,16 @@
 		382114BD2BBEAE9C00FEECC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382114BC2BBEAE9C00FEECC8 /* ViewController.swift */; };
 		382114C22BBEAE9F00FEECC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382114C12BBEAE9F00FEECC8 /* Assets.xcassets */; };
 		382114C52BBEAE9F00FEECC8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 382114C42BBEAE9F00FEECC8 /* Base */; };
+		38347BEA2BCDB59300221CA6 /* NetworkRequestDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38347BE92BCDB59300221CA6 /* NetworkRequestDescription.swift */; };
+		38347BEC2BCDB7EC00221CA6 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38347BEB2BCDB7EC00221CA6 /* NetworkModel.swift */; };
+		38347BEE2BCDB98100221CA6 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38347BED2BCDB98100221CA6 /* NetworkError.swift */; };
+		38347BF42BCDBFFF00221CA6 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38347BF32BCDBFFF00221CA6 /* NetworkRequest.swift */; };
+		38347BF82BCDC15100221CA6 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38347BF72BCDC15100221CA6 /* NetworkEnvironment.swift */; };
+		38347BFA2BCDC2B700221CA6 /* GET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38347BF92BCDC2B700221CA6 /* GET.swift */; };
+		38347BFD2BCDCBA700221CA6 /* POST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38347BFC2BCDCBA700221CA6 /* POST.swift */; };
+		38347BFF2BCDCD2100221CA6 /* PATCH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38347BFE2BCDCD2100221CA6 /* PATCH.swift */; };
+		38347C012BCDCD3500221CA6 /* DELETE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38347C002BCDCD3500221CA6 /* DELETE.swift */; };
+		38347C032BCDCD7500221CA6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38347C022BCDCD7500221CA6 /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +32,16 @@
 		382114C12BBEAE9F00FEECC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		382114C42BBEAE9F00FEECC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		382114C62BBEAE9F00FEECC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38347BE92BCDB59300221CA6 /* NetworkRequestDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestDescription.swift; sourceTree = "<group>"; };
+		38347BEB2BCDB7EC00221CA6 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		38347BED2BCDB98100221CA6 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		38347BF32BCDBFFF00221CA6 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		38347BF72BCDC15100221CA6 /* NetworkEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
+		38347BF92BCDC2B700221CA6 /* GET.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GET.swift; sourceTree = "<group>"; };
+		38347BFC2BCDCBA700221CA6 /* POST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POST.swift; sourceTree = "<group>"; };
+		38347BFE2BCDCD2100221CA6 /* PATCH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PATCH.swift; sourceTree = "<group>"; };
+		38347C002BCDCD3500221CA6 /* DELETE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DELETE.swift; sourceTree = "<group>"; };
+		38347C022BCDCD7500221CA6 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +74,7 @@
 		382114B72BBEAE9C00FEECC8 /* music-ios */ = {
 			isa = PBXGroup;
 			children = (
+				38347BE82BCDB55400221CA6 /* Network */,
 				382114B82BBEAE9C00FEECC8 /* AppDelegate.swift */,
 				382114BA2BBEAE9C00FEECC8 /* SceneDelegate.swift */,
 				382114BC2BBEAE9C00FEECC8 /* ViewController.swift */,
@@ -62,6 +83,39 @@
 				382114C62BBEAE9F00FEECC8 /* Info.plist */,
 			);
 			path = "music-ios";
+			sourceTree = "<group>";
+		};
+		38347BE82BCDB55400221CA6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				38347C042BCDCDD200221CA6 /* Presets */,
+				38347BFB2BCDCB8A00221CA6 /* Infrastructure */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		38347BFB2BCDCB8A00221CA6 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				38347BE92BCDB59300221CA6 /* NetworkRequestDescription.swift */,
+				38347BEB2BCDB7EC00221CA6 /* NetworkModel.swift */,
+				38347BED2BCDB98100221CA6 /* NetworkError.swift */,
+				38347BF72BCDC15100221CA6 /* NetworkEnvironment.swift */,
+				38347BF32BCDBFFF00221CA6 /* NetworkRequest.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		38347C042BCDCDD200221CA6 /* Presets */ = {
+			isa = PBXGroup;
+			children = (
+				38347BF92BCDC2B700221CA6 /* GET.swift */,
+				38347BFC2BCDCBA700221CA6 /* POST.swift */,
+				38347BFE2BCDCD2100221CA6 /* PATCH.swift */,
+				38347C002BCDCD3500221CA6 /* DELETE.swift */,
+				38347C022BCDCD7500221CA6 /* Request.swift */,
+			);
+			path = Presets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +188,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38347BEA2BCDB59300221CA6 /* NetworkRequestDescription.swift in Sources */,
+				38347C032BCDCD7500221CA6 /* Request.swift in Sources */,
+				38347BEC2BCDB7EC00221CA6 /* NetworkModel.swift in Sources */,
+				38347C012BCDCD3500221CA6 /* DELETE.swift in Sources */,
+				38347BF82BCDC15100221CA6 /* NetworkEnvironment.swift in Sources */,
 				382114BD2BBEAE9C00FEECC8 /* ViewController.swift in Sources */,
+				38347BEE2BCDB98100221CA6 /* NetworkError.swift in Sources */,
+				38347BFD2BCDCBA700221CA6 /* POST.swift in Sources */,
+				38347BF42BCDBFFF00221CA6 /* NetworkRequest.swift in Sources */,
+				38347BFA2BCDC2B700221CA6 /* GET.swift in Sources */,
 				382114B92BBEAE9C00FEECC8 /* AppDelegate.swift in Sources */,
+				38347BFF2BCDCD2100221CA6 /* PATCH.swift in Sources */,
 				382114BB2BBEAE9C00FEECC8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
