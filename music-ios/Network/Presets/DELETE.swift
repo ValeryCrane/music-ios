@@ -10,6 +10,8 @@ struct DELETE<Parameters: Encodable, Response: Decodable>: NetworkRequest {
     
     func serialize(with parameters: Parameters, environment: NetworkEnvironment) throws -> NetworkRequestDescription {
         let data = try JSONEncoder().encode(parameters)
+        var headers = environment.commonHeaders
+        headers["Content-Type"] = "application/json"
         
         return .init(
             method: "DELETE",
@@ -18,7 +20,7 @@ struct DELETE<Parameters: Encodable, Response: Decodable>: NetworkRequest {
             port: environment.port,
             path: path,
             urlParameters: [:],
-            headers: environment.commonHeaders,
+            headers: headers,
             body: data
         )
     }

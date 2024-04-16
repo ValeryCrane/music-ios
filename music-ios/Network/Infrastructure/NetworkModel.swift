@@ -4,7 +4,7 @@ struct NetworkModel {
     
     func runRequest(with description: NetworkRequestDescription) async throws -> Data {
         let request = try createURLRequest(from: description)
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let (data, _) = try await URLSession.shared.data(for: request)
         return data
     }
     
@@ -22,6 +22,7 @@ struct NetworkModel {
         
         var request = URLRequest(url: url)
         description.headers.forEach({ request.addValue($0.value, forHTTPHeaderField: $0.key) })
+        request.httpMethod = description.method
         request.httpBody = description.body
         
         return request
