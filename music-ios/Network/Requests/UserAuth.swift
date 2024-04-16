@@ -10,7 +10,7 @@ extension Requests {
         struct Response: Decodable {
             let authToken: String
             
-            enum CodingKeys: String, CodingKey {
+            private enum CodingKeys: String, CodingKey {
                 case authToken = "auth_token"
             }
         }

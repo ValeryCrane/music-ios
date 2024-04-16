@@ -11,9 +11,9 @@ struct NiceTextField: View {
     @ViewBuilder
     var textField: some View {
         if isSecure {
-            TextField(placeholder ?? "", text: $text)
-        } else {
             SecureField(placeholder ?? "", text: $text)
+        } else {
+            TextField(placeholder ?? "", text: $text)
         }
     }
     

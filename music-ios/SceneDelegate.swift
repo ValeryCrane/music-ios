@@ -9,7 +9,8 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
-    private let authManager = AuthManager()
+    private var authManager: AuthManager!
+    private var userManager: UserManager!
 
     var window: UIWindow?
 
@@ -19,7 +20,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        authManager = AuthManager()
+        userManager = UserManager(authManager: authManager)
+        userManager.delegate = self
+        
         let window = UIWindow(windowScene: windowScene)
+        if userManager.currentUser != nil {
+            window.rootViewController = provideMainTabBarController()
+        } else {
+            window.rootViewController = AuthViewController(authManager: authManager)
+        }
         window.rootViewController = UINavigationController(
             rootViewController: AuthViewController(authManager: authManager)
         )
@@ -55,6 +66,37 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    private func provideMainTabBarController() -> UIViewController {
+        let tabBarController = UITabBarController()
+        let profileController = UINavigationController(rootViewController: ProfileViewController(userManager: userManager))
+        tabBarController.viewControllers = [
+            profileController
+        ]
+        tabBarController.view.backgroundColor = .white
+        profileController.tabBarItem = .init(title: nil, image: UIImage(systemName: "person.crop.circle.fill"), tag: 0)
+        return tabBarController
+    }
 
+}
+
+extension SceneDelegate: UserManagerDelegate {
+    func currentUserUpdated(_ currentUser: CurrentUser?) {
+        DispatchQueue.main.async {
+            guard let window = self.window else { return }
+            
+            if currentUser != nil {
+                window.rootViewController = self.provideMainTabBarController()
+            } else {
+                window.rootViewController = AuthViewController(authManager: self.authManager)
+            }
+            UIView.transition(
+                with: window,
+                duration: 0.5,
+                options: .transitionCrossDissolve,
+                animations: nil,
+                completion: nil
+            )
+        }
+    }
 }
 

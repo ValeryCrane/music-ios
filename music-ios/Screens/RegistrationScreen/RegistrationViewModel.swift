@@ -33,8 +33,8 @@ final class RegistrationViewModel: ObservableObject {
                 try await authManager.register(username: username, email: email, password: password)
             } catch {
                 print(error.localizedDescription)
+                viewController?.stopLoader()
             }
-            viewController?.stopLoader()
         }
     }
 }

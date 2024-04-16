@@ -25,8 +25,8 @@ final class AuthViewModel: ObservableObject {
                 try await authManager.auth(username: username, password: password)
             } catch {
                 print(error.localizedDescription)
+                viewController?.stopLoader()
             }
-            viewController?.stopLoader()
         }
     }
     

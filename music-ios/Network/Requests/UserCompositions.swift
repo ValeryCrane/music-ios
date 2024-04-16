@@ -1,26 +1,27 @@
 import Foundation
 
 extension Requests {
-    struct UserRegister: Request {
+    struct UserCompositions: Request {
         struct Parameters: Encodable {
-            let username: String
-            let email: String
-            let password: String
+            let id: Int
         }
         
         struct Response: Decodable {
-            let authToken: String
+            let compositionCount: Int
+            let compositions: [CompositionMiniatureResponse]
             
             private enum CodingKeys: String, CodingKey {
-                case authToken = "auth_token"
+                case compositionCount = "composition_count"
+                case compositions
             }
         }
         
-        private let request = POST<Parameters, Response>(path: "/user/register")
+        private let request = GET<Parameters, Response>(path: "/user/compositions")
         
         func run(with parameters: Parameters) async throws -> Response {
             try await request.run(with: parameters, environment: NetworkEnvironmentManager().provideEnvironment())
         }
     }
 }
+
 
