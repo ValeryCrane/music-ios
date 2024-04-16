@@ -1,10 +1,3 @@
-//
-//  NiceTextField.swift
-//  music-ios
-//
-//  Created by valeriy.zhuravlev on 16.04.2024.
-//
-
 import SwiftUI
 
 struct NiceTextField: View {
@@ -13,6 +6,16 @@ struct NiceTextField: View {
     
     private let title: String?
     private let placeholder: String?
+    private let isSecure: Bool
+    
+    @ViewBuilder
+    var textField: some View {
+        if isSecure {
+            TextField(placeholder ?? "", text: $text)
+        } else {
+            SecureField(placeholder ?? "", text: $text)
+        }
+    }
     
     var body: some View {
         VStack {
@@ -20,8 +23,9 @@ struct NiceTextField: View {
                 Text(title)
                     .secondaryFont()
             }
-            TextField(placeholder ?? "", text: $text)
+            textField
                 .autocorrectionDisabled()
+                .textInputAutocapitalization(.never)
                 .primaryFont()
                 .multilineTextAlignment(.center)
                 .padding(8)
@@ -33,10 +37,11 @@ struct NiceTextField: View {
         }
     }
     
-    init(_ text: Binding<String>, title: String? = nil, placeholder: String? = nil) {
+    init(_ text: Binding<String>, title: String? = nil, placeholder: String? = nil, isSecure: Bool = false) {
         self._text = text
         self.title = title
         self.placeholder = placeholder
+        self.isSecure = isSecure
     }
 }
 

@@ -2,16 +2,16 @@ import Foundation
 import UIKit
 import SwiftUI
 
-final class AuthViewController: UIHostingController<AuthView> {
+final class RegistrationViewController: UIHostingController<RegistrationView> {
     
     init(authManager: AuthManager) {
-        let rootViewModel = AuthViewModel(authManager: authManager)
-        let rootView = AuthView(viewModel: rootViewModel)
+        let rootViewModel = RegistrationViewModel(authManager: authManager)
+        let rootView = RegistrationView(viewModel: rootViewModel)
         
         super.init(rootView: rootView)
         
         rootViewModel.viewController = self
-        title = "Вход"
+        title = "Регистрация"
     }
     
     @available(*, unavailable)

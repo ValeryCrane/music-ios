@@ -2,13 +2,19 @@ import Foundation
 import UIKit
 
 @MainActor
-final class AuthViewModel: ObservableObject {
+final class RegistrationViewModel: ObservableObject {
     
     @Published
     var username: String = ""
     
     @Published
+    var email: String = ""
+    
+    @Published
     var password: String = ""
+    
+    @Published
+    var repeatedPassword: String = ""
     
     weak var viewController: UIViewController?
     
@@ -18,22 +24,17 @@ final class AuthViewModel: ObservableObject {
         self.authManager = authManager
     }
     
-    func onAuthButtonPressed() {
+    func onRegisterButtonPressed() {
+        guard password == repeatedPassword else { return }
+        
         Task {
             viewController?.startLoader()
             do {
-                try await authManager.auth(username: username, password: password)
+                try await authManager.register(username: username, email: email, password: password)
             } catch {
                 print(error.localizedDescription)
             }
             viewController?.stopLoader()
         }
-    }
-    
-    func onRegisterButtonPressed() {
-        viewController?.navigationController?.pushViewController(
-            RegistrationViewController(authManager: authManager),
-            animated: true
-        )
     }
 }
