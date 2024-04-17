@@ -68,7 +68,10 @@ final class ProfileViewModel: ObservableObject {
     
     
     func onEditButtonPressed() {
-        // TODO
+        let editProfileViewController = UINavigationController(
+            rootViewController: EditProfileViewController(userManager: userManager)
+        )
+        viewController?.present(editProfileViewController,animated: true)
     }
     
     func onLogoutButtonPressed() {

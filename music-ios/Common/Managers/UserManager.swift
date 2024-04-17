@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 enum UserManagerError: Error {
     case unauthorized(message: String)
@@ -9,7 +10,10 @@ final class UserManager {
     
     private let userCurrentGet = Requests.UserCurrentGet()
     private let userGet = Requests.UserGet()
+    private let userEdit = Requests.UserEdit()
+    private let userAvatarEdit = Requests.UserAvatarEdit()
     private let userCompositions = Requests.UserCompositions()
+    private let userDelete = Requests.UserDelete()
     
     func loadUser(id: Int) async throws -> User {
         let userGetResponse = try await userGet.run(with: .init(id: id))
@@ -28,5 +32,25 @@ final class UserManager {
         } else {
             throw UserManagerError.unauthorized(message: "Current user is unauthorized")
         }
+    }
+    
+    func editCurrentUser(
+        username: String? = nil,
+        email: String? = nil,
+        password: String? = nil,
+        avatar: UIImage? = nil
+    ) async throws {
+        if username != nil || email != nil || password != nil {
+            try await userEdit.run(with: .init(username: username, email: email, password: password))
+        }
+        
+        if let avatar = avatar {
+            try await userAvatarEdit.run(with: avatar)
+        }
+    }
+    
+    func deleteCurrentUser() async throws {
+        try await userDelete.run(with: .init())
+        AuthTokenProvider.updateAuthToken(nil)
     }
 }

@@ -13,6 +13,13 @@
 		380EDEF72BCFF19C00FCB5FB /* ProfileAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDEF62BCFF19C00FCB5FB /* ProfileAvatarView.swift */; };
 		380EDF002BD0200F00FCB5FB /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDEFF2BD0200F00FCB5FB /* AuthToken.swift */; };
 		380EDF022BD024AC00FCB5FB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF012BD024AC00FCB5FB /* AuthManager.swift */; };
+		380EDF062BD0362100FCB5FB /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF052BD0362100FCB5FB /* EditProfileView.swift */; };
+		380EDF082BD0363100FCB5FB /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF072BD0363100FCB5FB /* EditProfileViewModel.swift */; };
+		380EDF0B2BD0370600FCB5FB /* UserEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF0A2BD0370600FCB5FB /* UserEdit.swift */; };
+		380EDF0D2BD03A7000FCB5FB /* MultipartFormdataPOST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF0C2BD03A7000FCB5FB /* MultipartFormdataPOST.swift */; };
+		380EDF0F2BD0464000FCB5FB /* UserAvatarEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF0E2BD0464000FCB5FB /* UserAvatarEdit.swift */; };
+		380EDF112BD050A400FCB5FB /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF102BD050A300FCB5FB /* EditProfileViewController.swift */; };
+		380EDF132BD05B2500FCB5FB /* UserDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF122BD05B2500FCB5FB /* UserDelete.swift */; };
 		382114B92BBEAE9C00FEECC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382114B82BBEAE9C00FEECC8 /* AppDelegate.swift */; };
 		382114BB2BBEAE9C00FEECC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382114BA2BBEAE9C00FEECC8 /* SceneDelegate.swift */; };
 		382114C22BBEAE9F00FEECC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382114C12BBEAE9F00FEECC8 /* Assets.xcassets */; };
@@ -63,6 +70,13 @@
 		380EDEF62BCFF19C00FCB5FB /* ProfileAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarView.swift; sourceTree = "<group>"; };
 		380EDEFF2BD0200F00FCB5FB /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		380EDF012BD024AC00FCB5FB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		380EDF052BD0362100FCB5FB /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		380EDF072BD0363100FCB5FB /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		380EDF0A2BD0370600FCB5FB /* UserEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEdit.swift; sourceTree = "<group>"; };
+		380EDF0C2BD03A7000FCB5FB /* MultipartFormdataPOST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartFormdataPOST.swift; sourceTree = "<group>"; };
+		380EDF0E2BD0464000FCB5FB /* UserAvatarEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarEdit.swift; sourceTree = "<group>"; };
+		380EDF102BD050A300FCB5FB /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		380EDF122BD05B2500FCB5FB /* UserDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDelete.swift; sourceTree = "<group>"; };
 		382114B52BBEAE9C00FEECC8 /* music-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "music-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		382114B82BBEAE9C00FEECC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		382114BA2BBEAE9C00FEECC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +141,25 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		380EDF042BD0361200FCB5FB /* EditProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				380EDF052BD0362100FCB5FB /* EditProfileView.swift */,
+				380EDF072BD0363100FCB5FB /* EditProfileViewModel.swift */,
+				380EDF102BD050A300FCB5FB /* EditProfileViewController.swift */,
+			);
+			path = EditProfileScreen;
+			sourceTree = "<group>";
+		};
+		380EDF092BD0364800FCB5FB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				380EDF012BD024AC00FCB5FB /* AuthManager.swift */,
+				387340BF2BCEDFC200D1EBBF /* UserManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		382114AC2BBEAE9C00FEECC8 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +222,7 @@
 				38347BFC2BCDCBA700221CA6 /* POST.swift */,
 				38347BFE2BCDCD2100221CA6 /* PATCH.swift */,
 				38347C002BCDCD3500221CA6 /* DELETE.swift */,
+				380EDF0C2BD03A7000FCB5FB /* MultipartFormdataPOST.swift */,
 				38347C022BCDCD7500221CA6 /* Request.swift */,
 			);
 			path = Presets;
@@ -198,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				387340BC2BCEDF1900D1EBBF /* Entities */,
+				380EDF042BD0361200FCB5FB /* EditProfileScreen */,
 				387340B52BCEDCC600D1EBBF /* ProfileScreen */,
 				387340AC2BCED5EA00D1EBBF /* RegistrationScreen */,
 				38347C062BCDCE8600221CA6 /* AuthScreen */,
@@ -218,11 +253,10 @@
 		38347C092BCDD24A00221CA6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				380EDF092BD0364800FCB5FB /* Managers */,
 				38347C0A2BCDD25800221CA6 /* AuthTokenProvider.swift */,
 				38347C132BCDD64000221CA6 /* Stored.swift */,
 				38347C1C2BCDDADA00221CA6 /* CGFloat+Constants.swift */,
-				387340BF2BCEDFC200D1EBBF /* UserManager.swift */,
-				380EDF012BD024AC00FCB5FB /* AuthManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -236,6 +270,9 @@
 				387340C52BCEE30700D1EBBF /* UserGet.swift */,
 				387340C72BCEE31D00D1EBBF /* UserCurrentGet.swift */,
 				380CC2272BCF14B200A8BA32 /* UserCompositions.swift */,
+				380EDF0A2BD0370600FCB5FB /* UserEdit.swift */,
+				380EDF0E2BD0464000FCB5FB /* UserAvatarEdit.swift */,
+				380EDF122BD05B2500FCB5FB /* UserDelete.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -365,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38347C082BCDD09D00221CA6 /* AuthView.swift in Sources */,
+				380EDF132BD05B2500FCB5FB /* UserDelete.swift in Sources */,
 				387340BE2BCEDF6100D1EBBF /* CompositionMiniature.swift in Sources */,
 				380CC2262BCF0FD500A8BA32 /* CompositionMiniatureView.swift in Sources */,
 				383482092BCE5D6400221CA6 /* Colors.swift in Sources */,
@@ -373,6 +411,7 @@
 				38347BEC2BCDB7EC00221CA6 /* NetworkModel.swift in Sources */,
 				38347C0B2BCDD25800221CA6 /* AuthTokenProvider.swift in Sources */,
 				387340C02BCEDFC200D1EBBF /* UserManager.swift in Sources */,
+				380EDF0B2BD0370600FCB5FB /* UserEdit.swift in Sources */,
 				387340BB2BCEDD2300D1EBBF /* ProfileViewController.swift in Sources */,
 				38347C012BCDCD3500221CA6 /* DELETE.swift in Sources */,
 				38347BF82BCDC15100221CA6 /* NetworkEnvironment.swift in Sources */,
@@ -382,27 +421,32 @@
 				38347C0E2BCDD2D800221CA6 /* UserAuth.swift in Sources */,
 				387340AE2BCED60100D1EBBF /* RegistrationView.swift in Sources */,
 				38347C122BCDD5F800221CA6 /* NetworkEnvironments.swift in Sources */,
+				380EDF062BD0362100FCB5FB /* EditProfileView.swift in Sources */,
 				387340B92BCEDCDE00D1EBBF /* ProfileViewModel.swift in Sources */,
 				380EDF022BD024AC00FCB5FB /* AuthManager.swift in Sources */,
 				38347BF42BCDBFFF00221CA6 /* NetworkRequest.swift in Sources */,
 				387340B42BCED97800D1EBBF /* UserRegister.swift in Sources */,
 				380EDF002BD0200F00FCB5FB /* AuthToken.swift in Sources */,
+				380EDF082BD0363100FCB5FB /* EditProfileViewModel.swift in Sources */,
 				38347C1B2BCDDA4900221CA6 /* FontModifiers.swift in Sources */,
 				38347BFA2BCDC2B700221CA6 /* GET.swift in Sources */,
 				387340B72BCEDCD400D1EBBF /* ProfileView.swift in Sources */,
 				387340C42BCEE02200D1EBBF /* User.swift in Sources */,
 				387340B02BCED60C00D1EBBF /* RegistrationViewModel.swift in Sources */,
 				38347C142BCDD64000221CA6 /* Stored.swift in Sources */,
+				380EDF0D2BD03A7000FCB5FB /* MultipartFormdataPOST.swift in Sources */,
 				383482142BCE63E100221CA6 /* UIViewController+Loader.swift in Sources */,
 				380CC22B2BCF15DF00A8BA32 /* CompositionMiniatureResponse.swift in Sources */,
 				3834820F2BCE62D000221CA6 /* AuthViewController.swift in Sources */,
 				382114B92BBEAE9C00FEECC8 /* AppDelegate.swift in Sources */,
 				38347C192BCDDA1300221CA6 /* NiceTextField.swift in Sources */,
+				380EDF0F2BD0464000FCB5FB /* UserAvatarEdit.swift in Sources */,
 				387340C82BCEE31D00D1EBBF /* UserCurrentGet.swift in Sources */,
 				38347C1D2BCDDADA00221CA6 /* CGFloat+Constants.swift in Sources */,
 				3834820D2BCE62AD00221CA6 /* AuthViewModel.swift in Sources */,
 				38347BFF2BCDCD2100221CA6 /* PATCH.swift in Sources */,
 				3834820B2BCE5E7200221CA6 /* NiceButton.swift in Sources */,
+				380EDF112BD050A400FCB5FB /* EditProfileViewController.swift in Sources */,
 				382114BB2BBEAE9C00FEECC8 /* SceneDelegate.swift in Sources */,
 				387340C22BCEE01D00D1EBBF /* CurrentUser.swift in Sources */,
 				380CC2282BCF14B200A8BA32 /* UserCompositions.swift in Sources */,

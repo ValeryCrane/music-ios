@@ -56,10 +56,7 @@ struct ProfileView: View {
                 }
             }
             .scrollIndicators(.hidden)
-            .confirmationDialog(
-                "Вы хотите выйти из аккаунта?",
-                isPresented: $viewModel.isLogoutConfirmationPresented
-            ) {
+            .confirmationDialog("", isPresented: $viewModel.isLogoutConfirmationPresented) {
                 Button("Выйти", role: .destructive) {
                     viewModel.onLogoutConfirmed()
                 }
