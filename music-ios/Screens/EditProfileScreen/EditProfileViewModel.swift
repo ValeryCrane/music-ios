@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 import PhotosUI
 
+@MainActor
 final class EditProfileViewModel: ObservableObject {
     
     @Published

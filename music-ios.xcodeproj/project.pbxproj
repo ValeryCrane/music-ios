@@ -20,6 +20,16 @@
 		380EDF0F2BD0464000FCB5FB /* UserAvatarEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF0E2BD0464000FCB5FB /* UserAvatarEdit.swift */; };
 		380EDF112BD050A400FCB5FB /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF102BD050A300FCB5FB /* EditProfileViewController.swift */; };
 		380EDF132BD05B2500FCB5FB /* UserDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF122BD05B2500FCB5FB /* UserDelete.swift */; };
+		380EDF172BD05E8600FCB5FB /* CompositionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF162BD05E8600FCB5FB /* CompositionsView.swift */; };
+		380EDF192BD05E9200FCB5FB /* CompositionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF182BD05E9200FCB5FB /* CompositionsViewModel.swift */; };
+		380EDF1B2BD05E9C00FCB5FB /* CompositionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF1A2BD05E9C00FCB5FB /* CompositionsViewController.swift */; };
+		380EDF1D2BD0725F00FCB5FB /* CompositionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF1C2BD0725F00FCB5FB /* CompositionManager.swift */; };
+		380EDF1F2BD0729400FCB5FB /* CompositionsGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF1E2BD0729400FCB5FB /* CompositionsGet.swift */; };
+		380EDF212BD077BE00FCB5FB /* CompositionCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF202BD077BE00FCB5FB /* CompositionCreate.swift */; };
+		380EDF232BD0782B00FCB5FB /* CompositionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF222BD0782B00FCB5FB /* CompositionResponse.swift */; };
+		380EDF252BD0787A00FCB5FB /* CompositionVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF242BD0787A00FCB5FB /* CompositionVisibility.swift */; };
+		380EDF272BD078B500FCB5FB /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF262BD078B500FCB5FB /* UserResponse.swift */; };
+		380EDF292BD079C700FCB5FB /* BlueprintResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF282BD079C700FCB5FB /* BlueprintResponse.swift */; };
 		382114B92BBEAE9C00FEECC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382114B82BBEAE9C00FEECC8 /* AppDelegate.swift */; };
 		382114BB2BBEAE9C00FEECC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382114BA2BBEAE9C00FEECC8 /* SceneDelegate.swift */; };
 		382114C22BBEAE9F00FEECC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382114C12BBEAE9F00FEECC8 /* Assets.xcassets */; };
@@ -77,6 +87,16 @@
 		380EDF0E2BD0464000FCB5FB /* UserAvatarEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarEdit.swift; sourceTree = "<group>"; };
 		380EDF102BD050A300FCB5FB /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		380EDF122BD05B2500FCB5FB /* UserDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDelete.swift; sourceTree = "<group>"; };
+		380EDF162BD05E8600FCB5FB /* CompositionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionsView.swift; sourceTree = "<group>"; };
+		380EDF182BD05E9200FCB5FB /* CompositionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionsViewModel.swift; sourceTree = "<group>"; };
+		380EDF1A2BD05E9C00FCB5FB /* CompositionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionsViewController.swift; sourceTree = "<group>"; };
+		380EDF1C2BD0725F00FCB5FB /* CompositionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionManager.swift; sourceTree = "<group>"; };
+		380EDF1E2BD0729400FCB5FB /* CompositionsGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionsGet.swift; sourceTree = "<group>"; };
+		380EDF202BD077BE00FCB5FB /* CompositionCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionCreate.swift; sourceTree = "<group>"; };
+		380EDF222BD0782B00FCB5FB /* CompositionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionResponse.swift; sourceTree = "<group>"; };
+		380EDF242BD0787A00FCB5FB /* CompositionVisibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionVisibility.swift; sourceTree = "<group>"; };
+		380EDF262BD078B500FCB5FB /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		380EDF282BD079C700FCB5FB /* BlueprintResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintResponse.swift; sourceTree = "<group>"; };
 		382114B52BBEAE9C00FEECC8 /* music-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "music-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		382114B82BBEAE9C00FEECC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		382114BA2BBEAE9C00FEECC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				380CC22A2BCF15DF00A8BA32 /* CompositionMiniatureResponse.swift */,
+				380EDF222BD0782B00FCB5FB /* CompositionResponse.swift */,
+				380EDF262BD078B500FCB5FB /* UserResponse.swift */,
+				380EDF282BD079C700FCB5FB /* BlueprintResponse.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -156,8 +179,19 @@
 			children = (
 				380EDF012BD024AC00FCB5FB /* AuthManager.swift */,
 				387340BF2BCEDFC200D1EBBF /* UserManager.swift */,
+				380EDF1C2BD0725F00FCB5FB /* CompositionManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		380EDF152BD05E5E00FCB5FB /* CompositionsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				380EDF162BD05E8600FCB5FB /* CompositionsView.swift */,
+				380EDF182BD05E9200FCB5FB /* CompositionsViewModel.swift */,
+				380EDF1A2BD05E9C00FCB5FB /* CompositionsViewController.swift */,
+			);
+			path = CompositionsScreen;
 			sourceTree = "<group>";
 		};
 		382114AC2BBEAE9C00FEECC8 = {
@@ -232,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				387340BC2BCEDF1900D1EBBF /* Entities */,
+				380EDF152BD05E5E00FCB5FB /* CompositionsScreen */,
 				380EDF042BD0361200FCB5FB /* EditProfileScreen */,
 				387340B52BCEDCC600D1EBBF /* ProfileScreen */,
 				387340AC2BCED5EA00D1EBBF /* RegistrationScreen */,
@@ -273,6 +308,8 @@
 				380EDF0A2BD0370600FCB5FB /* UserEdit.swift */,
 				380EDF0E2BD0464000FCB5FB /* UserAvatarEdit.swift */,
 				380EDF122BD05B2500FCB5FB /* UserDelete.swift */,
+				380EDF1E2BD0729400FCB5FB /* CompositionsGet.swift */,
+				380EDF202BD077BE00FCB5FB /* CompositionCreate.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -327,6 +364,7 @@
 				387340C12BCEE01D00D1EBBF /* CurrentUser.swift */,
 				387340C32BCEE02200D1EBBF /* User.swift */,
 				380EDEFF2BD0200F00FCB5FB /* AuthToken.swift */,
+				380EDF242BD0787A00FCB5FB /* CompositionVisibility.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -403,13 +441,18 @@
 			files = (
 				38347C082BCDD09D00221CA6 /* AuthView.swift in Sources */,
 				380EDF132BD05B2500FCB5FB /* UserDelete.swift in Sources */,
+				380EDF252BD0787A00FCB5FB /* CompositionVisibility.swift in Sources */,
+				380EDF232BD0782B00FCB5FB /* CompositionResponse.swift in Sources */,
+				380EDF1B2BD05E9C00FCB5FB /* CompositionsViewController.swift in Sources */,
 				387340BE2BCEDF6100D1EBBF /* CompositionMiniature.swift in Sources */,
 				380CC2262BCF0FD500A8BA32 /* CompositionMiniatureView.swift in Sources */,
 				383482092BCE5D6400221CA6 /* Colors.swift in Sources */,
 				38347BEA2BCDB59300221CA6 /* NetworkRequestDescription.swift in Sources */,
 				38347C032BCDCD7500221CA6 /* Request.swift in Sources */,
 				38347BEC2BCDB7EC00221CA6 /* NetworkModel.swift in Sources */,
+				380EDF272BD078B500FCB5FB /* UserResponse.swift in Sources */,
 				38347C0B2BCDD25800221CA6 /* AuthTokenProvider.swift in Sources */,
+				380EDF192BD05E9200FCB5FB /* CompositionsViewModel.swift in Sources */,
 				387340C02BCEDFC200D1EBBF /* UserManager.swift in Sources */,
 				380EDF0B2BD0370600FCB5FB /* UserEdit.swift in Sources */,
 				387340BB2BCEDD2300D1EBBF /* ProfileViewController.swift in Sources */,
@@ -417,6 +460,7 @@
 				38347BF82BCDC15100221CA6 /* NetworkEnvironment.swift in Sources */,
 				38347BEE2BCDB98100221CA6 /* NetworkError.swift in Sources */,
 				38347BFD2BCDCBA700221CA6 /* POST.swift in Sources */,
+				380EDF1D2BD0725F00FCB5FB /* CompositionManager.swift in Sources */,
 				383482122BCE63BF00221CA6 /* LoadingViewController.swift in Sources */,
 				38347C0E2BCDD2D800221CA6 /* UserAuth.swift in Sources */,
 				387340AE2BCED60100D1EBBF /* RegistrationView.swift in Sources */,
@@ -428,6 +472,7 @@
 				387340B42BCED97800D1EBBF /* UserRegister.swift in Sources */,
 				380EDF002BD0200F00FCB5FB /* AuthToken.swift in Sources */,
 				380EDF082BD0363100FCB5FB /* EditProfileViewModel.swift in Sources */,
+				380EDF1F2BD0729400FCB5FB /* CompositionsGet.swift in Sources */,
 				38347C1B2BCDDA4900221CA6 /* FontModifiers.swift in Sources */,
 				38347BFA2BCDC2B700221CA6 /* GET.swift in Sources */,
 				387340B72BCEDCD400D1EBBF /* ProfileView.swift in Sources */,
@@ -435,6 +480,7 @@
 				387340B02BCED60C00D1EBBF /* RegistrationViewModel.swift in Sources */,
 				38347C142BCDD64000221CA6 /* Stored.swift in Sources */,
 				380EDF0D2BD03A7000FCB5FB /* MultipartFormdataPOST.swift in Sources */,
+				380EDF172BD05E8600FCB5FB /* CompositionsView.swift in Sources */,
 				383482142BCE63E100221CA6 /* UIViewController+Loader.swift in Sources */,
 				380CC22B2BCF15DF00A8BA32 /* CompositionMiniatureResponse.swift in Sources */,
 				3834820F2BCE62D000221CA6 /* AuthViewController.swift in Sources */,
@@ -445,7 +491,9 @@
 				38347C1D2BCDDADA00221CA6 /* CGFloat+Constants.swift in Sources */,
 				3834820D2BCE62AD00221CA6 /* AuthViewModel.swift in Sources */,
 				38347BFF2BCDCD2100221CA6 /* PATCH.swift in Sources */,
+				380EDF292BD079C700FCB5FB /* BlueprintResponse.swift in Sources */,
 				3834820B2BCE5E7200221CA6 /* NiceButton.swift in Sources */,
+				380EDF212BD077BE00FCB5FB /* CompositionCreate.swift in Sources */,
 				380EDF112BD050A400FCB5FB /* EditProfileViewController.swift in Sources */,
 				382114BB2BBEAE9C00FEECC8 /* SceneDelegate.swift in Sources */,
 				387340C22BCEE01D00D1EBBF /* CurrentUser.swift in Sources */,
