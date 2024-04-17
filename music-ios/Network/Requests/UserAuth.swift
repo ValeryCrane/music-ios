@@ -8,9 +8,11 @@ extension Requests {
         }
         
         struct Response: Decodable {
+            let userId: Int
             let authToken: String
             
             private enum CodingKeys: String, CodingKey {
+                case userId = "user_id"
                 case authToken = "auth_token"
             }
         }
@@ -18,7 +20,7 @@ extension Requests {
         private let request = POST<Parameters, Response>(path: "/user/auth")
         
         func run(with parameters: Parameters) async throws -> Response {
-            try await request.run(with: parameters, environment: NetworkEnvironmentManager.shared.provideEnvironment())
+            try await request.run(with: parameters, environment: NetworkEnvironments.default)
         }
     }
 }

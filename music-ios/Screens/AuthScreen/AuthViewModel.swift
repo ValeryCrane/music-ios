@@ -12,17 +12,17 @@ final class AuthViewModel: ObservableObject {
     
     weak var viewController: UIViewController?
     
-    private let tokenManager: TokenManager
+    private let authManager: AuthManager
     
-    init(tokenManager: TokenManager) {
-        self.tokenManager = tokenManager
+    init(authManager: AuthManager) {
+        self.authManager = authManager
     }
     
     func onAuthButtonPressed() {
         Task {
             viewController?.startLoader()
             do {
-                try await tokenManager.auth(username: username, password: password)
+                try await authManager.auth(username: username, password: password)
             } catch {
                 print(error.localizedDescription)
                 viewController?.stopLoader()
@@ -32,7 +32,7 @@ final class AuthViewModel: ObservableObject {
     
     func onRegisterButtonPressed() {
         viewController?.navigationController?.pushViewController(
-            RegistrationViewController(tokenManager: tokenManager),
+            RegistrationViewController(authManager: authManager),
             animated: true
         )
     }

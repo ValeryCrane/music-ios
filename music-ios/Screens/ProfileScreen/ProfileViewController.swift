@@ -6,8 +6,8 @@ final class ProfileViewController: UIHostingController<ProfileView> {
     
     private let viewModel: ProfileViewModel
     
-    init(userManager: UserManager, tokenManager: TokenManager, userId: Int? = nil) {
-        let viewModel = ProfileViewModel(userManager: userManager, tokenManager: tokenManager, userId: userId)
+    init(userManager: UserManager, userId: Int? = nil) {
+        let viewModel = ProfileViewModel(userManager: userManager, userId: userId)
         let rootView = ProfileView(viewModel: viewModel)
         self.viewModel = viewModel
         

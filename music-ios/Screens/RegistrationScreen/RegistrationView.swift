@@ -25,5 +25,5 @@ struct RegistrationView: View {
 }
 
 #Preview {
-    RegistrationView(viewModel: .init(tokenManager: TokenManager()))
+    RegistrationView(viewModel: .init(authManager: .init()))
 }

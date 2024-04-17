@@ -74,5 +74,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(viewModel: .init(userManager: .init(), tokenManager: .init()))
+    ProfileView(viewModel: .init(userManager: .init()))
 }

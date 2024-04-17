@@ -19,7 +19,7 @@ extension Requests {
         private let request = GET<Parameters, Response>(path: "/user/compositions")
         
         func run(with parameters: Parameters) async throws -> Response {
-            try await request.run(with: parameters, environment: NetworkEnvironmentManager.shared.provideEnvironment())
+            try await request.run(with: parameters, environment: NetworkEnvironments.default)
         }
     }
 }

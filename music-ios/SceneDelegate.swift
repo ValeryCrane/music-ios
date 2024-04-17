@@ -9,8 +9,9 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
-    private var tokenManager: TokenManager!
-    private var userManager: UserManager!
+    private let authTokenProvider = AuthTokenProvider()
+    private let userManager = UserManager()
+    private let authManager = AuthManager()
 
     var window: UIWindow?
 
@@ -21,21 +22,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        tokenManager = TokenManager()
-        userManager = UserManager()
-        tokenManager.delegate = userManager
-        userManager.tokenUpdated(tokenManager.token)
-        userManager.delegate = self
+        authTokenProvider.delegate = self
         
         let window = UIWindow(windowScene: windowScene)
-        if userManager.currentUser != nil {
+        if authTokenProvider.token != nil {
             window.rootViewController = provideMainTabBarController()
         } else {
-            window.rootViewController = AuthViewController(tokenManager: tokenManager)
+            window.rootViewController = UINavigationController(
+                rootViewController: AuthViewController(authManager: authManager)
+            )
         }
-        window.rootViewController = UINavigationController(
-            rootViewController: AuthViewController(tokenManager: tokenManager)
-        )
+        
         self.window = window
         window.makeKeyAndVisible()
     }
@@ -70,10 +67,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func provideMainTabBarController() -> UIViewController {
         let tabBarController = UITabBarController()
-        let profileController = UINavigationController(rootViewController: ProfileViewController(
-            userManager: userManager,
-            tokenManager: tokenManager
-        ))
+        let profileController = UINavigationController(
+            rootViewController: ProfileViewController(userManager: userManager)
+        )
         tabBarController.viewControllers = [
             profileController
         ]
@@ -84,16 +80,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
-extension SceneDelegate: UserManagerDelegate {
-    func currentUserUpdated(_ currentUser: CurrentUser?) {
+extension SceneDelegate: AuthTokenProviderDelegate {
+    func authTokenProvider(authTokenUpdated authToken: AuthToken?) {
         DispatchQueue.main.async {
             guard let window = self.window else { return }
             
-            if currentUser != nil {
+            if authToken != nil {
                 window.rootViewController = self.provideMainTabBarController()
             } else {
-                window.rootViewController = AuthViewController(tokenManager: self.tokenManager)
+                window.rootViewController = UINavigationController(
+                    rootViewController: AuthViewController(authManager: self.authManager)
+                )
             }
+            
             UIView.transition(
                 with: window,
                 duration: 0.5,
@@ -102,6 +101,7 @@ extension SceneDelegate: UserManagerDelegate {
                 completion: nil
             )
         }
+
     }
 }
 

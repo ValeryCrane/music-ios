@@ -30,31 +30,27 @@ final class ProfileViewModel: ObservableObject {
     
     weak var viewController: UIViewController?
     
+    private let authTokenProvider = AuthTokenProvider()
     private let userManager: UserManager
-    private let tokenManager: TokenManager
     private let userId: Int?
     
-    init(userManager: UserManager, tokenManager: TokenManager, userId: Int? = nil) {
+    init(userManager: UserManager, userId: Int? = nil) {
         self.userManager = userManager
-        self.tokenManager = tokenManager
         self.userId = userId
     }
     
     func loadUser() async throws {
-        if let userId = userId {
-            let user = try await userManager.loadUser(id: userId)
-            if userManager.currentUser?.id == user.id {
-                loadCurrentUserIfPossible()
-            } else {
-                isCurrentUser = false
-                avatarURL = user.avatarURL
-                username = user.username
-                email = nil
-                compositionCount = user.compositionCount
-                isFavourite = user.isFavourite
-            }
+        guard let userId = userId else {
+            try await loadCurrentUser()
+            return
+        }
+        
+        let user = try await userManager.loadUser(id: userId)
+        
+        if authTokenProvider.token?.userId == user.id {
+            try await loadCurrentUser()
         } else {
-            loadCurrentUserIfPossible()
+            updateUserInfo(withUser: user)
         }
     }
     
@@ -80,15 +76,29 @@ final class ProfileViewModel: ObservableObject {
     }
     
     func onLogoutConfirmed() {
-        tokenManager.logout()
+        AuthTokenProvider.updateAuthToken(nil)
     }
     
-    private func loadCurrentUserIfPossible() {
+    private func loadCurrentUser() async throws {
+        let currentUser = try await userManager.loadCurrentUser()
+        updateUserInfo(withCurrentUser: currentUser)
+    }
+    
+    private func updateUserInfo(withUser user: User) {
+        isCurrentUser = false
+        avatarURL = user.avatarURL
+        username = user.username
+        email = nil
+        compositionCount = user.compositionCount
+        isFavourite = user.isFavourite
+    }
+    
+    private func updateUserInfo(withCurrentUser currentUser: CurrentUser) {
         isCurrentUser = true
-        avatarURL = userManager.currentUser?.avatarURL
-        username = userManager.currentUser?.username
-        email = userManager.currentUser?.email
-        compositionCount = userManager.currentUser?.compositionCount
+        avatarURL = currentUser.avatarURL
+        username = currentUser.username
+        email = currentUser.email
+        compositionCount = currentUser.compositionCount
         isFavourite = nil
     }
 }

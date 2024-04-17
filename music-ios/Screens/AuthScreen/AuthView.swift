@@ -27,5 +27,5 @@ struct AuthView: View {
 }
 
 #Preview {
-    AuthView(viewModel: AuthViewModel(tokenManager: TokenManager()))
+    AuthView(viewModel: AuthViewModel(authManager: AuthManager()))
 }
