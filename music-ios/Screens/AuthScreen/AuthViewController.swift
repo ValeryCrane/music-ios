@@ -4,8 +4,8 @@ import SwiftUI
 
 final class AuthViewController: UIHostingController<AuthView> {
     
-    init(authManager: AuthManager) {
-        let rootViewModel = AuthViewModel(authManager: authManager)
+    init(tokenManager: TokenManager) {
+        let rootViewModel = AuthViewModel(tokenManager: tokenManager)
         let rootView = AuthView(viewModel: rootViewModel)
         
         super.init(rootView: rootView)

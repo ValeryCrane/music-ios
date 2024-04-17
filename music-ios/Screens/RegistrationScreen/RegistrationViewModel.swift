@@ -18,10 +18,10 @@ final class RegistrationViewModel: ObservableObject {
     
     weak var viewController: UIViewController?
     
-    private let authManager: AuthManager
+    private let tokenManager: TokenManager
     
-    init(authManager: AuthManager) {
-        self.authManager = authManager
+    init(tokenManager: TokenManager) {
+        self.tokenManager = tokenManager
     }
     
     func onRegisterButtonPressed() {
@@ -30,7 +30,7 @@ final class RegistrationViewModel: ObservableObject {
         Task {
             viewController?.startLoader()
             do {
-                try await authManager.register(username: username, email: email, password: password)
+                try await tokenManager.register(username: username, email: email, password: password)
             } catch {
                 print(error.localizedDescription)
                 viewController?.stopLoader()

@@ -18,13 +18,6 @@ final class UserManager {
         }
     }
     
-    private let authManager: AuthManager
-    
-    init(authManager: AuthManager) {
-        self.authManager = authManager
-        authManager.delegate = self
-    }
-    
     private let userCurrentGet = Requests.UserCurrentGet()
     private let userGet = Requests.UserGet()
     
@@ -44,8 +37,8 @@ final class UserManager {
         }
     }
     
-    private func updateCurrentUser() async throws {
-        guard authManager.token != nil else {
+    private func updateCurrentUser(token: String?) async throws {
+        guard token != nil else {
             currentUser = nil
             return
         }
@@ -56,10 +49,10 @@ final class UserManager {
     
 }
 
-extension UserManager: AuthManagerDelegate {
+extension UserManager: TokenManagerDelegate {
     func tokenUpdated(_ token: String?) {
         Task {
-            try await updateCurrentUser()
+            try await updateCurrentUser(token: token)
         }
     }
 }

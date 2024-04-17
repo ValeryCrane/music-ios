@@ -25,13 +25,18 @@ final class ProfileViewModel: ObservableObject {
     @Published
     var compositions: [CompositionMiniature]? = nil
     
+    @Published
+    var isLogoutConfirmationPresented: Bool = false
+    
     weak var viewController: UIViewController?
     
     private let userManager: UserManager
+    private let tokenManager: TokenManager
     private let userId: Int?
     
-    init(userManager: UserManager, userId: Int? = nil) {
+    init(userManager: UserManager, tokenManager: TokenManager, userId: Int? = nil) {
         self.userManager = userManager
+        self.tokenManager = tokenManager
         self.userId = userId
     }
     
@@ -63,6 +68,19 @@ final class ProfileViewModel: ObservableObject {
         Task {
             compositions = try await userManager.loadUserCompositions(userId: userId)
         }
+    }
+    
+    
+    func onEditButtonPressed() {
+        // TODO
+    }
+    
+    func onLogoutButtonPressed() {
+        isLogoutConfirmationPresented = true
+    }
+    
+    func onLogoutConfirmed() {
+        tokenManager.logout()
     }
     
     private func loadCurrentUserIfPossible() {

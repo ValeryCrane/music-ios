@@ -19,25 +19,9 @@ struct ProfileView: View {
         {
             ScrollView {
                 VStack {
-                    AsyncImage(url: avatarURL, content: { imagePhase in
-                        switch imagePhase {
-                        case .success(let image):
-                            image.resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 128, height: 128)
-                                .clipShape(Circle())
-                        case .failure, .empty:
-                            Color(uiColor: .imp.lightGray)
-                                .frame(width: 128, height: 128)
-                                .clipShape(Circle())
-                        @unknown default:
-                            Color(uiColor: .imp.lightGray)
-                                .frame(width: 128, height: 128)
-                                .clipShape(Circle())
-                        }
-                    })
-                    .padding(.top, 32)
-                    .padding(.bottom, 8)
+                    ProfileAvatarView(avatarURL: avatarURL)
+                        .padding(.top, 32)
+                        .padding(.bottom, 8)
                     
                     Text(username).titleFont()
                     if let email = viewModel.email {
@@ -64,13 +48,21 @@ struct ProfileView: View {
                         .padding(.horizontal, 16)
                     } else {
                         ProgressView()
+                            .onAppear {
+                                viewModel.loadCompositions()
+                            }
                     }
                     Spacer()
                 }
             }
             .scrollIndicators(.hidden)
-            .refreshable {
-                try? await viewModel.loadUser()
+            .confirmationDialog(
+                "Вы хотите выйти из аккаунта?",
+                isPresented: $viewModel.isLogoutConfirmationPresented
+            ) {
+                Button("Выйти", role: .destructive) {
+                    viewModel.onLogoutConfirmed()
+                }
             }
         } else {
             ProgressView()
@@ -82,5 +74,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(viewModel: .init(userManager: .init(authManager: .init())))
+    ProfileView(viewModel: .init(userManager: .init(), tokenManager: .init()))
 }

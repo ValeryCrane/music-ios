@@ -1,16 +1,17 @@
 import Foundation
 import UIKit
 
-protocol AuthManagerDelegate: AnyObject {
+protocol TokenManagerDelegate: AnyObject {
     func tokenUpdated(_ token: String?)
 }
 
-final class AuthManager {
-    weak var delegate: AuthManagerDelegate?
+final class TokenManager {
+    weak var delegate: TokenManagerDelegate?
     
-    @Stored(key: "AuthManager.token", defaultValue: nil)
+    @Stored(key: "TokenManager.token", defaultValue: nil)
     private(set) var token: String? {
         didSet {
+            NetworkEnvironmentManager.shared.updateToken(token)
             delegate?.tokenUpdated(token)
         }
     }
@@ -31,6 +32,10 @@ final class AuthManager {
         )).authToken
         
         self.token = token
+    }
+    
+    func logout() {
+        token = nil
     }
     
 }

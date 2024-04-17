@@ -4,8 +4,8 @@ import SwiftUI
 
 final class RegistrationViewController: UIHostingController<RegistrationView> {
     
-    init(authManager: AuthManager) {
-        let rootViewModel = RegistrationViewModel(authManager: authManager)
+    init(tokenManager: TokenManager) {
+        let rootViewModel = RegistrationViewModel(tokenManager: tokenManager)
         let rootView = RegistrationView(viewModel: rootViewModel)
         
         super.init(rootView: rootView)

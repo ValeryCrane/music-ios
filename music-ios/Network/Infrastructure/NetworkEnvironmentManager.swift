@@ -1,7 +1,9 @@
 import Foundation
 
 final class NetworkEnvironmentManager {
-    private let authManager = AuthManager()
+    static let shared = NetworkEnvironmentManager()
+    
+    private var token: String? = nil
     
     func provideEnvironment() -> NetworkEnvironment {
         .init(
@@ -9,12 +11,16 @@ final class NetworkEnvironmentManager {
             host: "localhost",
             port: 80,
             commonHeaders: {
-                if let token = authManager.token {
+                if let token {
                     return ["Auth": token]
                 } else {
                     return [:]
                 }
             }()
         )
+    }
+    
+    func updateToken(_ token: String?) {
+        self.token = token
     }
 }

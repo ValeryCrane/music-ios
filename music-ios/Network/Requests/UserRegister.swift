@@ -19,7 +19,7 @@ extension Requests {
         private let request = POST<Parameters, Response>(path: "/user/register")
         
         func run(with parameters: Parameters) async throws -> Response {
-            try await request.run(with: parameters, environment: NetworkEnvironmentManager().provideEnvironment())
+            try await request.run(with: parameters, environment: NetworkEnvironmentManager.shared.provideEnvironment())
         }
     }
 }

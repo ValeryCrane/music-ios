@@ -13,6 +13,7 @@ import UIKit
 extension UIColor {
     enum imp {
         static let primary = UIColor(hex: "#5781ffff")!
+        static let secondary = UIColor(hex: "#8aa7ffff")!
         static let complementary = UIColor(hex: "#ffd557ff")!
         static let lightGray = UIColor(hex: "#f5f5f5ff")!
     }
