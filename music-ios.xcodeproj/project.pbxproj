@@ -269,6 +269,7 @@
 		382114B72BBEAE9C00FEECC8 /* music-ios */ = {
 			isa = PBXGroup;
 			children = (
+				387340BC2BCEDF1900D1EBBF /* Entities */,
 				38347C152BCDD97100221CA6 /* UI */,
 				38347C092BCDD24A00221CA6 /* Common */,
 				38347C052BCDCE7800221CA6 /* Screens */,
@@ -321,7 +322,6 @@
 		38347C052BCDCE7800221CA6 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				387340BC2BCEDF1900D1EBBF /* Entities */,
 				380EDF402BD10B8000FCB5FB /* SearchScreen */,
 				380EDF2A2BD0803400FCB5FB /* FavouritesScreen */,
 				380EDF152BD05E5E00FCB5FB /* CompositionsScreen */,
@@ -357,25 +357,11 @@
 		38347C0C2BCDD2C000221CA6 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				385F9A4E2BD1B39B0089BD28 /* Search */,
+				385F9A4D2BD1B3800089BD28 /* Favourite */,
+				385F9A4C2BD1B3700089BD28 /* Composition */,
+				385F9A4B2BD1B3580089BD28 /* User */,
 				380CC2292BCF15CE00A8BA32 /* Entities */,
-				38347C0D2BCDD2D800221CA6 /* UserAuth.swift */,
-				387340B32BCED97800D1EBBF /* UserRegister.swift */,
-				387340C52BCEE30700D1EBBF /* UserGet.swift */,
-				387340C72BCEE31D00D1EBBF /* UserCurrentGet.swift */,
-				380CC2272BCF14B200A8BA32 /* UserCompositions.swift */,
-				380EDF0A2BD0370600FCB5FB /* UserEdit.swift */,
-				380EDF0E2BD0464000FCB5FB /* UserAvatarEdit.swift */,
-				380EDF122BD05B2500FCB5FB /* UserDelete.swift */,
-				380EDF1E2BD0729400FCB5FB /* CompositionsGet.swift */,
-				380EDF202BD077BE00FCB5FB /* CompositionCreate.swift */,
-				380EDF332BD084C400FCB5FB /* FavouriteCompositionAdd.swift */,
-				380EDF352BD084E100FCB5FB /* FavouriteCompositionRemove.swift */,
-				380EDF372BD084F900FCB5FB /* FavouriteCompositionsGet.swift */,
-				380EDF392BD0851500FCB5FB /* FavouriteUserAdd.swift */,
-				380EDF3B2BD0852500FCB5FB /* FavouriteUserRemove.swift */,
-				380EDF3D2BD0853B00FCB5FB /* FavouriteUsersGet.swift */,
-				380EDF492BD10D8B00FCB5FB /* SearchUsers.swift */,
-				380EDF4B2BD10D9600FCB5FB /* SearchCompositions.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -383,12 +369,9 @@
 		38347C152BCDD97100221CA6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				383482102BCE63A500221CA6 /* Loader */,
-				3834820A2BCE5E7200221CA6 /* NiceButton.swift */,
-				38347C182BCDDA1300221CA6 /* NiceTextField.swift */,
-				38347C1A2BCDDA4900221CA6 /* FontModifiers.swift */,
+				385F9A502BD1B3C90089BD28 /* SwiftUI */,
+				385F9A4F2BD1B3BE0089BD28 /* UIKit */,
 				383482082BCE5D6400221CA6 /* Colors.swift */,
-				380CC2252BCF0FD500A8BA32 /* CompositionMiniatureView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -400,6 +383,71 @@
 				383482132BCE63E100221CA6 /* UIViewController+Loader.swift */,
 			);
 			path = Loader;
+			sourceTree = "<group>";
+		};
+		385F9A4B2BD1B3580089BD28 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				38347C0D2BCDD2D800221CA6 /* UserAuth.swift */,
+				387340B32BCED97800D1EBBF /* UserRegister.swift */,
+				387340C52BCEE30700D1EBBF /* UserGet.swift */,
+				387340C72BCEE31D00D1EBBF /* UserCurrentGet.swift */,
+				380CC2272BCF14B200A8BA32 /* UserCompositions.swift */,
+				380EDF0A2BD0370600FCB5FB /* UserEdit.swift */,
+				380EDF0E2BD0464000FCB5FB /* UserAvatarEdit.swift */,
+				380EDF122BD05B2500FCB5FB /* UserDelete.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		385F9A4C2BD1B3700089BD28 /* Composition */ = {
+			isa = PBXGroup;
+			children = (
+				380EDF1E2BD0729400FCB5FB /* CompositionsGet.swift */,
+				380EDF202BD077BE00FCB5FB /* CompositionCreate.swift */,
+			);
+			path = Composition;
+			sourceTree = "<group>";
+		};
+		385F9A4D2BD1B3800089BD28 /* Favourite */ = {
+			isa = PBXGroup;
+			children = (
+				380EDF332BD084C400FCB5FB /* FavouriteCompositionAdd.swift */,
+				380EDF352BD084E100FCB5FB /* FavouriteCompositionRemove.swift */,
+				380EDF372BD084F900FCB5FB /* FavouriteCompositionsGet.swift */,
+				380EDF392BD0851500FCB5FB /* FavouriteUserAdd.swift */,
+				380EDF3B2BD0852500FCB5FB /* FavouriteUserRemove.swift */,
+				380EDF3D2BD0853B00FCB5FB /* FavouriteUsersGet.swift */,
+			);
+			path = Favourite;
+			sourceTree = "<group>";
+		};
+		385F9A4E2BD1B39B0089BD28 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				380EDF492BD10D8B00FCB5FB /* SearchUsers.swift */,
+				380EDF4B2BD10D9600FCB5FB /* SearchCompositions.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		385F9A4F2BD1B3BE0089BD28 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				383482102BCE63A500221CA6 /* Loader */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		385F9A502BD1B3C90089BD28 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				3834820A2BCE5E7200221CA6 /* NiceButton.swift */,
+				38347C182BCDDA1300221CA6 /* NiceTextField.swift */,
+				38347C1A2BCDDA4900221CA6 /* FontModifiers.swift */,
+				380CC2252BCF0FD500A8BA32 /* CompositionMiniatureView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		387340AC2BCED5EA00D1EBBF /* RegistrationScreen */ = {
