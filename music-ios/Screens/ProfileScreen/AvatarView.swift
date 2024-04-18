@@ -1,21 +1,9 @@
-//
-//  ProfileAvatarView.swift
-//  music-ios
-//
-//  Created by valeriy.zhuravlev on 17.04.2024.
-//
-
 import SwiftUI
 
-extension ProfileAvatarView {
-    private enum Constants {
-        static let avatarSize: CGFloat = 128
-    }
-}
-
-struct ProfileAvatarView: View {
+struct AvatarView: View {
     
     private let avatarURL: URL?
+    private let size: CGFloat
     
     @ViewBuilder
     private var image: some View {
@@ -34,16 +22,16 @@ struct ProfileAvatarView: View {
     
     var body: some View {
         image
-            .frame(width: Constants.avatarSize, height: Constants.avatarSize)
+            .frame(width: size, height: size)
             .clipShape(Circle())
-            .shadow(color: Color(uiColor: .imp.secondary), radius: 128)
     }
     
-    init(avatarURL: URL?) {
+    init(avatarURL: URL?, size: CGFloat) {
         self.avatarURL = avatarURL
+        self.size = size
     }
 }
 
 #Preview {
-    ProfileAvatarView(avatarURL: .init(string: "http://localhost/user/avatar?id=19"))
+    AvatarView(avatarURL: .init(string: "http://localhost/user/avatar?id=19"), size: 128)
 }

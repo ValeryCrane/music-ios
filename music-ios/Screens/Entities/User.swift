@@ -9,13 +9,13 @@ struct User {
 }
 
 extension User {
-    init(from userGetResponse: Requests.UserGet.Response) {
+    init(from userResponse: UserResponse) {
         self.init(
-            id: userGetResponse.id,
-            username: userGetResponse.username,
-            compositionCount: userGetResponse.compositionCount,
-            avatarURL: userGetResponse.avatarURL,
-            isFavourite: userGetResponse.isFavourite
+            id: userResponse.id,
+            username: userResponse.username,
+            compositionCount: userResponse.compositionCount,
+            avatarURL: userResponse.avatarURL,
+            isFavourite: userResponse.isFavourite
         )
     }
 }

@@ -3,7 +3,7 @@ import Foundation
 struct UserResponse: Decodable {
     let id: Int
     let username: String
-    let compositionCount: String
+    let compositionCount: Int
     let avatarURL: URL
     let isFavourite: Bool
     

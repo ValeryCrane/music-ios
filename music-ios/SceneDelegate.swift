@@ -12,6 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private let authTokenProvider = AuthTokenProvider()
     private let userManager = UserManager()
     private let compositionManager = CompositionManager()
+    private let favouritesManager = FavouritesManager()
     private let authManager = AuthManager()
 
     var window: UIWindow?
@@ -74,13 +75,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let compositionsContoller = UINavigationController(
             rootViewController: CompositionsViewController(compositionManager: compositionManager)
         )
+        let favouritesController = UINavigationController(
+            rootViewController: FavouritesViewController(favouritesManager: favouritesManager)
+        )
         tabBarController.viewControllers = [
             profileController,
-            compositionsContoller
+            compositionsContoller,
+            favouritesController
         ]
         tabBarController.view.backgroundColor = .white
         profileController.tabBarItem = .init(title: nil, image: .init(systemName: "person.crop.circle.fill"), tag: 0)
         compositionsContoller.tabBarItem = .init(title: nil, image: .init(systemName: "music.note.list"), tag: 0)
+        favouritesController.tabBarItem = .init(title: nil, image: .init(systemName: "heart.fill"), tag: 0)
         return tabBarController
     }
 

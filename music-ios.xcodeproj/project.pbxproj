@@ -10,7 +10,7 @@
 		380CC2262BCF0FD500A8BA32 /* CompositionMiniatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380CC2252BCF0FD500A8BA32 /* CompositionMiniatureView.swift */; };
 		380CC2282BCF14B200A8BA32 /* UserCompositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380CC2272BCF14B200A8BA32 /* UserCompositions.swift */; };
 		380CC22B2BCF15DF00A8BA32 /* CompositionMiniatureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380CC22A2BCF15DF00A8BA32 /* CompositionMiniatureResponse.swift */; };
-		380EDEF72BCFF19C00FCB5FB /* ProfileAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDEF62BCFF19C00FCB5FB /* ProfileAvatarView.swift */; };
+		380EDEF72BCFF19C00FCB5FB /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDEF62BCFF19C00FCB5FB /* AvatarView.swift */; };
 		380EDF002BD0200F00FCB5FB /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDEFF2BD0200F00FCB5FB /* AuthToken.swift */; };
 		380EDF022BD024AC00FCB5FB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF012BD024AC00FCB5FB /* AuthManager.swift */; };
 		380EDF062BD0362100FCB5FB /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF052BD0362100FCB5FB /* EditProfileView.swift */; };
@@ -30,6 +30,16 @@
 		380EDF252BD0787A00FCB5FB /* CompositionVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF242BD0787A00FCB5FB /* CompositionVisibility.swift */; };
 		380EDF272BD078B500FCB5FB /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF262BD078B500FCB5FB /* UserResponse.swift */; };
 		380EDF292BD079C700FCB5FB /* BlueprintResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF282BD079C700FCB5FB /* BlueprintResponse.swift */; };
+		380EDF2C2BD0805100FCB5FB /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF2B2BD0805100FCB5FB /* FavouritesView.swift */; };
+		380EDF2E2BD0805F00FCB5FB /* FavouritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF2D2BD0805F00FCB5FB /* FavouritesViewModel.swift */; };
+		380EDF302BD0806C00FCB5FB /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF2F2BD0806C00FCB5FB /* FavouritesViewController.swift */; };
+		380EDF322BD0808300FCB5FB /* FavouritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF312BD0808300FCB5FB /* FavouritesManager.swift */; };
+		380EDF342BD084C400FCB5FB /* FavouriteCompositionAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF332BD084C400FCB5FB /* FavouriteCompositionAdd.swift */; };
+		380EDF362BD084E100FCB5FB /* FavouriteCompositionRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF352BD084E100FCB5FB /* FavouriteCompositionRemove.swift */; };
+		380EDF382BD084F900FCB5FB /* FavouriteCompositionsGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF372BD084F900FCB5FB /* FavouriteCompositionsGet.swift */; };
+		380EDF3A2BD0851500FCB5FB /* FavouriteUserAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF392BD0851500FCB5FB /* FavouriteUserAdd.swift */; };
+		380EDF3C2BD0852500FCB5FB /* FavouriteUserRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF3B2BD0852500FCB5FB /* FavouriteUserRemove.swift */; };
+		380EDF3E2BD0853B00FCB5FB /* FavouriteUsersGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF3D2BD0853B00FCB5FB /* FavouriteUsersGet.swift */; };
 		382114B92BBEAE9C00FEECC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382114B82BBEAE9C00FEECC8 /* AppDelegate.swift */; };
 		382114BB2BBEAE9C00FEECC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382114BA2BBEAE9C00FEECC8 /* SceneDelegate.swift */; };
 		382114C22BBEAE9F00FEECC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382114C12BBEAE9F00FEECC8 /* Assets.xcassets */; };
@@ -77,7 +87,7 @@
 		380CC2252BCF0FD500A8BA32 /* CompositionMiniatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionMiniatureView.swift; sourceTree = "<group>"; };
 		380CC2272BCF14B200A8BA32 /* UserCompositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCompositions.swift; sourceTree = "<group>"; };
 		380CC22A2BCF15DF00A8BA32 /* CompositionMiniatureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionMiniatureResponse.swift; sourceTree = "<group>"; };
-		380EDEF62BCFF19C00FCB5FB /* ProfileAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarView.swift; sourceTree = "<group>"; };
+		380EDEF62BCFF19C00FCB5FB /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		380EDEFF2BD0200F00FCB5FB /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		380EDF012BD024AC00FCB5FB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		380EDF052BD0362100FCB5FB /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
@@ -97,6 +107,16 @@
 		380EDF242BD0787A00FCB5FB /* CompositionVisibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionVisibility.swift; sourceTree = "<group>"; };
 		380EDF262BD078B500FCB5FB /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		380EDF282BD079C700FCB5FB /* BlueprintResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintResponse.swift; sourceTree = "<group>"; };
+		380EDF2B2BD0805100FCB5FB /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
+		380EDF2D2BD0805F00FCB5FB /* FavouritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewModel.swift; sourceTree = "<group>"; };
+		380EDF2F2BD0806C00FCB5FB /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		380EDF312BD0808300FCB5FB /* FavouritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesManager.swift; sourceTree = "<group>"; };
+		380EDF332BD084C400FCB5FB /* FavouriteCompositionAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCompositionAdd.swift; sourceTree = "<group>"; };
+		380EDF352BD084E100FCB5FB /* FavouriteCompositionRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCompositionRemove.swift; sourceTree = "<group>"; };
+		380EDF372BD084F900FCB5FB /* FavouriteCompositionsGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCompositionsGet.swift; sourceTree = "<group>"; };
+		380EDF392BD0851500FCB5FB /* FavouriteUserAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUserAdd.swift; sourceTree = "<group>"; };
+		380EDF3B2BD0852500FCB5FB /* FavouriteUserRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUserRemove.swift; sourceTree = "<group>"; };
+		380EDF3D2BD0853B00FCB5FB /* FavouriteUsersGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUsersGet.swift; sourceTree = "<group>"; };
 		382114B52BBEAE9C00FEECC8 /* music-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "music-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		382114B82BBEAE9C00FEECC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		382114BA2BBEAE9C00FEECC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +200,7 @@
 				380EDF012BD024AC00FCB5FB /* AuthManager.swift */,
 				387340BF2BCEDFC200D1EBBF /* UserManager.swift */,
 				380EDF1C2BD0725F00FCB5FB /* CompositionManager.swift */,
+				380EDF312BD0808300FCB5FB /* FavouritesManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -192,6 +213,16 @@
 				380EDF1A2BD05E9C00FCB5FB /* CompositionsViewController.swift */,
 			);
 			path = CompositionsScreen;
+			sourceTree = "<group>";
+		};
+		380EDF2A2BD0803400FCB5FB /* FavouritesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				380EDF2B2BD0805100FCB5FB /* FavouritesView.swift */,
+				380EDF2D2BD0805F00FCB5FB /* FavouritesViewModel.swift */,
+				380EDF2F2BD0806C00FCB5FB /* FavouritesViewController.swift */,
+			);
+			path = FavouritesScreen;
 			sourceTree = "<group>";
 		};
 		382114AC2BBEAE9C00FEECC8 = {
@@ -266,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				387340BC2BCEDF1900D1EBBF /* Entities */,
+				380EDF2A2BD0803400FCB5FB /* FavouritesScreen */,
 				380EDF152BD05E5E00FCB5FB /* CompositionsScreen */,
 				380EDF042BD0361200FCB5FB /* EditProfileScreen */,
 				387340B52BCEDCC600D1EBBF /* ProfileScreen */,
@@ -310,6 +342,12 @@
 				380EDF122BD05B2500FCB5FB /* UserDelete.swift */,
 				380EDF1E2BD0729400FCB5FB /* CompositionsGet.swift */,
 				380EDF202BD077BE00FCB5FB /* CompositionCreate.swift */,
+				380EDF332BD084C400FCB5FB /* FavouriteCompositionAdd.swift */,
+				380EDF352BD084E100FCB5FB /* FavouriteCompositionRemove.swift */,
+				380EDF372BD084F900FCB5FB /* FavouriteCompositionsGet.swift */,
+				380EDF392BD0851500FCB5FB /* FavouriteUserAdd.swift */,
+				380EDF3B2BD0852500FCB5FB /* FavouriteUserRemove.swift */,
+				380EDF3D2BD0853B00FCB5FB /* FavouriteUsersGet.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -352,7 +390,7 @@
 				387340B62BCEDCD400D1EBBF /* ProfileView.swift */,
 				387340B82BCEDCDE00D1EBBF /* ProfileViewModel.swift */,
 				387340BA2BCEDD2300D1EBBF /* ProfileViewController.swift */,
-				380EDEF62BCFF19C00FCB5FB /* ProfileAvatarView.swift */,
+				380EDEF62BCFF19C00FCB5FB /* AvatarView.swift */,
 			);
 			path = ProfileScreen;
 			sourceTree = "<group>";
@@ -447,6 +485,7 @@
 				387340BE2BCEDF6100D1EBBF /* CompositionMiniature.swift in Sources */,
 				380CC2262BCF0FD500A8BA32 /* CompositionMiniatureView.swift in Sources */,
 				383482092BCE5D6400221CA6 /* Colors.swift in Sources */,
+				380EDF342BD084C400FCB5FB /* FavouriteCompositionAdd.swift in Sources */,
 				38347BEA2BCDB59300221CA6 /* NetworkRequestDescription.swift in Sources */,
 				38347C032BCDCD7500221CA6 /* Request.swift in Sources */,
 				38347BEC2BCDB7EC00221CA6 /* NetworkModel.swift in Sources */,
@@ -454,10 +493,14 @@
 				38347C0B2BCDD25800221CA6 /* AuthTokenProvider.swift in Sources */,
 				380EDF192BD05E9200FCB5FB /* CompositionsViewModel.swift in Sources */,
 				387340C02BCEDFC200D1EBBF /* UserManager.swift in Sources */,
+				380EDF362BD084E100FCB5FB /* FavouriteCompositionRemove.swift in Sources */,
 				380EDF0B2BD0370600FCB5FB /* UserEdit.swift in Sources */,
 				387340BB2BCEDD2300D1EBBF /* ProfileViewController.swift in Sources */,
 				38347C012BCDCD3500221CA6 /* DELETE.swift in Sources */,
+				380EDF3C2BD0852500FCB5FB /* FavouriteUserRemove.swift in Sources */,
+				380EDF3A2BD0851500FCB5FB /* FavouriteUserAdd.swift in Sources */,
 				38347BF82BCDC15100221CA6 /* NetworkEnvironment.swift in Sources */,
+				380EDF2C2BD0805100FCB5FB /* FavouritesView.swift in Sources */,
 				38347BEE2BCDB98100221CA6 /* NetworkError.swift in Sources */,
 				38347BFD2BCDCBA700221CA6 /* POST.swift in Sources */,
 				380EDF1D2BD0725F00FCB5FB /* CompositionManager.swift in Sources */,
@@ -467,6 +510,7 @@
 				38347C122BCDD5F800221CA6 /* NetworkEnvironments.swift in Sources */,
 				380EDF062BD0362100FCB5FB /* EditProfileView.swift in Sources */,
 				387340B92BCEDCDE00D1EBBF /* ProfileViewModel.swift in Sources */,
+				380EDF3E2BD0853B00FCB5FB /* FavouriteUsersGet.swift in Sources */,
 				380EDF022BD024AC00FCB5FB /* AuthManager.swift in Sources */,
 				38347BF42BCDBFFF00221CA6 /* NetworkRequest.swift in Sources */,
 				387340B42BCED97800D1EBBF /* UserRegister.swift in Sources */,
@@ -478,9 +522,12 @@
 				387340B72BCEDCD400D1EBBF /* ProfileView.swift in Sources */,
 				387340C42BCEE02200D1EBBF /* User.swift in Sources */,
 				387340B02BCED60C00D1EBBF /* RegistrationViewModel.swift in Sources */,
+				380EDF2E2BD0805F00FCB5FB /* FavouritesViewModel.swift in Sources */,
 				38347C142BCDD64000221CA6 /* Stored.swift in Sources */,
 				380EDF0D2BD03A7000FCB5FB /* MultipartFormdataPOST.swift in Sources */,
+				380EDF302BD0806C00FCB5FB /* FavouritesViewController.swift in Sources */,
 				380EDF172BD05E8600FCB5FB /* CompositionsView.swift in Sources */,
+				380EDF322BD0808300FCB5FB /* FavouritesManager.swift in Sources */,
 				383482142BCE63E100221CA6 /* UIViewController+Loader.swift in Sources */,
 				380CC22B2BCF15DF00A8BA32 /* CompositionMiniatureResponse.swift in Sources */,
 				3834820F2BCE62D000221CA6 /* AuthViewController.swift in Sources */,
@@ -491,6 +538,7 @@
 				38347C1D2BCDDADA00221CA6 /* CGFloat+Constants.swift in Sources */,
 				3834820D2BCE62AD00221CA6 /* AuthViewModel.swift in Sources */,
 				38347BFF2BCDCD2100221CA6 /* PATCH.swift in Sources */,
+				380EDF382BD084F900FCB5FB /* FavouriteCompositionsGet.swift in Sources */,
 				380EDF292BD079C700FCB5FB /* BlueprintResponse.swift in Sources */,
 				3834820B2BCE5E7200221CA6 /* NiceButton.swift in Sources */,
 				380EDF212BD077BE00FCB5FB /* CompositionCreate.swift in Sources */,
@@ -500,7 +548,7 @@
 				380CC2282BCF14B200A8BA32 /* UserCompositions.swift in Sources */,
 				387340B22BCED61800D1EBBF /* RegistrationViewController.swift in Sources */,
 				387340C62BCEE30700D1EBBF /* UserGet.swift in Sources */,
-				380EDEF72BCFF19C00FCB5FB /* ProfileAvatarView.swift in Sources */,
+				380EDEF72BCFF19C00FCB5FB /* AvatarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
