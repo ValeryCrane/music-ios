@@ -4,6 +4,9 @@ import Foundation
 final class FavouritesViewModel: ObservableObject {
     
     @Published
+    var currentGroup: SearchGroup = .compositions
+    
+    @Published
     var favouriteCompositions: [CompositionMiniature]? = nil
     
     @Published
@@ -15,29 +18,21 @@ final class FavouritesViewModel: ObservableObject {
         self.favouritesManager = favouritesManager
     }
     
-    func loadCompositions() {
+    func loadCurrentGroup() {
         Task {
-            await updateCompositions()
+            await updateCurrentGroup()
         }
     }
     
-    func updateCompositions() async {
+    func updateCurrentGroup() async {
         do {
-            favouriteCompositions = try await favouritesManager.getFavouriteCompositions()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
-    func loadUsers() {
-        Task {
-            await updateUsers()
-        }
-    }
-    
-    func updateUsers() async {
-        do {
-            favouriteUsers = try await favouritesManager.getFavouriteUsers()
+            switch currentGroup {
+            case .compositions:
+                favouriteCompositions = try await favouritesManager.getFavouriteCompositions()
+            case .users:
+                favouriteUsers = try await favouritesManager.getFavouriteUsers()
+            }
+            
         } catch {
             print(error.localizedDescription)
         }

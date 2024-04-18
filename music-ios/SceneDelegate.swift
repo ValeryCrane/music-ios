@@ -13,6 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private let userManager = UserManager()
     private let compositionManager = CompositionManager()
     private let favouritesManager = FavouritesManager()
+    private let searchManager = SearchManager()
     private let authManager = AuthManager()
 
     var window: UIWindow?
@@ -78,15 +79,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let favouritesController = UINavigationController(
             rootViewController: FavouritesViewController(favouritesManager: favouritesManager)
         )
+        let searchViewController = UINavigationController(
+            rootViewController: SearchViewController(searchManager: searchManager)
+        )
         tabBarController.viewControllers = [
             profileController,
             compositionsContoller,
-            favouritesController
+            favouritesController,
+            searchViewController
         ]
         tabBarController.view.backgroundColor = .white
         profileController.tabBarItem = .init(title: nil, image: .init(systemName: "person.crop.circle.fill"), tag: 0)
         compositionsContoller.tabBarItem = .init(title: nil, image: .init(systemName: "music.note.list"), tag: 0)
         favouritesController.tabBarItem = .init(title: nil, image: .init(systemName: "heart.fill"), tag: 0)
+        searchViewController.tabBarItem = .init(title: nil, image: .init(systemName: "magnifyingglass"), tag: 0)
         return tabBarController
     }
 

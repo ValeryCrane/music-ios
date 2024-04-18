@@ -40,6 +40,13 @@
 		380EDF3A2BD0851500FCB5FB /* FavouriteUserAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF392BD0851500FCB5FB /* FavouriteUserAdd.swift */; };
 		380EDF3C2BD0852500FCB5FB /* FavouriteUserRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF3B2BD0852500FCB5FB /* FavouriteUserRemove.swift */; };
 		380EDF3E2BD0853B00FCB5FB /* FavouriteUsersGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF3D2BD0853B00FCB5FB /* FavouriteUsersGet.swift */; };
+		380EDF422BD10B9900FCB5FB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF412BD10B9900FCB5FB /* SearchView.swift */; };
+		380EDF442BD10C4800FCB5FB /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF432BD10C4800FCB5FB /* SearchViewModel.swift */; };
+		380EDF462BD10C5500FCB5FB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF452BD10C5500FCB5FB /* SearchViewController.swift */; };
+		380EDF482BD10C6700FCB5FB /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF472BD10C6700FCB5FB /* SearchManager.swift */; };
+		380EDF4A2BD10D8B00FCB5FB /* SearchUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF492BD10D8B00FCB5FB /* SearchUsers.swift */; };
+		380EDF4C2BD10D9600FCB5FB /* SearchCompositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF4B2BD10D9600FCB5FB /* SearchCompositions.swift */; };
+		380EDF4E2BD12B7200FCB5FB /* SearchGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EDF4D2BD12B7200FCB5FB /* SearchGroup.swift */; };
 		382114B92BBEAE9C00FEECC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382114B82BBEAE9C00FEECC8 /* AppDelegate.swift */; };
 		382114BB2BBEAE9C00FEECC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382114BA2BBEAE9C00FEECC8 /* SceneDelegate.swift */; };
 		382114C22BBEAE9F00FEECC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382114C12BBEAE9F00FEECC8 /* Assets.xcassets */; };
@@ -117,6 +124,13 @@
 		380EDF392BD0851500FCB5FB /* FavouriteUserAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUserAdd.swift; sourceTree = "<group>"; };
 		380EDF3B2BD0852500FCB5FB /* FavouriteUserRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUserRemove.swift; sourceTree = "<group>"; };
 		380EDF3D2BD0853B00FCB5FB /* FavouriteUsersGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUsersGet.swift; sourceTree = "<group>"; };
+		380EDF412BD10B9900FCB5FB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		380EDF432BD10C4800FCB5FB /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		380EDF452BD10C5500FCB5FB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		380EDF472BD10C6700FCB5FB /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
+		380EDF492BD10D8B00FCB5FB /* SearchUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsers.swift; sourceTree = "<group>"; };
+		380EDF4B2BD10D9600FCB5FB /* SearchCompositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCompositions.swift; sourceTree = "<group>"; };
+		380EDF4D2BD12B7200FCB5FB /* SearchGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGroup.swift; sourceTree = "<group>"; };
 		382114B52BBEAE9C00FEECC8 /* music-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "music-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		382114B82BBEAE9C00FEECC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		382114BA2BBEAE9C00FEECC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +215,7 @@
 				387340BF2BCEDFC200D1EBBF /* UserManager.swift */,
 				380EDF1C2BD0725F00FCB5FB /* CompositionManager.swift */,
 				380EDF312BD0808300FCB5FB /* FavouritesManager.swift */,
+				380EDF472BD10C6700FCB5FB /* SearchManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -223,6 +238,16 @@
 				380EDF2F2BD0806C00FCB5FB /* FavouritesViewController.swift */,
 			);
 			path = FavouritesScreen;
+			sourceTree = "<group>";
+		};
+		380EDF402BD10B8000FCB5FB /* SearchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				380EDF412BD10B9900FCB5FB /* SearchView.swift */,
+				380EDF432BD10C4800FCB5FB /* SearchViewModel.swift */,
+				380EDF452BD10C5500FCB5FB /* SearchViewController.swift */,
+			);
+			path = SearchScreen;
 			sourceTree = "<group>";
 		};
 		382114AC2BBEAE9C00FEECC8 = {
@@ -297,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				387340BC2BCEDF1900D1EBBF /* Entities */,
+				380EDF402BD10B8000FCB5FB /* SearchScreen */,
 				380EDF2A2BD0803400FCB5FB /* FavouritesScreen */,
 				380EDF152BD05E5E00FCB5FB /* CompositionsScreen */,
 				380EDF042BD0361200FCB5FB /* EditProfileScreen */,
@@ -348,6 +374,8 @@
 				380EDF392BD0851500FCB5FB /* FavouriteUserAdd.swift */,
 				380EDF3B2BD0852500FCB5FB /* FavouriteUserRemove.swift */,
 				380EDF3D2BD0853B00FCB5FB /* FavouriteUsersGet.swift */,
+				380EDF492BD10D8B00FCB5FB /* SearchUsers.swift */,
+				380EDF4B2BD10D9600FCB5FB /* SearchCompositions.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -403,6 +431,7 @@
 				387340C32BCEE02200D1EBBF /* User.swift */,
 				380EDEFF2BD0200F00FCB5FB /* AuthToken.swift */,
 				380EDF242BD0787A00FCB5FB /* CompositionVisibility.swift */,
+				380EDF4D2BD12B7200FCB5FB /* SearchGroup.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -477,10 +506,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				380EDF4A2BD10D8B00FCB5FB /* SearchUsers.swift in Sources */,
 				38347C082BCDD09D00221CA6 /* AuthView.swift in Sources */,
 				380EDF132BD05B2500FCB5FB /* UserDelete.swift in Sources */,
 				380EDF252BD0787A00FCB5FB /* CompositionVisibility.swift in Sources */,
 				380EDF232BD0782B00FCB5FB /* CompositionResponse.swift in Sources */,
+				380EDF442BD10C4800FCB5FB /* SearchViewModel.swift in Sources */,
 				380EDF1B2BD05E9C00FCB5FB /* CompositionsViewController.swift in Sources */,
 				387340BE2BCEDF6100D1EBBF /* CompositionMiniature.swift in Sources */,
 				380CC2262BCF0FD500A8BA32 /* CompositionMiniatureView.swift in Sources */,
@@ -491,6 +522,7 @@
 				38347BEC2BCDB7EC00221CA6 /* NetworkModel.swift in Sources */,
 				380EDF272BD078B500FCB5FB /* UserResponse.swift in Sources */,
 				38347C0B2BCDD25800221CA6 /* AuthTokenProvider.swift in Sources */,
+				380EDF462BD10C5500FCB5FB /* SearchViewController.swift in Sources */,
 				380EDF192BD05E9200FCB5FB /* CompositionsViewModel.swift in Sources */,
 				387340C02BCEDFC200D1EBBF /* UserManager.swift in Sources */,
 				380EDF362BD084E100FCB5FB /* FavouriteCompositionRemove.swift in Sources */,
@@ -511,6 +543,7 @@
 				380EDF062BD0362100FCB5FB /* EditProfileView.swift in Sources */,
 				387340B92BCEDCDE00D1EBBF /* ProfileViewModel.swift in Sources */,
 				380EDF3E2BD0853B00FCB5FB /* FavouriteUsersGet.swift in Sources */,
+				380EDF422BD10B9900FCB5FB /* SearchView.swift in Sources */,
 				380EDF022BD024AC00FCB5FB /* AuthManager.swift in Sources */,
 				38347BF42BCDBFFF00221CA6 /* NetworkRequest.swift in Sources */,
 				387340B42BCED97800D1EBBF /* UserRegister.swift in Sources */,
@@ -545,10 +578,13 @@
 				380EDF112BD050A400FCB5FB /* EditProfileViewController.swift in Sources */,
 				382114BB2BBEAE9C00FEECC8 /* SceneDelegate.swift in Sources */,
 				387340C22BCEE01D00D1EBBF /* CurrentUser.swift in Sources */,
+				380EDF4E2BD12B7200FCB5FB /* SearchGroup.swift in Sources */,
+				380EDF4C2BD10D9600FCB5FB /* SearchCompositions.swift in Sources */,
 				380CC2282BCF14B200A8BA32 /* UserCompositions.swift in Sources */,
 				387340B22BCED61800D1EBBF /* RegistrationViewController.swift in Sources */,
 				387340C62BCEE30700D1EBBF /* UserGet.swift in Sources */,
 				380EDEF72BCFF19C00FCB5FB /* AvatarView.swift in Sources */,
+				380EDF482BD10C6700FCB5FB /* SearchManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

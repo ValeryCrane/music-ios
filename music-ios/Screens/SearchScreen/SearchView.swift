@@ -1,16 +1,16 @@
 import Foundation
 import SwiftUI
 
-struct FavouritesView: View {
+struct SearchView: View {
     
     @StateObject
-    var viewModel: FavouritesViewModel
+    var viewModel: SearchViewModel
     
     private let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 16),
         GridItem(.flexible(), spacing: 16)
     ]
-
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -27,9 +27,9 @@ struct FavouritesView: View {
                 
                 switch viewModel.currentGroup {
                 case .compositions:
-                    if let compositions = viewModel.favouriteCompositions {
+                    if let compositions = viewModel.compositionResults {
                         if compositions.isEmpty {
-                            Text("Избранные композиции отсутствуют")
+                            Text("Композиций не найдено")
                                 .secondaryFont()
                                 .padding(32)
                         } else {
@@ -48,13 +48,13 @@ struct FavouritesView: View {
                         ProgressView()
                             .padding(32)
                             .onAppear {
-                                viewModel.loadCurrentGroup()
+                                viewModel.updateSearchResults()
                             }
                     }
                 case .users:
-                    if let users = viewModel.favouriteUsers {
+                    if let users = viewModel.userResults {
                         if users.isEmpty {
-                            Text("Избранные пользователи отсутствуют")
+                            Text("Пользователей не найдено")
                                 .secondaryFont()
                                 .padding(32)
                         } else {
@@ -83,19 +83,16 @@ struct FavouritesView: View {
                         ProgressView()
                             .padding(32)
                             .onAppear {
-                                viewModel.loadCurrentGroup()
+                                viewModel.updateSearchResults()
                             }
                     }
                 }
             }
-            .padding(16)
+            .padding(.horizontal, 16)
         }
         .refreshable {
-            await viewModel.updateCurrentGroup()
+            await viewModel.updateSearchResults()
         }
+        .scrollIndicators(.hidden)
     }
-}
-
-#Preview {
-    FavouritesView(viewModel: .init(favouritesManager: .init()))
 }
