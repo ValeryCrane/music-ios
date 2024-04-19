@@ -7,12 +7,14 @@ protocol CompositionViewModelInput: AnyObject {
     
     func onCompositionsParametersButtonPressed()
     func onFavouriteButtonPressed()
+    func onOpenCombination(_ combination: MutableCombination)
     func createFork(name: String)
 }
 
 protocol CompositionViewModelOutput: UIViewController { }
 
 final class CompositionViewModel {
+    weak var view: CompositionViewModelOutput?
     
     private var composition: MutableComposition
     
@@ -28,6 +30,11 @@ extension CompositionViewModel: CompositionViewModelInput {
     
     func onFavouriteButtonPressed() {
         // TODO
+    }
+    
+    func onOpenCombination(_ combination: MutableCombination) {
+        let combinationController = CombinationViewController(viewModel: CombinationViewModel(combination: combination))
+        view?.navigationController?.pushViewController(combinationController, animated: true)
     }
     
     func createFork(name: String) {

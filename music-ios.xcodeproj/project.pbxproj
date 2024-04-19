@@ -92,6 +92,13 @@
 		385F9A742BD1D74F0089BD28 /* UILabel+Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A732BD1D74F0089BD28 /* UILabel+Role.swift */; };
 		385F9A762BD1DF0C0089BD28 /* BPMStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A752BD1DF0C0089BD28 /* BPMStepper.swift */; };
 		385F9A782BD1EA590089BD28 /* RecordToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A772BD1EA590089BD28 /* RecordToolbarView.swift */; };
+		385F9A7B2BD1F6DA0089BD28 /* CombinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A7A2BD1F6DA0089BD28 /* CombinationViewController.swift */; };
+		385F9A7D2BD1F7000089BD28 /* CombinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A7C2BD1F7000089BD28 /* CombinationViewModel.swift */; };
+		385F9B402BD201A10089BD28 /* MelodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9B3F2BD201A10089BD28 /* MelodyTableViewCell.swift */; };
+		385F9B422BD201B30089BD28 /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9B412BD201B30089BD28 /* SampleTableViewCell.swift */; };
+		385F9ECD2BD26E1F0089BD28 /* CGSize+scaled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9ECC2BD26E1F0089BD28 /* CGSize+scaled.swift */; };
+		385F9ECF2BD27A5A0089BD28 /* UIButton+scaleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9ECE2BD27A5A0089BD28 /* UIButton+scaleImage.swift */; };
+		385F9ED12BD29B560089BD28 /* AddRowTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9ED02BD29B560089BD28 /* AddRowTableFooterView.swift */; };
 		387340AE2BCED60100D1EBBF /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340AD2BCED60100D1EBBF /* RegistrationView.swift */; };
 		387340B02BCED60C00D1EBBF /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340AF2BCED60C00D1EBBF /* RegistrationViewModel.swift */; };
 		387340B22BCED61800D1EBBF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340B12BCED61800D1EBBF /* RegistrationViewController.swift */; };
@@ -195,6 +202,13 @@
 		385F9A732BD1D74F0089BD28 /* UILabel+Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Role.swift"; sourceTree = "<group>"; };
 		385F9A752BD1DF0C0089BD28 /* BPMStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPMStepper.swift; sourceTree = "<group>"; };
 		385F9A772BD1EA590089BD28 /* RecordToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordToolbarView.swift; sourceTree = "<group>"; };
+		385F9A7A2BD1F6DA0089BD28 /* CombinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationViewController.swift; sourceTree = "<group>"; };
+		385F9A7C2BD1F7000089BD28 /* CombinationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationViewModel.swift; sourceTree = "<group>"; };
+		385F9B3F2BD201A10089BD28 /* MelodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyTableViewCell.swift; sourceTree = "<group>"; };
+		385F9B412BD201B30089BD28 /* SampleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
+		385F9ECC2BD26E1F0089BD28 /* CGSize+scaled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+scaled.swift"; sourceTree = "<group>"; };
+		385F9ECE2BD27A5A0089BD28 /* UIButton+scaleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+scaleImage.swift"; sourceTree = "<group>"; };
+		385F9ED02BD29B560089BD28 /* AddRowTableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRowTableFooterView.swift; sourceTree = "<group>"; };
 		387340AD2BCED60100D1EBBF /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		387340AF2BCED60C00D1EBBF /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		387340B12BCED61800D1EBBF /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -473,6 +487,9 @@
 				385F9A732BD1D74F0089BD28 /* UILabel+Role.swift */,
 				385F9A752BD1DF0C0089BD28 /* BPMStepper.swift */,
 				385F9A772BD1EA590089BD28 /* RecordToolbarView.swift */,
+				385F9ECC2BD26E1F0089BD28 /* CGSize+scaled.swift */,
+				385F9ECE2BD27A5A0089BD28 /* UIButton+scaleImage.swift */,
+				385F9ED02BD29B560089BD28 /* AddRowTableFooterView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -491,6 +508,7 @@
 		385F9A522BD1B4300089BD28 /* CompositionEditor */ = {
 			isa = PBXGroup;
 			children = (
+				385F9A792BD1F6B70089BD28 /* CombinationScreen */,
 				385F9A532BD1B4380089BD28 /* CompositionScreen */,
 			);
 			path = CompositionEditor;
@@ -538,6 +556,17 @@
 				385F9A652BD1C7C80089BD28 /* Sample.swift */,
 			);
 			path = Immutable;
+			sourceTree = "<group>";
+		};
+		385F9A792BD1F6B70089BD28 /* CombinationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				385F9A7A2BD1F6DA0089BD28 /* CombinationViewController.swift */,
+				385F9A7C2BD1F7000089BD28 /* CombinationViewModel.swift */,
+				385F9B3F2BD201A10089BD28 /* MelodyTableViewCell.swift */,
+				385F9B412BD201B30089BD28 /* SampleTableViewCell.swift */,
+			);
+			path = CombinationScreen;
 			sourceTree = "<group>";
 		};
 		387340AC2BCED5EA00D1EBBF /* RegistrationScreen */ = {
@@ -651,6 +680,7 @@
 				380EDF132BD05B2500FCB5FB /* UserDelete.swift in Sources */,
 				380EDF252BD0787A00FCB5FB /* CompositionVisibility.swift in Sources */,
 				380EDF232BD0782B00FCB5FB /* CompositionResponse.swift in Sources */,
+				385F9A7D2BD1F7000089BD28 /* CombinationViewModel.swift in Sources */,
 				380EDF442BD10C4800FCB5FB /* SearchViewModel.swift in Sources */,
 				380EDF1B2BD05E9C00FCB5FB /* CompositionsViewController.swift in Sources */,
 				387340BE2BCEDF6100D1EBBF /* CompositionMiniature.swift in Sources */,
@@ -659,9 +689,11 @@
 				383482092BCE5D6400221CA6 /* Colors.swift in Sources */,
 				380EDF342BD084C400FCB5FB /* FavouriteCompositionAdd.swift in Sources */,
 				38347BEA2BCDB59300221CA6 /* NetworkRequestDescription.swift in Sources */,
+				385F9B402BD201A10089BD28 /* MelodyTableViewCell.swift in Sources */,
 				38347C032BCDCD7500221CA6 /* Request.swift in Sources */,
 				38347BEC2BCDB7EC00221CA6 /* NetworkModel.swift in Sources */,
 				380EDF272BD078B500FCB5FB /* UserResponse.swift in Sources */,
+				385F9ECD2BD26E1F0089BD28 /* CGSize+scaled.swift in Sources */,
 				38347C0B2BCDD25800221CA6 /* AuthTokenProvider.swift in Sources */,
 				380EDF462BD10C5500FCB5FB /* SearchViewController.swift in Sources */,
 				380EDF192BD05E9200FCB5FB /* CompositionsViewModel.swift in Sources */,
@@ -671,6 +703,7 @@
 				380EDF0B2BD0370600FCB5FB /* UserEdit.swift in Sources */,
 				387340BB2BCEDD2300D1EBBF /* ProfileViewController.swift in Sources */,
 				385F9A762BD1DF0C0089BD28 /* BPMStepper.swift in Sources */,
+				385F9A7B2BD1F6DA0089BD28 /* CombinationViewController.swift in Sources */,
 				38347C012BCDCD3500221CA6 /* DELETE.swift in Sources */,
 				380EDF3C2BD0852500FCB5FB /* FavouriteUserRemove.swift in Sources */,
 				380EDF3A2BD0851500FCB5FB /* FavouriteUserAdd.swift in Sources */,
@@ -699,6 +732,7 @@
 				38347C1B2BCDDA4900221CA6 /* FontModifiers.swift in Sources */,
 				38347BFA2BCDC2B700221CA6 /* GET.swift in Sources */,
 				387340B72BCEDCD400D1EBBF /* ProfileView.swift in Sources */,
+				385F9B422BD201B30089BD28 /* SampleTableViewCell.swift in Sources */,
 				387340C42BCEE02200D1EBBF /* User.swift in Sources */,
 				387340B02BCED60C00D1EBBF /* RegistrationViewModel.swift in Sources */,
 				380EDF2E2BD0805F00FCB5FB /* FavouritesViewModel.swift in Sources */,
@@ -731,6 +765,8 @@
 				382114BB2BBEAE9C00FEECC8 /* SceneDelegate.swift in Sources */,
 				387340C22BCEE01D00D1EBBF /* CurrentUser.swift in Sources */,
 				380EDF4E2BD12B7200FCB5FB /* SearchGroup.swift in Sources */,
+				385F9ED12BD29B560089BD28 /* AddRowTableFooterView.swift in Sources */,
+				385F9ECF2BD27A5A0089BD28 /* UIButton+scaleImage.swift in Sources */,
 				380EDF4C2BD10D9600FCB5FB /* SearchCompositions.swift in Sources */,
 				380CC2282BCF14B200A8BA32 /* UserCompositions.swift in Sources */,
 				385F9A602BD1C7620089BD28 /* EffectType.swift in Sources */,

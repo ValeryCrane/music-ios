@@ -63,8 +63,8 @@ final class RecordToolbarView: UIView {
         micButton.layer.cornerRadius = .defaultCornerRadius
         recordButton.layer.cornerRadius = .defaultCornerRadius
         
-        placeholderLabel.role(.secondary)
-        placeholderLabel.text = "запись композиции"
+        placeholderLabel.role(.title)
+        placeholderLabel.text = "Запись композиции"
         
         micButton.addTarget(self, action: #selector(onMicButtonPressed(_:)), for: .touchUpInside)
         recordButton.addTarget(self, action: #selector(onRecordButtonPressed(_:)), for: .touchUpInside)

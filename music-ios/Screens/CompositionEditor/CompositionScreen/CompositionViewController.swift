@@ -127,6 +127,10 @@ extension CompositionViewController: UICollectionViewDelegateFlowLayout {
         let itemSize = (viewWidth - Constants.combinationSpacing) / 2
         return .init(width: itemSize, height: itemSize)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.onOpenCombination(combinations[indexPath.row])
+    }
 }
 
 extension CompositionViewController: UICollectionViewDataSource {
@@ -144,3 +148,5 @@ extension CompositionViewController: UICollectionViewDataSource {
         return cell ?? UICollectionViewCell()
     }
 }
+
+extension CompositionViewController: CompositionViewModelOutput { }
