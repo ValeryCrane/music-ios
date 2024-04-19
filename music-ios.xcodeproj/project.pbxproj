@@ -75,6 +75,23 @@
 		3834820F2BCE62D000221CA6 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834820E2BCE62D000221CA6 /* AuthViewController.swift */; };
 		383482122BCE63BF00221CA6 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383482112BCE63BF00221CA6 /* LoadingViewController.swift */; };
 		383482142BCE63E100221CA6 /* UIViewController+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383482132BCE63E100221CA6 /* UIViewController+Loader.swift */; };
+		385F9A552BD1B44E0089BD28 /* CompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A542BD1B44E0089BD28 /* CompositionViewController.swift */; };
+		385F9A572BD1B4570089BD28 /* CompositionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A562BD1B4570089BD28 /* CompositionViewModel.swift */; };
+		385F9A592BD1B6E30089BD28 /* CombinationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A582BD1B6E30089BD28 /* CombinationCollectionViewCell.swift */; };
+		385F9A5B2BD1B7150089BD28 /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A5A2BD1B7150089BD28 /* Composition.swift */; };
+		385F9A5E2BD1C75B0089BD28 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A5D2BD1C75B0089BD28 /* Effect.swift */; };
+		385F9A602BD1C7620089BD28 /* EffectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A5F2BD1C7620089BD28 /* EffectType.swift */; };
+		385F9A622BD1C7860089BD28 /* Combination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A612BD1C7860089BD28 /* Combination.swift */; };
+		385F9A642BD1C7A10089BD28 /* Melody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A632BD1C7A10089BD28 /* Melody.swift */; };
+		385F9A662BD1C7C80089BD28 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A652BD1C7C80089BD28 /* Sample.swift */; };
+		385F9A6A2BD1C8070089BD28 /* MutableComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A692BD1C8070089BD28 /* MutableComposition.swift */; };
+		385F9A6C2BD1C83C0089BD28 /* MutableCombination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A6B2BD1C83C0089BD28 /* MutableCombination.swift */; };
+		385F9A6E2BD1C8610089BD28 /* MutableEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A6D2BD1C8610089BD28 /* MutableEffect.swift */; };
+		385F9A702BD1C8AA0089BD28 /* MutableMelody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A6F2BD1C8AA0089BD28 /* MutableMelody.swift */; };
+		385F9A722BD1C8B60089BD28 /* MutableSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A712BD1C8B60089BD28 /* MutableSample.swift */; };
+		385F9A742BD1D74F0089BD28 /* UILabel+Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A732BD1D74F0089BD28 /* UILabel+Role.swift */; };
+		385F9A762BD1DF0C0089BD28 /* BPMStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A752BD1DF0C0089BD28 /* BPMStepper.swift */; };
+		385F9A782BD1EA590089BD28 /* RecordToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A772BD1EA590089BD28 /* RecordToolbarView.swift */; };
 		387340AE2BCED60100D1EBBF /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340AD2BCED60100D1EBBF /* RegistrationView.swift */; };
 		387340B02BCED60C00D1EBBF /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340AF2BCED60C00D1EBBF /* RegistrationViewModel.swift */; };
 		387340B22BCED61800D1EBBF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340B12BCED61800D1EBBF /* RegistrationViewController.swift */; };
@@ -161,6 +178,23 @@
 		3834820E2BCE62D000221CA6 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		383482112BCE63BF00221CA6 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		383482132BCE63E100221CA6 /* UIViewController+Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Loader.swift"; sourceTree = "<group>"; };
+		385F9A542BD1B44E0089BD28 /* CompositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionViewController.swift; sourceTree = "<group>"; };
+		385F9A562BD1B4570089BD28 /* CompositionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionViewModel.swift; sourceTree = "<group>"; };
+		385F9A582BD1B6E30089BD28 /* CombinationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationCollectionViewCell.swift; sourceTree = "<group>"; };
+		385F9A5A2BD1B7150089BD28 /* Composition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
+		385F9A5D2BD1C75B0089BD28 /* Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
+		385F9A5F2BD1C7620089BD28 /* EffectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectType.swift; sourceTree = "<group>"; };
+		385F9A612BD1C7860089BD28 /* Combination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combination.swift; sourceTree = "<group>"; };
+		385F9A632BD1C7A10089BD28 /* Melody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Melody.swift; sourceTree = "<group>"; };
+		385F9A652BD1C7C80089BD28 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
+		385F9A692BD1C8070089BD28 /* MutableComposition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableComposition.swift; sourceTree = "<group>"; };
+		385F9A6B2BD1C83C0089BD28 /* MutableCombination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableCombination.swift; sourceTree = "<group>"; };
+		385F9A6D2BD1C8610089BD28 /* MutableEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableEffect.swift; sourceTree = "<group>"; };
+		385F9A6F2BD1C8AA0089BD28 /* MutableMelody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableMelody.swift; sourceTree = "<group>"; };
+		385F9A712BD1C8B60089BD28 /* MutableSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableSample.swift; sourceTree = "<group>"; };
+		385F9A732BD1D74F0089BD28 /* UILabel+Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Role.swift"; sourceTree = "<group>"; };
+		385F9A752BD1DF0C0089BD28 /* BPMStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPMStepper.swift; sourceTree = "<group>"; };
+		385F9A772BD1EA590089BD28 /* RecordToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordToolbarView.swift; sourceTree = "<group>"; };
 		387340AD2BCED60100D1EBBF /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		387340AF2BCED60C00D1EBBF /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		387340B12BCED61800D1EBBF /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -322,6 +356,7 @@
 		38347C052BCDCE7800221CA6 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				385F9A522BD1B4300089BD28 /* CompositionEditor */,
 				380EDF402BD10B8000FCB5FB /* SearchScreen */,
 				380EDF2A2BD0803400FCB5FB /* FavouritesScreen */,
 				380EDF152BD05E5E00FCB5FB /* CompositionsScreen */,
@@ -435,6 +470,9 @@
 			isa = PBXGroup;
 			children = (
 				383482102BCE63A500221CA6 /* Loader */,
+				385F9A732BD1D74F0089BD28 /* UILabel+Role.swift */,
+				385F9A752BD1DF0C0089BD28 /* BPMStepper.swift */,
+				385F9A772BD1EA590089BD28 /* RecordToolbarView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -448,6 +486,58 @@
 				380CC2252BCF0FD500A8BA32 /* CompositionMiniatureView.swift */,
 			);
 			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		385F9A522BD1B4300089BD28 /* CompositionEditor */ = {
+			isa = PBXGroup;
+			children = (
+				385F9A532BD1B4380089BD28 /* CompositionScreen */,
+			);
+			path = CompositionEditor;
+			sourceTree = "<group>";
+		};
+		385F9A532BD1B4380089BD28 /* CompositionScreen */ = {
+			isa = PBXGroup;
+			children = (
+				385F9A582BD1B6E30089BD28 /* CombinationCollectionViewCell.swift */,
+				385F9A542BD1B44E0089BD28 /* CompositionViewController.swift */,
+				385F9A562BD1B4570089BD28 /* CompositionViewModel.swift */,
+			);
+			path = CompositionScreen;
+			sourceTree = "<group>";
+		};
+		385F9A5C2BD1C6040089BD28 /* CompositionStructure */ = {
+			isa = PBXGroup;
+			children = (
+				385F9A682BD1C7F10089BD28 /* Immutable */,
+				385F9A672BD1C7E90089BD28 /* Mutable */,
+			);
+			path = CompositionStructure;
+			sourceTree = "<group>";
+		};
+		385F9A672BD1C7E90089BD28 /* Mutable */ = {
+			isa = PBXGroup;
+			children = (
+				385F9A692BD1C8070089BD28 /* MutableComposition.swift */,
+				385F9A6B2BD1C83C0089BD28 /* MutableCombination.swift */,
+				385F9A6D2BD1C8610089BD28 /* MutableEffect.swift */,
+				385F9A6F2BD1C8AA0089BD28 /* MutableMelody.swift */,
+				385F9A712BD1C8B60089BD28 /* MutableSample.swift */,
+			);
+			path = Mutable;
+			sourceTree = "<group>";
+		};
+		385F9A682BD1C7F10089BD28 /* Immutable */ = {
+			isa = PBXGroup;
+			children = (
+				385F9A5A2BD1B7150089BD28 /* Composition.swift */,
+				385F9A5D2BD1C75B0089BD28 /* Effect.swift */,
+				385F9A5F2BD1C7620089BD28 /* EffectType.swift */,
+				385F9A612BD1C7860089BD28 /* Combination.swift */,
+				385F9A632BD1C7A10089BD28 /* Melody.swift */,
+				385F9A652BD1C7C80089BD28 /* Sample.swift */,
+			);
+			path = Immutable;
 			sourceTree = "<group>";
 		};
 		387340AC2BCED5EA00D1EBBF /* RegistrationScreen */ = {
@@ -474,6 +564,7 @@
 		387340BC2BCEDF1900D1EBBF /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				385F9A5C2BD1C6040089BD28 /* CompositionStructure */,
 				387340BD2BCEDF6100D1EBBF /* CompositionMiniature.swift */,
 				387340C12BCEE01D00D1EBBF /* CurrentUser.swift */,
 				387340C32BCEE02200D1EBBF /* User.swift */,
@@ -554,6 +645,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				385F9A592BD1B6E30089BD28 /* CombinationCollectionViewCell.swift in Sources */,
 				380EDF4A2BD10D8B00FCB5FB /* SearchUsers.swift in Sources */,
 				38347C082BCDD09D00221CA6 /* AuthView.swift in Sources */,
 				380EDF132BD05B2500FCB5FB /* UserDelete.swift in Sources */,
@@ -562,6 +654,7 @@
 				380EDF442BD10C4800FCB5FB /* SearchViewModel.swift in Sources */,
 				380EDF1B2BD05E9C00FCB5FB /* CompositionsViewController.swift in Sources */,
 				387340BE2BCEDF6100D1EBBF /* CompositionMiniature.swift in Sources */,
+				385F9A662BD1C7C80089BD28 /* Sample.swift in Sources */,
 				380CC2262BCF0FD500A8BA32 /* CompositionMiniatureView.swift in Sources */,
 				383482092BCE5D6400221CA6 /* Colors.swift in Sources */,
 				380EDF342BD084C400FCB5FB /* FavouriteCompositionAdd.swift in Sources */,
@@ -574,13 +667,16 @@
 				380EDF192BD05E9200FCB5FB /* CompositionsViewModel.swift in Sources */,
 				387340C02BCEDFC200D1EBBF /* UserManager.swift in Sources */,
 				380EDF362BD084E100FCB5FB /* FavouriteCompositionRemove.swift in Sources */,
+				385F9A702BD1C8AA0089BD28 /* MutableMelody.swift in Sources */,
 				380EDF0B2BD0370600FCB5FB /* UserEdit.swift in Sources */,
 				387340BB2BCEDD2300D1EBBF /* ProfileViewController.swift in Sources */,
+				385F9A762BD1DF0C0089BD28 /* BPMStepper.swift in Sources */,
 				38347C012BCDCD3500221CA6 /* DELETE.swift in Sources */,
 				380EDF3C2BD0852500FCB5FB /* FavouriteUserRemove.swift in Sources */,
 				380EDF3A2BD0851500FCB5FB /* FavouriteUserAdd.swift in Sources */,
 				38347BF82BCDC15100221CA6 /* NetworkEnvironment.swift in Sources */,
 				380EDF2C2BD0805100FCB5FB /* FavouritesView.swift in Sources */,
+				385F9A782BD1EA590089BD28 /* RecordToolbarView.swift in Sources */,
 				38347BEE2BCDB98100221CA6 /* NetworkError.swift in Sources */,
 				38347BFD2BCDCBA700221CA6 /* POST.swift in Sources */,
 				380EDF1D2BD0725F00FCB5FB /* CompositionManager.swift in Sources */,
@@ -589,6 +685,8 @@
 				387340AE2BCED60100D1EBBF /* RegistrationView.swift in Sources */,
 				38347C122BCDD5F800221CA6 /* NetworkEnvironments.swift in Sources */,
 				380EDF062BD0362100FCB5FB /* EditProfileView.swift in Sources */,
+				385F9A722BD1C8B60089BD28 /* MutableSample.swift in Sources */,
+				385F9A5E2BD1C75B0089BD28 /* Effect.swift in Sources */,
 				387340B92BCEDCDE00D1EBBF /* ProfileViewModel.swift in Sources */,
 				380EDF3E2BD0853B00FCB5FB /* FavouriteUsersGet.swift in Sources */,
 				380EDF422BD10B9900FCB5FB /* SearchView.swift in Sources */,
@@ -606,6 +704,8 @@
 				380EDF2E2BD0805F00FCB5FB /* FavouritesViewModel.swift in Sources */,
 				38347C142BCDD64000221CA6 /* Stored.swift in Sources */,
 				380EDF0D2BD03A7000FCB5FB /* MultipartFormdataPOST.swift in Sources */,
+				385F9A642BD1C7A10089BD28 /* Melody.swift in Sources */,
+				385F9A572BD1B4570089BD28 /* CompositionViewModel.swift in Sources */,
 				380EDF302BD0806C00FCB5FB /* FavouritesViewController.swift in Sources */,
 				380EDF172BD05E8600FCB5FB /* CompositionsView.swift in Sources */,
 				380EDF322BD0808300FCB5FB /* FavouritesManager.swift in Sources */,
@@ -617,20 +717,28 @@
 				380EDF0F2BD0464000FCB5FB /* UserAvatarEdit.swift in Sources */,
 				387340C82BCEE31D00D1EBBF /* UserCurrentGet.swift in Sources */,
 				38347C1D2BCDDADA00221CA6 /* CGFloat+Constants.swift in Sources */,
+				385F9A6C2BD1C83C0089BD28 /* MutableCombination.swift in Sources */,
 				3834820D2BCE62AD00221CA6 /* AuthViewModel.swift in Sources */,
 				38347BFF2BCDCD2100221CA6 /* PATCH.swift in Sources */,
 				380EDF382BD084F900FCB5FB /* FavouriteCompositionsGet.swift in Sources */,
+				385F9A6A2BD1C8070089BD28 /* MutableComposition.swift in Sources */,
 				380EDF292BD079C700FCB5FB /* BlueprintResponse.swift in Sources */,
 				3834820B2BCE5E7200221CA6 /* NiceButton.swift in Sources */,
+				385F9A5B2BD1B7150089BD28 /* Composition.swift in Sources */,
 				380EDF212BD077BE00FCB5FB /* CompositionCreate.swift in Sources */,
 				380EDF112BD050A400FCB5FB /* EditProfileViewController.swift in Sources */,
+				385F9A742BD1D74F0089BD28 /* UILabel+Role.swift in Sources */,
 				382114BB2BBEAE9C00FEECC8 /* SceneDelegate.swift in Sources */,
 				387340C22BCEE01D00D1EBBF /* CurrentUser.swift in Sources */,
 				380EDF4E2BD12B7200FCB5FB /* SearchGroup.swift in Sources */,
 				380EDF4C2BD10D9600FCB5FB /* SearchCompositions.swift in Sources */,
 				380CC2282BCF14B200A8BA32 /* UserCompositions.swift in Sources */,
+				385F9A602BD1C7620089BD28 /* EffectType.swift in Sources */,
+				385F9A6E2BD1C8610089BD28 /* MutableEffect.swift in Sources */,
 				387340B22BCED61800D1EBBF /* RegistrationViewController.swift in Sources */,
+				385F9A622BD1C7860089BD28 /* Combination.swift in Sources */,
 				387340C62BCEE30700D1EBBF /* UserGet.swift in Sources */,
+				385F9A552BD1B44E0089BD28 /* CompositionViewController.swift in Sources */,
 				380EDEF72BCFF19C00FCB5FB /* AvatarView.swift in Sources */,
 				380EDF482BD10C6700FCB5FB /* SearchManager.swift in Sources */,
 			);
