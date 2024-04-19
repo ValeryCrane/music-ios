@@ -58,9 +58,7 @@ final class CombinationViewController: UIViewController {
     }
 }
 
-extension CombinationViewController: UITableViewDelegate {
-    
-}
+extension CombinationViewController: UITableViewDelegate { }
 
 extension CombinationViewController: UITableViewDataSource {
     
@@ -116,6 +114,7 @@ extension CombinationViewController: UITableViewDataSource {
             ) as? SampleTableViewCell
             
             cell?.setup(sample: viewModel.getSamples()[indexPath.row])
+            cell?.delegate = self
             return cell ?? UITableViewCell()
         case 1:
             let cell = tableView.dequeueReusableCell(
@@ -130,3 +129,11 @@ extension CombinationViewController: UITableViewDataSource {
         }
     }
 }
+
+extension CombinationViewController: SampleTableViewCellDelegate {
+    func didPressEffectsButtonOnSample(_ sample: MutableSample) {
+        viewModel.didPressEffectsButtonOnSample(sample)
+    }
+}
+
+extension CombinationViewController: CombinationViewModelOutput { }

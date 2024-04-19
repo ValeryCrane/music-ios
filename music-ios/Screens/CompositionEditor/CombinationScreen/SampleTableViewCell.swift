@@ -1,6 +1,10 @@
 import Foundation
 import UIKit
 
+protocol SampleTableViewCellDelegate: AnyObject {
+    func didPressEffectsButtonOnSample(_ sample: MutableSample)
+}
+
 extension SampleTableViewCell {
     enum Constants {
         static let buttonWidth: CGFloat = 28
@@ -13,6 +17,8 @@ extension SampleTableViewCell {
 
 final class SampleTableViewCell: UITableViewCell {
     static let reuseIdentifier = "SampleTableViewCell"
+    
+    weak var delegate: SampleTableViewCellDelegate?
     
     private let wrapperView = UIView()
     
@@ -105,6 +111,8 @@ final class SampleTableViewCell: UITableViewCell {
     
     @objc
     private func onEffectsButtonPressed(_ sender: UIButton) {
-        // TODO
+        if let sample = sample {
+            delegate?.didPressEffectsButtonOnSample(sample)
+        }
     }
 }

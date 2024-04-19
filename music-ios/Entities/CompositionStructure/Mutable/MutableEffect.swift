@@ -2,10 +2,10 @@ import Foundation
 
 class MutableEffect {
     let type: EffectType
-    var value: Float
+    var properties: [MutableEffectProperty]
     
     init(_ effect: Effect) {
         self.type = effect.type
-        self.value = effect.value
+        self.properties = effect.properties.map { .init($0) }
     }
 }

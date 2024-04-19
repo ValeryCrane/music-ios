@@ -99,6 +99,12 @@
 		385F9ECD2BD26E1F0089BD28 /* CGSize+scaled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9ECC2BD26E1F0089BD28 /* CGSize+scaled.swift */; };
 		385F9ECF2BD27A5A0089BD28 /* UIButton+scaleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9ECE2BD27A5A0089BD28 /* UIButton+scaleImage.swift */; };
 		385F9ED12BD29B560089BD28 /* AddRowTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9ED02BD29B560089BD28 /* AddRowTableFooterView.swift */; };
+		385F9ED42BD2A6310089BD28 /* EffectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9ED32BD2A6310089BD28 /* EffectsViewController.swift */; };
+		385FA79C2BD2BCBB0089BD28 /* EffectProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA79B2BD2BCBB0089BD28 /* EffectProperty.swift */; };
+		385FA79E2BD2BCE70089BD28 /* EffectPropertyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA79D2BD2BCE70089BD28 /* EffectPropertyType.swift */; };
+		385FA7A02BD2BF8F0089BD28 /* MutableEffectProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA79F2BD2BF8F0089BD28 /* MutableEffectProperty.swift */; };
+		385FA7A22BD2DE760089BD28 /* EffectControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA7A12BD2DE760089BD28 /* EffectControl.swift */; };
+		385FA7A42BD2DF5B0089BD28 /* EffectPropertyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA7A32BD2DF5B0089BD28 /* EffectPropertyControl.swift */; };
 		387340AE2BCED60100D1EBBF /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340AD2BCED60100D1EBBF /* RegistrationView.swift */; };
 		387340B02BCED60C00D1EBBF /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340AF2BCED60C00D1EBBF /* RegistrationViewModel.swift */; };
 		387340B22BCED61800D1EBBF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340B12BCED61800D1EBBF /* RegistrationViewController.swift */; };
@@ -209,6 +215,12 @@
 		385F9ECC2BD26E1F0089BD28 /* CGSize+scaled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+scaled.swift"; sourceTree = "<group>"; };
 		385F9ECE2BD27A5A0089BD28 /* UIButton+scaleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+scaleImage.swift"; sourceTree = "<group>"; };
 		385F9ED02BD29B560089BD28 /* AddRowTableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRowTableFooterView.swift; sourceTree = "<group>"; };
+		385F9ED32BD2A6310089BD28 /* EffectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsViewController.swift; sourceTree = "<group>"; };
+		385FA79B2BD2BCBB0089BD28 /* EffectProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectProperty.swift; sourceTree = "<group>"; };
+		385FA79D2BD2BCE70089BD28 /* EffectPropertyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectPropertyType.swift; sourceTree = "<group>"; };
+		385FA79F2BD2BF8F0089BD28 /* MutableEffectProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableEffectProperty.swift; sourceTree = "<group>"; };
+		385FA7A12BD2DE760089BD28 /* EffectControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectControl.swift; sourceTree = "<group>"; };
+		385FA7A32BD2DF5B0089BD28 /* EffectPropertyControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectPropertyControl.swift; sourceTree = "<group>"; };
 		387340AD2BCED60100D1EBBF /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		387340AF2BCED60C00D1EBBF /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		387340B12BCED61800D1EBBF /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -508,6 +520,7 @@
 		385F9A522BD1B4300089BD28 /* CompositionEditor */ = {
 			isa = PBXGroup;
 			children = (
+				385F9ED22BD2A6200089BD28 /* EffectsScreen */,
 				385F9A792BD1F6B70089BD28 /* CombinationScreen */,
 				385F9A532BD1B4380089BD28 /* CompositionScreen */,
 			);
@@ -539,6 +552,7 @@
 				385F9A692BD1C8070089BD28 /* MutableComposition.swift */,
 				385F9A6B2BD1C83C0089BD28 /* MutableCombination.swift */,
 				385F9A6D2BD1C8610089BD28 /* MutableEffect.swift */,
+				385FA79F2BD2BF8F0089BD28 /* MutableEffectProperty.swift */,
 				385F9A6F2BD1C8AA0089BD28 /* MutableMelody.swift */,
 				385F9A712BD1C8B60089BD28 /* MutableSample.swift */,
 			);
@@ -551,6 +565,8 @@
 				385F9A5A2BD1B7150089BD28 /* Composition.swift */,
 				385F9A5D2BD1C75B0089BD28 /* Effect.swift */,
 				385F9A5F2BD1C7620089BD28 /* EffectType.swift */,
+				385FA79B2BD2BCBB0089BD28 /* EffectProperty.swift */,
+				385FA79D2BD2BCE70089BD28 /* EffectPropertyType.swift */,
 				385F9A612BD1C7860089BD28 /* Combination.swift */,
 				385F9A632BD1C7A10089BD28 /* Melody.swift */,
 				385F9A652BD1C7C80089BD28 /* Sample.swift */,
@@ -567,6 +583,16 @@
 				385F9B412BD201B30089BD28 /* SampleTableViewCell.swift */,
 			);
 			path = CombinationScreen;
+			sourceTree = "<group>";
+		};
+		385F9ED22BD2A6200089BD28 /* EffectsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				385F9ED32BD2A6310089BD28 /* EffectsViewController.swift */,
+				385FA7A12BD2DE760089BD28 /* EffectControl.swift */,
+				385FA7A32BD2DF5B0089BD28 /* EffectPropertyControl.swift */,
+			);
+			path = EffectsScreen;
 			sourceTree = "<group>";
 		};
 		387340AC2BCED5EA00D1EBBF /* RegistrationScreen */ = {
@@ -723,6 +749,7 @@
 				387340B92BCEDCDE00D1EBBF /* ProfileViewModel.swift in Sources */,
 				380EDF3E2BD0853B00FCB5FB /* FavouriteUsersGet.swift in Sources */,
 				380EDF422BD10B9900FCB5FB /* SearchView.swift in Sources */,
+				385FA7A02BD2BF8F0089BD28 /* MutableEffectProperty.swift in Sources */,
 				380EDF022BD024AC00FCB5FB /* AuthManager.swift in Sources */,
 				38347BF42BCDBFFF00221CA6 /* NetworkRequest.swift in Sources */,
 				387340B42BCED97800D1EBBF /* UserRegister.swift in Sources */,
@@ -732,6 +759,7 @@
 				38347C1B2BCDDA4900221CA6 /* FontModifiers.swift in Sources */,
 				38347BFA2BCDC2B700221CA6 /* GET.swift in Sources */,
 				387340B72BCEDCD400D1EBBF /* ProfileView.swift in Sources */,
+				385FA79E2BD2BCE70089BD28 /* EffectPropertyType.swift in Sources */,
 				385F9B422BD201B30089BD28 /* SampleTableViewCell.swift in Sources */,
 				387340C42BCEE02200D1EBBF /* User.swift in Sources */,
 				387340B02BCED60C00D1EBBF /* RegistrationViewModel.swift in Sources */,
@@ -763,14 +791,18 @@
 				380EDF112BD050A400FCB5FB /* EditProfileViewController.swift in Sources */,
 				385F9A742BD1D74F0089BD28 /* UILabel+Role.swift in Sources */,
 				382114BB2BBEAE9C00FEECC8 /* SceneDelegate.swift in Sources */,
+				385FA79C2BD2BCBB0089BD28 /* EffectProperty.swift in Sources */,
 				387340C22BCEE01D00D1EBBF /* CurrentUser.swift in Sources */,
 				380EDF4E2BD12B7200FCB5FB /* SearchGroup.swift in Sources */,
 				385F9ED12BD29B560089BD28 /* AddRowTableFooterView.swift in Sources */,
 				385F9ECF2BD27A5A0089BD28 /* UIButton+scaleImage.swift in Sources */,
+				385FA7A22BD2DE760089BD28 /* EffectControl.swift in Sources */,
+				385F9ED42BD2A6310089BD28 /* EffectsViewController.swift in Sources */,
 				380EDF4C2BD10D9600FCB5FB /* SearchCompositions.swift in Sources */,
 				380CC2282BCF14B200A8BA32 /* UserCompositions.swift in Sources */,
 				385F9A602BD1C7620089BD28 /* EffectType.swift in Sources */,
 				385F9A6E2BD1C8610089BD28 /* MutableEffect.swift in Sources */,
+				385FA7A42BD2DF5B0089BD28 /* EffectPropertyControl.swift in Sources */,
 				387340B22BCED61800D1EBBF /* RegistrationViewController.swift in Sources */,
 				385F9A622BD1C7860089BD28 /* Combination.swift in Sources */,
 				387340C62BCEE30700D1EBBF /* UserGet.swift in Sources */,
