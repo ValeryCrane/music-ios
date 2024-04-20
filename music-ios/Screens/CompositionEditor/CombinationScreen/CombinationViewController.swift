@@ -56,6 +56,22 @@ final class CombinationViewController: UIViewController {
     private func configureNavigationItem() {
         navigationItem.titleView = BPMStepper(value: 120, minimumValue: 30, maximumValue: 240)
     }
+    
+    @objc 
+    private func onAddSampleButtonPressed(_ sender: AddRowTableFooterView) {
+        let viewModel = ChooseSampleViewModel()
+        let viewController = ChooseSampleViewController(viewModel: viewModel)
+        viewModel.view = viewController
+        present(UINavigationController(rootViewController: viewController), animated: true)
+    }
+    
+    @objc
+    private func onAddMelodyButtonPressed(_ sender: AddRowTableFooterView) {
+        let viewModel = ChooseMelodyViewModel()
+        let viewController = ChooseMelodyViewController(viewModel: viewModel)
+        viewModel.view = viewController
+        present(UINavigationController(rootViewController: viewController), animated: true)
+    }
 }
 
 extension CombinationViewController: UITableViewDelegate { }
@@ -77,9 +93,11 @@ extension CombinationViewController: UITableViewDataSource {
         switch section {
         case 0:
             let view = AddRowTableFooterView(title: "Добавить сэмпл")
+            view.addTarget(self, action: #selector(onAddSampleButtonPressed(_:)), for: .touchUpInside)
             return view
         case 1:
             let view = AddRowTableFooterView(title: "Добавить мелодию")
+            view.addTarget(self, action: #selector(onAddMelodyButtonPressed(_:)), for: .touchUpInside)
             return view
         default:
             return nil

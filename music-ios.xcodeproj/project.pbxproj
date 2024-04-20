@@ -105,6 +105,18 @@
 		385FA7A02BD2BF8F0089BD28 /* MutableEffectProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA79F2BD2BF8F0089BD28 /* MutableEffectProperty.swift */; };
 		385FA7A22BD2DE760089BD28 /* EffectControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA7A12BD2DE760089BD28 /* EffectControl.swift */; };
 		385FA7A42BD2DF5B0089BD28 /* EffectPropertyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA7A32BD2DF5B0089BD28 /* EffectPropertyControl.swift */; };
+		385FA86C2BD315900089BD28 /* ChooseMelodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA86B2BD315900089BD28 /* ChooseMelodyViewController.swift */; };
+		385FA86E2BD3159B0089BD28 /* ChooseMelodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA86D2BD3159B0089BD28 /* ChooseMelodyViewModel.swift */; };
+		385FA8702BD315AC0089BD28 /* ChooseSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA86F2BD315AC0089BD28 /* ChooseSampleViewController.swift */; };
+		385FA8722BD315B70089BD28 /* ChooseSampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8712BD315B70089BD28 /* ChooseSampleViewModel.swift */; };
+		385FA8742BD3BAC00089BD28 /* ChooseSampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8732BD3BAC00089BD28 /* ChooseSampleTableViewCell.swift */; };
+		385FA8762BD3BCCF0089BD28 /* SampleMiniature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8752BD3BCCF0089BD28 /* SampleMiniature.swift */; };
+		385FA87B2BD3D5400089BD28 /* SamplesGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA87A2BD3D5400089BD28 /* SamplesGet.swift */; };
+		385FA87D2BD3D5A50089BD28 /* SampleMiniatureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA87C2BD3D5A50089BD28 /* SampleMiniatureResponse.swift */; };
+		385FA87F2BD3FD550089BD28 /* MelodyMiniature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA87E2BD3FD550089BD28 /* MelodyMiniature.swift */; };
+		385FA8812BD3FDB90089BD28 /* ChooseMelodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8802BD3FDB90089BD28 /* ChooseMelodyTableViewCell.swift */; };
+		385FA8842BD40EB20089BD28 /* MelodiesGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8832BD40EB20089BD28 /* MelodiesGet.swift */; };
+		385FA8862BD40ED20089BD28 /* MelodyMiniatureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8852BD40ED20089BD28 /* MelodyMiniatureResponse.swift */; };
 		387340AE2BCED60100D1EBBF /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340AD2BCED60100D1EBBF /* RegistrationView.swift */; };
 		387340B02BCED60C00D1EBBF /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340AF2BCED60C00D1EBBF /* RegistrationViewModel.swift */; };
 		387340B22BCED61800D1EBBF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340B12BCED61800D1EBBF /* RegistrationViewController.swift */; };
@@ -221,6 +233,18 @@
 		385FA79F2BD2BF8F0089BD28 /* MutableEffectProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableEffectProperty.swift; sourceTree = "<group>"; };
 		385FA7A12BD2DE760089BD28 /* EffectControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectControl.swift; sourceTree = "<group>"; };
 		385FA7A32BD2DF5B0089BD28 /* EffectPropertyControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectPropertyControl.swift; sourceTree = "<group>"; };
+		385FA86B2BD315900089BD28 /* ChooseMelodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMelodyViewController.swift; sourceTree = "<group>"; };
+		385FA86D2BD3159B0089BD28 /* ChooseMelodyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMelodyViewModel.swift; sourceTree = "<group>"; };
+		385FA86F2BD315AC0089BD28 /* ChooseSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSampleViewController.swift; sourceTree = "<group>"; };
+		385FA8712BD315B70089BD28 /* ChooseSampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSampleViewModel.swift; sourceTree = "<group>"; };
+		385FA8732BD3BAC00089BD28 /* ChooseSampleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSampleTableViewCell.swift; sourceTree = "<group>"; };
+		385FA8752BD3BCCF0089BD28 /* SampleMiniature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMiniature.swift; sourceTree = "<group>"; };
+		385FA87A2BD3D5400089BD28 /* SamplesGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesGet.swift; sourceTree = "<group>"; };
+		385FA87C2BD3D5A50089BD28 /* SampleMiniatureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMiniatureResponse.swift; sourceTree = "<group>"; };
+		385FA87E2BD3FD550089BD28 /* MelodyMiniature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyMiniature.swift; sourceTree = "<group>"; };
+		385FA8802BD3FDB90089BD28 /* ChooseMelodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMelodyTableViewCell.swift; sourceTree = "<group>"; };
+		385FA8832BD40EB20089BD28 /* MelodiesGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodiesGet.swift; sourceTree = "<group>"; };
+		385FA8852BD40ED20089BD28 /* MelodyMiniatureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyMiniatureResponse.swift; sourceTree = "<group>"; };
 		387340AD2BCED60100D1EBBF /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		387340AF2BCED60C00D1EBBF /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		387340B12BCED61800D1EBBF /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +278,8 @@
 				380EDF222BD0782B00FCB5FB /* CompositionResponse.swift */,
 				380EDF262BD078B500FCB5FB /* UserResponse.swift */,
 				380EDF282BD079C700FCB5FB /* BlueprintResponse.swift */,
+				385FA87C2BD3D5A50089BD28 /* SampleMiniatureResponse.swift */,
+				385FA8852BD40ED20089BD28 /* MelodyMiniatureResponse.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -418,6 +444,8 @@
 		38347C0C2BCDD2C000221CA6 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				385FA8822BD40EA70089BD28 /* Melody */,
+				385FA8792BD3D5340089BD28 /* Sample */,
 				385F9A4E2BD1B39B0089BD28 /* Search */,
 				385F9A4D2BD1B3800089BD28 /* Favourite */,
 				385F9A4C2BD1B3700089BD28 /* Composition */,
@@ -520,6 +548,8 @@
 		385F9A522BD1B4300089BD28 /* CompositionEditor */ = {
 			isa = PBXGroup;
 			children = (
+				385FA86A2BD309DC0089BD28 /* ChooseMelodyScreen */,
+				385FA8692BD309C60089BD28 /* ChooseSampleScreen */,
 				385F9ED22BD2A6200089BD28 /* EffectsScreen */,
 				385F9A792BD1F6B70089BD28 /* CombinationScreen */,
 				385F9A532BD1B4380089BD28 /* CompositionScreen */,
@@ -595,6 +625,42 @@
 			path = EffectsScreen;
 			sourceTree = "<group>";
 		};
+		385FA8692BD309C60089BD28 /* ChooseSampleScreen */ = {
+			isa = PBXGroup;
+			children = (
+				385FA86F2BD315AC0089BD28 /* ChooseSampleViewController.swift */,
+				385FA8712BD315B70089BD28 /* ChooseSampleViewModel.swift */,
+				385FA8732BD3BAC00089BD28 /* ChooseSampleTableViewCell.swift */,
+			);
+			path = ChooseSampleScreen;
+			sourceTree = "<group>";
+		};
+		385FA86A2BD309DC0089BD28 /* ChooseMelodyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				385FA86B2BD315900089BD28 /* ChooseMelodyViewController.swift */,
+				385FA86D2BD3159B0089BD28 /* ChooseMelodyViewModel.swift */,
+				385FA8802BD3FDB90089BD28 /* ChooseMelodyTableViewCell.swift */,
+			);
+			path = ChooseMelodyScreen;
+			sourceTree = "<group>";
+		};
+		385FA8792BD3D5340089BD28 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				385FA87A2BD3D5400089BD28 /* SamplesGet.swift */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
+		385FA8822BD40EA70089BD28 /* Melody */ = {
+			isa = PBXGroup;
+			children = (
+				385FA8832BD40EB20089BD28 /* MelodiesGet.swift */,
+			);
+			path = Melody;
+			sourceTree = "<group>";
+		};
 		387340AC2BCED5EA00D1EBBF /* RegistrationScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -626,6 +692,8 @@
 				380EDEFF2BD0200F00FCB5FB /* AuthToken.swift */,
 				380EDF242BD0787A00FCB5FB /* CompositionVisibility.swift */,
 				380EDF4D2BD12B7200FCB5FB /* SearchGroup.swift */,
+				385FA8752BD3BCCF0089BD28 /* SampleMiniature.swift */,
+				385FA87E2BD3FD550089BD28 /* MelodyMiniature.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -704,14 +772,18 @@
 				380EDF4A2BD10D8B00FCB5FB /* SearchUsers.swift in Sources */,
 				38347C082BCDD09D00221CA6 /* AuthView.swift in Sources */,
 				380EDF132BD05B2500FCB5FB /* UserDelete.swift in Sources */,
+				385FA87B2BD3D5400089BD28 /* SamplesGet.swift in Sources */,
 				380EDF252BD0787A00FCB5FB /* CompositionVisibility.swift in Sources */,
 				380EDF232BD0782B00FCB5FB /* CompositionResponse.swift in Sources */,
 				385F9A7D2BD1F7000089BD28 /* CombinationViewModel.swift in Sources */,
 				380EDF442BD10C4800FCB5FB /* SearchViewModel.swift in Sources */,
 				380EDF1B2BD05E9C00FCB5FB /* CompositionsViewController.swift in Sources */,
 				387340BE2BCEDF6100D1EBBF /* CompositionMiniature.swift in Sources */,
+				385FA8702BD315AC0089BD28 /* ChooseSampleViewController.swift in Sources */,
 				385F9A662BD1C7C80089BD28 /* Sample.swift in Sources */,
 				380CC2262BCF0FD500A8BA32 /* CompositionMiniatureView.swift in Sources */,
+				385FA8842BD40EB20089BD28 /* MelodiesGet.swift in Sources */,
+				385FA87F2BD3FD550089BD28 /* MelodyMiniature.swift in Sources */,
 				383482092BCE5D6400221CA6 /* Colors.swift in Sources */,
 				380EDF342BD084C400FCB5FB /* FavouriteCompositionAdd.swift in Sources */,
 				38347BEA2BCDB59300221CA6 /* NetworkRequestDescription.swift in Sources */,
@@ -727,11 +799,13 @@
 				380EDF362BD084E100FCB5FB /* FavouriteCompositionRemove.swift in Sources */,
 				385F9A702BD1C8AA0089BD28 /* MutableMelody.swift in Sources */,
 				380EDF0B2BD0370600FCB5FB /* UserEdit.swift in Sources */,
+				385FA8812BD3FDB90089BD28 /* ChooseMelodyTableViewCell.swift in Sources */,
 				387340BB2BCEDD2300D1EBBF /* ProfileViewController.swift in Sources */,
 				385F9A762BD1DF0C0089BD28 /* BPMStepper.swift in Sources */,
 				385F9A7B2BD1F6DA0089BD28 /* CombinationViewController.swift in Sources */,
 				38347C012BCDCD3500221CA6 /* DELETE.swift in Sources */,
 				380EDF3C2BD0852500FCB5FB /* FavouriteUserRemove.swift in Sources */,
+				385FA86C2BD315900089BD28 /* ChooseMelodyViewController.swift in Sources */,
 				380EDF3A2BD0851500FCB5FB /* FavouriteUserAdd.swift in Sources */,
 				38347BF82BCDC15100221CA6 /* NetworkEnvironment.swift in Sources */,
 				380EDF2C2BD0805100FCB5FB /* FavouritesView.swift in Sources */,
@@ -753,9 +827,11 @@
 				380EDF022BD024AC00FCB5FB /* AuthManager.swift in Sources */,
 				38347BF42BCDBFFF00221CA6 /* NetworkRequest.swift in Sources */,
 				387340B42BCED97800D1EBBF /* UserRegister.swift in Sources */,
+				385FA8862BD40ED20089BD28 /* MelodyMiniatureResponse.swift in Sources */,
 				380EDF002BD0200F00FCB5FB /* AuthToken.swift in Sources */,
 				380EDF082BD0363100FCB5FB /* EditProfileViewModel.swift in Sources */,
 				380EDF1F2BD0729400FCB5FB /* CompositionsGet.swift in Sources */,
+				385FA8742BD3BAC00089BD28 /* ChooseSampleTableViewCell.swift in Sources */,
 				38347C1B2BCDDA4900221CA6 /* FontModifiers.swift in Sources */,
 				38347BFA2BCDC2B700221CA6 /* GET.swift in Sources */,
 				387340B72BCEDCD400D1EBBF /* ProfileView.swift in Sources */,
@@ -767,6 +843,7 @@
 				38347C142BCDD64000221CA6 /* Stored.swift in Sources */,
 				380EDF0D2BD03A7000FCB5FB /* MultipartFormdataPOST.swift in Sources */,
 				385F9A642BD1C7A10089BD28 /* Melody.swift in Sources */,
+				385FA8722BD315B70089BD28 /* ChooseSampleViewModel.swift in Sources */,
 				385F9A572BD1B4570089BD28 /* CompositionViewModel.swift in Sources */,
 				380EDF302BD0806C00FCB5FB /* FavouritesViewController.swift in Sources */,
 				380EDF172BD05E8600FCB5FB /* CompositionsView.swift in Sources */,
@@ -787,11 +864,13 @@
 				380EDF292BD079C700FCB5FB /* BlueprintResponse.swift in Sources */,
 				3834820B2BCE5E7200221CA6 /* NiceButton.swift in Sources */,
 				385F9A5B2BD1B7150089BD28 /* Composition.swift in Sources */,
+				385FA86E2BD3159B0089BD28 /* ChooseMelodyViewModel.swift in Sources */,
 				380EDF212BD077BE00FCB5FB /* CompositionCreate.swift in Sources */,
 				380EDF112BD050A400FCB5FB /* EditProfileViewController.swift in Sources */,
 				385F9A742BD1D74F0089BD28 /* UILabel+Role.swift in Sources */,
 				382114BB2BBEAE9C00FEECC8 /* SceneDelegate.swift in Sources */,
 				385FA79C2BD2BCBB0089BD28 /* EffectProperty.swift in Sources */,
+				385FA8762BD3BCCF0089BD28 /* SampleMiniature.swift in Sources */,
 				387340C22BCEE01D00D1EBBF /* CurrentUser.swift in Sources */,
 				380EDF4E2BD12B7200FCB5FB /* SearchGroup.swift in Sources */,
 				385F9ED12BD29B560089BD28 /* AddRowTableFooterView.swift in Sources */,
@@ -808,6 +887,7 @@
 				387340C62BCEE30700D1EBBF /* UserGet.swift in Sources */,
 				385F9A552BD1B44E0089BD28 /* CompositionViewController.swift in Sources */,
 				380EDEF72BCFF19C00FCB5FB /* AvatarView.swift in Sources */,
+				385FA87D2BD3D5A50089BD28 /* SampleMiniatureResponse.swift in Sources */,
 				380EDF482BD10C6700FCB5FB /* SearchManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
