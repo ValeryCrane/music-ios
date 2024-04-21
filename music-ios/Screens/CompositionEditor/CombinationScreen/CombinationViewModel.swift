@@ -6,6 +6,7 @@ protocol CombinationViewModelInput: AnyObject {
     func getSamples() -> [MutableSample]
     
     func didPressEffectsButtonOnSample(_ sample: MutableSample)
+    func didPressEditButtonOnMelody(atIndex index: Int)
 }
 
 protocol CombinationViewModelOutput: UIViewController {
@@ -24,6 +25,10 @@ final class CombinationViewModel {
 }
 
 extension CombinationViewModel: CombinationViewModelInput {
+    func didPressEditButtonOnMelody(atIndex index: Int) {
+        // TODO
+    }
+    
     func didPressEffectsButtonOnSample(_ sample: MutableSample) {
         let effectsViewController = UINavigationController(rootViewController: EffectsViewController(effects: sample.effects)) 
         effectsViewController.modalPresentationStyle = .pageSheet

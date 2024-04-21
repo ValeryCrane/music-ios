@@ -117,6 +117,11 @@
 		385FA8812BD3FDB90089BD28 /* ChooseMelodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8802BD3FDB90089BD28 /* ChooseMelodyTableViewCell.swift */; };
 		385FA8842BD40EB20089BD28 /* MelodiesGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8832BD40EB20089BD28 /* MelodiesGet.swift */; };
 		385FA8862BD40ED20089BD28 /* MelodyMiniatureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8852BD40ED20089BD28 /* MelodyMiniatureResponse.swift */; };
+		385FA8892BD4146E0089BD28 /* EditMelodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8882BD4146E0089BD28 /* EditMelodyViewController.swift */; };
+		385FA88B2BD461F60089BD28 /* MelodyKeyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA88A2BD461F60089BD28 /* MelodyKeyCollectionViewCell.swift */; };
+		385FA88D2BD46AD30089BD28 /* EditMelodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA88C2BD46AD30089BD28 /* EditMelodyViewModel.swift */; };
+		385FA88F2BD51C940089BD28 /* NiceStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA88E2BD51C940089BD28 /* NiceStepper.swift */; };
+		385FA8912BD52A700089BD28 /* ClassicStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8902BD52A700089BD28 /* ClassicStepper.swift */; };
 		387340AE2BCED60100D1EBBF /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340AD2BCED60100D1EBBF /* RegistrationView.swift */; };
 		387340B02BCED60C00D1EBBF /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340AF2BCED60C00D1EBBF /* RegistrationViewModel.swift */; };
 		387340B22BCED61800D1EBBF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340B12BCED61800D1EBBF /* RegistrationViewController.swift */; };
@@ -245,6 +250,11 @@
 		385FA8802BD3FDB90089BD28 /* ChooseMelodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMelodyTableViewCell.swift; sourceTree = "<group>"; };
 		385FA8832BD40EB20089BD28 /* MelodiesGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodiesGet.swift; sourceTree = "<group>"; };
 		385FA8852BD40ED20089BD28 /* MelodyMiniatureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyMiniatureResponse.swift; sourceTree = "<group>"; };
+		385FA8882BD4146E0089BD28 /* EditMelodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMelodyViewController.swift; sourceTree = "<group>"; };
+		385FA88A2BD461F60089BD28 /* MelodyKeyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyKeyCollectionViewCell.swift; sourceTree = "<group>"; };
+		385FA88C2BD46AD30089BD28 /* EditMelodyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMelodyViewModel.swift; sourceTree = "<group>"; };
+		385FA88E2BD51C940089BD28 /* NiceStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiceStepper.swift; sourceTree = "<group>"; };
+		385FA8902BD52A700089BD28 /* ClassicStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicStepper.swift; sourceTree = "<group>"; };
 		387340AD2BCED60100D1EBBF /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		387340AF2BCED60C00D1EBBF /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		387340B12BCED61800D1EBBF /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -523,9 +533,9 @@
 		385F9A4F2BD1B3BE0089BD28 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				385FA8922BD52A730089BD28 /* Steppers */,
 				383482102BCE63A500221CA6 /* Loader */,
 				385F9A732BD1D74F0089BD28 /* UILabel+Role.swift */,
-				385F9A752BD1DF0C0089BD28 /* BPMStepper.swift */,
 				385F9A772BD1EA590089BD28 /* RecordToolbarView.swift */,
 				385F9ECC2BD26E1F0089BD28 /* CGSize+scaled.swift */,
 				385F9ECE2BD27A5A0089BD28 /* UIButton+scaleImage.swift */,
@@ -548,6 +558,7 @@
 		385F9A522BD1B4300089BD28 /* CompositionEditor */ = {
 			isa = PBXGroup;
 			children = (
+				385FA8872BD414470089BD28 /* EditMelodyScreen */,
 				385FA86A2BD309DC0089BD28 /* ChooseMelodyScreen */,
 				385FA8692BD309C60089BD28 /* ChooseSampleScreen */,
 				385F9ED22BD2A6200089BD28 /* EffectsScreen */,
@@ -659,6 +670,26 @@
 				385FA8832BD40EB20089BD28 /* MelodiesGet.swift */,
 			);
 			path = Melody;
+			sourceTree = "<group>";
+		};
+		385FA8872BD414470089BD28 /* EditMelodyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				385FA8882BD4146E0089BD28 /* EditMelodyViewController.swift */,
+				385FA88C2BD46AD30089BD28 /* EditMelodyViewModel.swift */,
+				385FA88A2BD461F60089BD28 /* MelodyKeyCollectionViewCell.swift */,
+			);
+			path = EditMelodyScreen;
+			sourceTree = "<group>";
+		};
+		385FA8922BD52A730089BD28 /* Steppers */ = {
+			isa = PBXGroup;
+			children = (
+				385FA88E2BD51C940089BD28 /* NiceStepper.swift */,
+				385F9A752BD1DF0C0089BD28 /* BPMStepper.swift */,
+				385FA8902BD52A700089BD28 /* ClassicStepper.swift */,
+			);
+			path = Steppers;
 			sourceTree = "<group>";
 		};
 		387340AC2BCED5EA00D1EBBF /* RegistrationScreen */ = {
@@ -788,6 +819,7 @@
 				380EDF342BD084C400FCB5FB /* FavouriteCompositionAdd.swift in Sources */,
 				38347BEA2BCDB59300221CA6 /* NetworkRequestDescription.swift in Sources */,
 				385F9B402BD201A10089BD28 /* MelodyTableViewCell.swift in Sources */,
+				385FA88D2BD46AD30089BD28 /* EditMelodyViewModel.swift in Sources */,
 				38347C032BCDCD7500221CA6 /* Request.swift in Sources */,
 				38347BEC2BCDB7EC00221CA6 /* NetworkModel.swift in Sources */,
 				380EDF272BD078B500FCB5FB /* UserResponse.swift in Sources */,
@@ -809,6 +841,7 @@
 				380EDF3A2BD0851500FCB5FB /* FavouriteUserAdd.swift in Sources */,
 				38347BF82BCDC15100221CA6 /* NetworkEnvironment.swift in Sources */,
 				380EDF2C2BD0805100FCB5FB /* FavouritesView.swift in Sources */,
+				385FA88F2BD51C940089BD28 /* NiceStepper.swift in Sources */,
 				385F9A782BD1EA590089BD28 /* RecordToolbarView.swift in Sources */,
 				38347BEE2BCDB98100221CA6 /* NetworkError.swift in Sources */,
 				38347BFD2BCDCBA700221CA6 /* POST.swift in Sources */,
@@ -820,6 +853,7 @@
 				380EDF062BD0362100FCB5FB /* EditProfileView.swift in Sources */,
 				385F9A722BD1C8B60089BD28 /* MutableSample.swift in Sources */,
 				385F9A5E2BD1C75B0089BD28 /* Effect.swift in Sources */,
+				385FA8892BD4146E0089BD28 /* EditMelodyViewController.swift in Sources */,
 				387340B92BCEDCDE00D1EBBF /* ProfileViewModel.swift in Sources */,
 				380EDF3E2BD0853B00FCB5FB /* FavouriteUsersGet.swift in Sources */,
 				380EDF422BD10B9900FCB5FB /* SearchView.swift in Sources */,
@@ -854,6 +888,7 @@
 				382114B92BBEAE9C00FEECC8 /* AppDelegate.swift in Sources */,
 				38347C192BCDDA1300221CA6 /* NiceTextField.swift in Sources */,
 				380EDF0F2BD0464000FCB5FB /* UserAvatarEdit.swift in Sources */,
+				385FA88B2BD461F60089BD28 /* MelodyKeyCollectionViewCell.swift in Sources */,
 				387340C82BCEE31D00D1EBBF /* UserCurrentGet.swift in Sources */,
 				38347C1D2BCDDADA00221CA6 /* CGFloat+Constants.swift in Sources */,
 				385F9A6C2BD1C83C0089BD28 /* MutableCombination.swift in Sources */,
@@ -864,6 +899,7 @@
 				380EDF292BD079C700FCB5FB /* BlueprintResponse.swift in Sources */,
 				3834820B2BCE5E7200221CA6 /* NiceButton.swift in Sources */,
 				385F9A5B2BD1B7150089BD28 /* Composition.swift in Sources */,
+				385FA8912BD52A700089BD28 /* ClassicStepper.swift in Sources */,
 				385FA86E2BD3159B0089BD28 /* ChooseMelodyViewModel.swift in Sources */,
 				380EDF212BD077BE00FCB5FB /* CompositionCreate.swift in Sources */,
 				380EDF112BD050A400FCB5FB /* EditProfileViewController.swift in Sources */,

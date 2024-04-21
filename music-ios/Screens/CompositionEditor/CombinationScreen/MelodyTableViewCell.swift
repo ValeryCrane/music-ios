@@ -22,6 +22,7 @@ final class MelodyTableViewCell: UITableViewCell {
     private let muteButton = UIButton()
     
     private var melody: MutableMelody?
+    private var onEditButtonPressed: (() -> Void)?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -37,8 +38,12 @@ final class MelodyTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(melody: MutableMelody) {
+    func setup(
+        melody: MutableMelody,
+        onEditButtonPressed: @escaping () -> Void
+    ) {
         self.melody = melody
+        self.onEditButtonPressed = onEditButtonPressed
         nameLabel.text = melody.name
         updateMuteButton()
     }
@@ -112,7 +117,7 @@ final class MelodyTableViewCell: UITableViewCell {
     
     @objc
     private func onEditButtonPressed(_ sender: UIButton) {
-        // TODO
+        onEditButtonPressed?()
     }
     
     @objc

@@ -140,7 +140,13 @@ extension CombinationViewController: UITableViewDataSource {
                 for: indexPath
             ) as? MelodyTableViewCell
             
-            cell?.setup(melody: viewModel.getMelodies()[indexPath.row])
+            cell?.setup(
+                melody: viewModel.getMelodies()[indexPath.row],
+                onEditButtonPressed: { [weak self] in
+                    self?.viewModel.didPressEditButtonOnMelody(atIndex: indexPath.row)
+                }
+            )
+            
             return cell ?? UITableViewCell()
         default:
             return UITableViewCell()

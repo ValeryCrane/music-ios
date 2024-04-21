@@ -1,26 +1,27 @@
 import Foundation
 import UIKit
 
-extension BPMStepper {
+extension NiceStepper {
     private enum Constants {
         static let viewSpacing: CGFloat = 8
     }
 }
 
-final class BPMStepper: UIControl {
+class NiceStepper: UIControl {
     let minimumValue: Int
     let maximumValue: Int
     
     private(set) var value: Int
     
-    private let label = UILabel()
+    private let wrappedView: UIView?
     private let plusButton = UIButton()
     private let minusButton = UIButton()
     
-    init(value: Int, minimumValue: Int, maximumValue: Int) {
+    init(value: Int, minimumValue: Int, maximumValue: Int, wrappedView: UIView? = nil) {
         self.value = value
         self.minimumValue = minimumValue
         self.maximumValue = maximumValue
+        self.wrappedView = wrappedView
         
         super.init(frame: .zero)
         
@@ -35,8 +36,6 @@ final class BPMStepper: UIControl {
     }
     
     private func configure() {
-        label.role(.title)
-        
         plusButton.setImage(.init(systemName: "plus.circle"), for: .normal)
         plusButton.tintColor = .imp.primary
         plusButton.addTarget(self, action: #selector(plusButtonPressed(_:)), for: .touchUpInside)
@@ -47,25 +46,28 @@ final class BPMStepper: UIControl {
     }
     
     private func layout() {
-        [label, plusButton, minusButton].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            addSubview($0)
-        }
+        let stackView = UIStackView(arrangedSubviews: [minusButton, plusButton])
         
+        stackView.axis = .horizontal
+        stackView.spacing = Constants.viewSpacing
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(stackView)
         NSLayoutConstraint.activate([
-            minusButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            label.centerYAnchor.constraint(equalTo: centerYAnchor),
-            plusButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            
-            minusButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-            label.leadingAnchor.constraint(equalTo: minusButton.trailingAnchor, constant: Constants.viewSpacing),
-            plusButton.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: Constants.viewSpacing),
-            plusButton.trailingAnchor.constraint(equalTo: trailingAnchor)
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            stackView.heightAnchor.constraint(greaterThanOrEqualTo: plusButton.heightAnchor),
+            stackView.heightAnchor.constraint(greaterThanOrEqualTo: minusButton.heightAnchor)
         ])
+        
+        if let wrappedView = wrappedView {
+            stackView.insertArrangedSubview(wrappedView, at: 1)
+            stackView.heightAnchor.constraint(greaterThanOrEqualTo: wrappedView.heightAnchor).isActive = true
+        }
     }
     
     private func updateState() {
-        label.text = "\(value)bpm"
         minusButton.isEnabled = value != minimumValue
         plusButton.isEnabled = value != maximumValue
     }
