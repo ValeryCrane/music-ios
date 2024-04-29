@@ -6,14 +6,12 @@ final class EditProfileViewController: UIHostingController<EditProfileView> {
     
     private let viewModel: EditProfileViewModel
     
-    init(userManager: UserManager) {
-        let viewModel = EditProfileViewModel(userManager: userManager)
+    init(viewModel: EditProfileViewModel) {
         let rootView = EditProfileView(viewModel: viewModel)
         self.viewModel = viewModel
         
         super.init(rootView: rootView)
         
-        viewModel.viewController = self
         configureNavigationItem()
     }
     

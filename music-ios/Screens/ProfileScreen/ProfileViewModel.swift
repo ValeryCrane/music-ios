@@ -11,6 +11,9 @@ final class ProfileViewModel: ObservableObject {
     var avatarURL: URL? = nil
     
     @Published
+    var avatarId: UUID = UUID()
+    
+    @Published
     var username: String? = nil
     
     @Published
@@ -40,6 +43,7 @@ final class ProfileViewModel: ObservableObject {
     }
     
     func loadUser() async throws {
+        avatarId = UUID()
         guard let userId = userId else {
             try await loadCurrentUser()
             return
@@ -68,10 +72,12 @@ final class ProfileViewModel: ObservableObject {
     
     
     func onEditButtonPressed() {
-        let editProfileViewController = UINavigationController(
-            rootViewController: EditProfileViewController(userManager: userManager)
-        )
-        viewController?.present(editProfileViewController,animated: true)
+        let editProfileViewModel = EditProfileViewModel(userManager: userManager, onSuccess: { [weak self] _ in
+            self?.loadUser()
+        })
+        let editProfileViewController = EditProfileViewController(viewModel: editProfileViewModel)
+        editProfileViewModel.viewController = editProfileViewController
+        viewController?.present(UINavigationController(rootViewController: editProfileViewController), animated: true)
     }
     
     func onLogoutButtonPressed() {

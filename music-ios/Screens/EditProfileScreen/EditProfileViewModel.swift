@@ -26,9 +26,11 @@ final class EditProfileViewModel: ObservableObject {
     weak var viewController: UIViewController?
     
     private let userManager: UserManager
+    private let onSuccess: ((EditProfileUserDataDiff) -> Void)?
     
-    init(userManager: UserManager) {
+    init(userManager: UserManager, onSuccess: ((EditProfileUserDataDiff) -> Void)? = nil) {
         self.userManager = userManager
+        self.onSuccess = onSuccess
     }
     
     func onEditProfilePictureButtonPressed() {
@@ -41,6 +43,9 @@ final class EditProfileViewModel: ObservableObject {
     }
     
     func onSaveButtonPressed() {
+        let username = username.isEmpty ? nil : username
+        let email = email.isEmpty ? nil : email
+        let password = password.isEmpty ? nil : password
         viewController?.startLoader()
         Task {
             try await userManager.editCurrentUser(
@@ -49,8 +54,11 @@ final class EditProfileViewModel: ObservableObject {
                 password: password,
                 avatar: avatarImage
             )
-            await viewController?.stopLoader()
-            await viewController?.dismiss(animated: true)
+            viewController?.stopLoader()
+            viewController?.dismiss(animated: true, completion: { [weak self] in
+                self?.onSuccess?(.init(avatar: self?.avatarImage, username: username, email: email))
+            })
+            
         }
     }
     

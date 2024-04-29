@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3802CD902BDBC2C100421C7C /* EditProfileUserDataDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3802CD8F2BDBC2C100421C7C /* EditProfileUserDataDiff.swift */; };
 		380CC2262BCF0FD500A8BA32 /* CompositionMiniatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380CC2252BCF0FD500A8BA32 /* CompositionMiniatureView.swift */; };
 		380CC2282BCF14B200A8BA32 /* UserCompositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380CC2272BCF14B200A8BA32 /* UserCompositions.swift */; };
 		380CC22B2BCF15DF00A8BA32 /* CompositionMiniatureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380CC22A2BCF15DF00A8BA32 /* CompositionMiniatureResponse.swift */; };
@@ -122,6 +123,10 @@
 		385FA88D2BD46AD30089BD28 /* EditMelodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA88C2BD46AD30089BD28 /* EditMelodyViewModel.swift */; };
 		385FA88F2BD51C940089BD28 /* NiceStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA88E2BD51C940089BD28 /* NiceStepper.swift */; };
 		385FA8912BD52A700089BD28 /* ClassicStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8902BD52A700089BD28 /* ClassicStepper.swift */; };
+		385FA8952BD555DF0089BD28 /* RecordSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8942BD555DF0089BD28 /* RecordSampleViewController.swift */; };
+		385FA8972BD555EE0089BD28 /* RecordSampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8962BD555EE0089BD28 /* RecordSampleViewModel.swift */; };
+		385FA8992BD5754E0089BD28 /* RecordSampleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8982BD5754E0089BD28 /* RecordSampleButton.swift */; };
+		385FA89B2BD57EAF0089BD28 /* BeatRecordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA89A2BD57EAF0089BD28 /* BeatRecordCollectionViewCell.swift */; };
 		387340AE2BCED60100D1EBBF /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340AD2BCED60100D1EBBF /* RegistrationView.swift */; };
 		387340B02BCED60C00D1EBBF /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340AF2BCED60C00D1EBBF /* RegistrationViewModel.swift */; };
 		387340B22BCED61800D1EBBF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340B12BCED61800D1EBBF /* RegistrationViewController.swift */; };
@@ -138,6 +143,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3802CD8F2BDBC2C100421C7C /* EditProfileUserDataDiff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileUserDataDiff.swift; sourceTree = "<group>"; };
 		380CC2252BCF0FD500A8BA32 /* CompositionMiniatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionMiniatureView.swift; sourceTree = "<group>"; };
 		380CC2272BCF14B200A8BA32 /* UserCompositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCompositions.swift; sourceTree = "<group>"; };
 		380CC22A2BCF15DF00A8BA32 /* CompositionMiniatureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionMiniatureResponse.swift; sourceTree = "<group>"; };
@@ -255,6 +261,10 @@
 		385FA88C2BD46AD30089BD28 /* EditMelodyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMelodyViewModel.swift; sourceTree = "<group>"; };
 		385FA88E2BD51C940089BD28 /* NiceStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiceStepper.swift; sourceTree = "<group>"; };
 		385FA8902BD52A700089BD28 /* ClassicStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicStepper.swift; sourceTree = "<group>"; };
+		385FA8942BD555DF0089BD28 /* RecordSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSampleViewController.swift; sourceTree = "<group>"; };
+		385FA8962BD555EE0089BD28 /* RecordSampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSampleViewModel.swift; sourceTree = "<group>"; };
+		385FA8982BD5754E0089BD28 /* RecordSampleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSampleButton.swift; sourceTree = "<group>"; };
+		385FA89A2BD57EAF0089BD28 /* BeatRecordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatRecordCollectionViewCell.swift; sourceTree = "<group>"; };
 		387340AD2BCED60100D1EBBF /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		387340AF2BCED60C00D1EBBF /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		387340B12BCED61800D1EBBF /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -300,6 +310,7 @@
 				380EDF052BD0362100FCB5FB /* EditProfileView.swift */,
 				380EDF072BD0363100FCB5FB /* EditProfileViewModel.swift */,
 				380EDF102BD050A300FCB5FB /* EditProfileViewController.swift */,
+				3802CD8F2BDBC2C100421C7C /* EditProfileUserDataDiff.swift */,
 			);
 			path = EditProfileScreen;
 			sourceTree = "<group>";
@@ -558,6 +569,7 @@
 		385F9A522BD1B4300089BD28 /* CompositionEditor */ = {
 			isa = PBXGroup;
 			children = (
+				385FA8932BD554F50089BD28 /* RecordSampleScreen */,
 				385FA8872BD414470089BD28 /* EditMelodyScreen */,
 				385FA86A2BD309DC0089BD28 /* ChooseMelodyScreen */,
 				385FA8692BD309C60089BD28 /* ChooseSampleScreen */,
@@ -690,6 +702,17 @@
 				385FA8902BD52A700089BD28 /* ClassicStepper.swift */,
 			);
 			path = Steppers;
+			sourceTree = "<group>";
+		};
+		385FA8932BD554F50089BD28 /* RecordSampleScreen */ = {
+			isa = PBXGroup;
+			children = (
+				385FA8942BD555DF0089BD28 /* RecordSampleViewController.swift */,
+				385FA8962BD555EE0089BD28 /* RecordSampleViewModel.swift */,
+				385FA8982BD5754E0089BD28 /* RecordSampleButton.swift */,
+				385FA89A2BD57EAF0089BD28 /* BeatRecordCollectionViewCell.swift */,
+			);
+			path = RecordSampleScreen;
 			sourceTree = "<group>";
 		};
 		387340AC2BCED5EA00D1EBBF /* RegistrationScreen */ = {
@@ -837,8 +860,10 @@
 				385F9A7B2BD1F6DA0089BD28 /* CombinationViewController.swift in Sources */,
 				38347C012BCDCD3500221CA6 /* DELETE.swift in Sources */,
 				380EDF3C2BD0852500FCB5FB /* FavouriteUserRemove.swift in Sources */,
+				3802CD902BDBC2C100421C7C /* EditProfileUserDataDiff.swift in Sources */,
 				385FA86C2BD315900089BD28 /* ChooseMelodyViewController.swift in Sources */,
 				380EDF3A2BD0851500FCB5FB /* FavouriteUserAdd.swift in Sources */,
+				385FA8952BD555DF0089BD28 /* RecordSampleViewController.swift in Sources */,
 				38347BF82BCDC15100221CA6 /* NetworkEnvironment.swift in Sources */,
 				380EDF2C2BD0805100FCB5FB /* FavouritesView.swift in Sources */,
 				385FA88F2BD51C940089BD28 /* NiceStepper.swift in Sources */,
@@ -861,6 +886,7 @@
 				380EDF022BD024AC00FCB5FB /* AuthManager.swift in Sources */,
 				38347BF42BCDBFFF00221CA6 /* NetworkRequest.swift in Sources */,
 				387340B42BCED97800D1EBBF /* UserRegister.swift in Sources */,
+				385FA89B2BD57EAF0089BD28 /* BeatRecordCollectionViewCell.swift in Sources */,
 				385FA8862BD40ED20089BD28 /* MelodyMiniatureResponse.swift in Sources */,
 				380EDF002BD0200F00FCB5FB /* AuthToken.swift in Sources */,
 				380EDF082BD0363100FCB5FB /* EditProfileViewModel.swift in Sources */,
@@ -871,6 +897,7 @@
 				387340B72BCEDCD400D1EBBF /* ProfileView.swift in Sources */,
 				385FA79E2BD2BCE70089BD28 /* EffectPropertyType.swift in Sources */,
 				385F9B422BD201B30089BD28 /* SampleTableViewCell.swift in Sources */,
+				385FA8992BD5754E0089BD28 /* RecordSampleButton.swift in Sources */,
 				387340C42BCEE02200D1EBBF /* User.swift in Sources */,
 				387340B02BCED60C00D1EBBF /* RegistrationViewModel.swift in Sources */,
 				380EDF2E2BD0805F00FCB5FB /* FavouritesViewModel.swift in Sources */,
@@ -887,6 +914,7 @@
 				3834820F2BCE62D000221CA6 /* AuthViewController.swift in Sources */,
 				382114B92BBEAE9C00FEECC8 /* AppDelegate.swift in Sources */,
 				38347C192BCDDA1300221CA6 /* NiceTextField.swift in Sources */,
+				385FA8972BD555EE0089BD28 /* RecordSampleViewModel.swift in Sources */,
 				380EDF0F2BD0464000FCB5FB /* UserAvatarEdit.swift in Sources */,
 				385FA88B2BD461F60089BD28 /* MelodyKeyCollectionViewCell.swift in Sources */,
 				387340C82BCEE31D00D1EBBF /* UserCurrentGet.swift in Sources */,

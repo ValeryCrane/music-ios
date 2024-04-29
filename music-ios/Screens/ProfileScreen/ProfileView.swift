@@ -20,6 +20,7 @@ struct ProfileView: View {
             ScrollView {
                 VStack {
                     AvatarView(avatarURL: avatarURL, size: 128)
+                        .id(viewModel.avatarId)
                         .padding(.top, 32)
                         .padding(.bottom, 8)
                     
