@@ -4,5 +4,5 @@ struct Sample {
     let sampleId: Int
     let name: String
     let isMuted: Bool
-    let effects: [Effect]
+    let effects: [EffectType: [EffectPropertyType: Float]]
 }

@@ -80,14 +80,12 @@
 		385F9A572BD1B4570089BD28 /* CompositionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A562BD1B4570089BD28 /* CompositionViewModel.swift */; };
 		385F9A592BD1B6E30089BD28 /* CombinationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A582BD1B6E30089BD28 /* CombinationCollectionViewCell.swift */; };
 		385F9A5B2BD1B7150089BD28 /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A5A2BD1B7150089BD28 /* Composition.swift */; };
-		385F9A5E2BD1C75B0089BD28 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A5D2BD1C75B0089BD28 /* Effect.swift */; };
 		385F9A602BD1C7620089BD28 /* EffectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A5F2BD1C7620089BD28 /* EffectType.swift */; };
 		385F9A622BD1C7860089BD28 /* Combination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A612BD1C7860089BD28 /* Combination.swift */; };
 		385F9A642BD1C7A10089BD28 /* Melody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A632BD1C7A10089BD28 /* Melody.swift */; };
 		385F9A662BD1C7C80089BD28 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A652BD1C7C80089BD28 /* Sample.swift */; };
 		385F9A6A2BD1C8070089BD28 /* MutableComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A692BD1C8070089BD28 /* MutableComposition.swift */; };
 		385F9A6C2BD1C83C0089BD28 /* MutableCombination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A6B2BD1C83C0089BD28 /* MutableCombination.swift */; };
-		385F9A6E2BD1C8610089BD28 /* MutableEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A6D2BD1C8610089BD28 /* MutableEffect.swift */; };
 		385F9A702BD1C8AA0089BD28 /* MutableMelody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A6F2BD1C8AA0089BD28 /* MutableMelody.swift */; };
 		385F9A722BD1C8B60089BD28 /* MutableSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A712BD1C8B60089BD28 /* MutableSample.swift */; };
 		385F9A742BD1D74F0089BD28 /* UILabel+Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A732BD1D74F0089BD28 /* UILabel+Role.swift */; };
@@ -101,9 +99,7 @@
 		385F9ECF2BD27A5A0089BD28 /* UIButton+scaleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9ECE2BD27A5A0089BD28 /* UIButton+scaleImage.swift */; };
 		385F9ED12BD29B560089BD28 /* AddRowTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9ED02BD29B560089BD28 /* AddRowTableFooterView.swift */; };
 		385F9ED42BD2A6310089BD28 /* EffectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9ED32BD2A6310089BD28 /* EffectsViewController.swift */; };
-		385FA79C2BD2BCBB0089BD28 /* EffectProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA79B2BD2BCBB0089BD28 /* EffectProperty.swift */; };
 		385FA79E2BD2BCE70089BD28 /* EffectPropertyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA79D2BD2BCE70089BD28 /* EffectPropertyType.swift */; };
-		385FA7A02BD2BF8F0089BD28 /* MutableEffectProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA79F2BD2BF8F0089BD28 /* MutableEffectProperty.swift */; };
 		385FA7A22BD2DE760089BD28 /* EffectControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA7A12BD2DE760089BD28 /* EffectControl.swift */; };
 		385FA7A42BD2DF5B0089BD28 /* EffectPropertyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA7A32BD2DF5B0089BD28 /* EffectPropertyControl.swift */; };
 		385FA86C2BD315900089BD28 /* ChooseMelodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA86B2BD315900089BD28 /* ChooseMelodyViewController.swift */; };
@@ -119,7 +115,6 @@
 		385FA8842BD40EB20089BD28 /* MelodiesGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8832BD40EB20089BD28 /* MelodiesGet.swift */; };
 		385FA8862BD40ED20089BD28 /* MelodyMiniatureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8852BD40ED20089BD28 /* MelodyMiniatureResponse.swift */; };
 		385FA8892BD4146E0089BD28 /* EditMelodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8882BD4146E0089BD28 /* EditMelodyViewController.swift */; };
-		385FA88B2BD461F60089BD28 /* MelodyKeyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA88A2BD461F60089BD28 /* MelodyKeyCollectionViewCell.swift */; };
 		385FA88D2BD46AD30089BD28 /* EditMelodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA88C2BD46AD30089BD28 /* EditMelodyViewModel.swift */; };
 		385FA88F2BD51C940089BD28 /* NiceStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA88E2BD51C940089BD28 /* NiceStepper.swift */; };
 		385FA8912BD52A700089BD28 /* ClassicStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8902BD52A700089BD28 /* ClassicStepper.swift */; };
@@ -140,6 +135,41 @@
 		387340C42BCEE02200D1EBBF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340C32BCEE02200D1EBBF /* User.swift */; };
 		387340C62BCEE30700D1EBBF /* UserGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340C52BCEE30700D1EBBF /* UserGet.swift */; };
 		387340C82BCEE31D00D1EBBF /* UserCurrentGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340C72BCEE31D00D1EBBF /* UserCurrentGet.swift */; };
+		38901C0E2BE599A30093837A /* AudioEngineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38901C0D2BE599A30093837A /* AudioEngineManager.swift */; };
+		38901C142BE706EF0093837A /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38901C132BE706EF0093837A /* Metronome.swift */; };
+		389024062BE957E20093837A /* BottomSheetTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389024052BE957E20093837A /* BottomSheetTransitioningDelegate.swift */; };
+		389024082BE958820093837A /* BottomSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389024072BE958820093837A /* BottomSheetPresentationController.swift */; };
+		3890240A2BE9760D0093837A /* EffectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389024092BE9760D0093837A /* EffectsViewModel.swift */; };
+		3890240C2BE9761C0093837A /* EffectsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890240B2BE9761C0093837A /* EffectsManager.swift */; };
+		3890240E2BE980FA0093837A /* MutableEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890240D2BE980FA0093837A /* MutableEffects.swift */; };
+		389024102BE9A7C00093837A /* EffectEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890240F2BE9A7C00093837A /* EffectEditor.swift */; };
+		389024132BEA1F670093837A /* ChooseKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389024122BEA1F670093837A /* ChooseKeyboardViewController.swift */; };
+		389024152BEA1FD00093837A /* ChooseKeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389024142BEA1FD00093837A /* ChooseKeyboardViewModel.swift */; };
+		389024172BEA3A6B0093837A /* ChooseKeyboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389024162BEA3A6B0093837A /* ChooseKeyboardTableViewCell.swift */; };
+		389024192BEA3EF70093837A /* KeyboardMiniature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389024182BEA3EF70093837A /* KeyboardMiniature.swift */; };
+		3890241B2BEA404C0093837A /* KeyboardMiniatureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890241A2BEA404C0093837A /* KeyboardMiniatureResponse.swift */; };
+		3890241D2BEA41B20093837A /* KeyboardsGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890241C2BEA41B20093837A /* KeyboardsGet.swift */; };
+		3890241F2BEA42B40093837A /* KeyboardPreviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890241E2BEA42B40093837A /* KeyboardPreviewManager.swift */; };
+		38902C482BEA94210093837A /* ChooseKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38902C472BEA94210093837A /* ChooseKeyboard.swift */; };
+		38902C4A2BEAB4930093837A /* AVAudioPCMBuffer+initURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38902C492BEAB4930093837A /* AVAudioPCMBuffer+initURL.swift */; };
+		389034392BED64990093837A /* Double+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389034382BED64990093837A /* Double+Constants.swift */; };
+		3890343C2BED8CB80093837A /* Int+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890343B2BED8CB80093837A /* Int+Constants.swift */; };
+		38CA38712BE2686800BE34E8 /* MelodyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA38702BE2686800BE34E8 /* MelodyManager.swift */; };
+		38CA38732BE272A800BE34E8 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA38722BE272A800BE34E8 /* Note.swift */; };
+		38CA38752BE275C600BE34E8 /* MutableNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA38742BE275C600BE34E8 /* MutableNote.swift */; };
+		38CA38772BE2881C00BE34E8 /* EditMelodyGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA38762BE2881C00BE34E8 /* EditMelodyGrid.swift */; };
+		38CA38792BE2887D00BE34E8 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA38782BE2887D00BE34E8 /* NoteViewModel.swift */; };
+		38CA387C2BE2C3E800BE34E8 /* EditMelodyGridNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA387B2BE2C3E800BE34E8 /* EditMelodyGridNote.swift */; };
+		38CA387E2BE2E9DB00BE34E8 /* MelodyResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA387D2BE2E9DB00BE34E8 /* MelodyResolution.swift */; };
+		38CA38802BE2EC2800BE34E8 /* String+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA387F2BE2EC2800BE34E8 /* String+UIImage.swift */; };
+		38CA38852BE3CA3C00BE34E8 /* ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA38842BE3CA3C00BE34E8 /* ObjectMapper.swift */; };
+		38ED0D752BE1753F00C47271 /* MelodyEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED0D742BE1753F00C47271 /* MelodyEditor.swift */; };
+		38ED0D792BE1787300C47271 /* KeyboardCachingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED0D782BE1787300C47271 /* KeyboardCachingManager.swift */; };
+		38ED0D7B2BE1788300C47271 /* SampleCachingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED0D7A2BE1788300C47271 /* SampleCachingManager.swift */; };
+		38ED0D7D2BE18BC300C47271 /* SampleGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED0D7C2BE18BC200C47271 /* SampleGet.swift */; };
+		38ED0D7F2BE18F6100C47271 /* DATA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED0D7E2BE18F6100C47271 /* DATA.swift */; };
+		38ED0D822BE1945F00C47271 /* CachingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED0D812BE1945F00C47271 /* CachingError.swift */; };
+		38ED0D852BE1964100C47271 /* KeyboardGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED0D842BE1964100C47271 /* KeyboardGet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -218,14 +248,12 @@
 		385F9A562BD1B4570089BD28 /* CompositionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionViewModel.swift; sourceTree = "<group>"; };
 		385F9A582BD1B6E30089BD28 /* CombinationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationCollectionViewCell.swift; sourceTree = "<group>"; };
 		385F9A5A2BD1B7150089BD28 /* Composition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
-		385F9A5D2BD1C75B0089BD28 /* Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		385F9A5F2BD1C7620089BD28 /* EffectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectType.swift; sourceTree = "<group>"; };
 		385F9A612BD1C7860089BD28 /* Combination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combination.swift; sourceTree = "<group>"; };
 		385F9A632BD1C7A10089BD28 /* Melody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Melody.swift; sourceTree = "<group>"; };
 		385F9A652BD1C7C80089BD28 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		385F9A692BD1C8070089BD28 /* MutableComposition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableComposition.swift; sourceTree = "<group>"; };
 		385F9A6B2BD1C83C0089BD28 /* MutableCombination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableCombination.swift; sourceTree = "<group>"; };
-		385F9A6D2BD1C8610089BD28 /* MutableEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableEffect.swift; sourceTree = "<group>"; };
 		385F9A6F2BD1C8AA0089BD28 /* MutableMelody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableMelody.swift; sourceTree = "<group>"; };
 		385F9A712BD1C8B60089BD28 /* MutableSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableSample.swift; sourceTree = "<group>"; };
 		385F9A732BD1D74F0089BD28 /* UILabel+Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Role.swift"; sourceTree = "<group>"; };
@@ -239,9 +267,7 @@
 		385F9ECE2BD27A5A0089BD28 /* UIButton+scaleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+scaleImage.swift"; sourceTree = "<group>"; };
 		385F9ED02BD29B560089BD28 /* AddRowTableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRowTableFooterView.swift; sourceTree = "<group>"; };
 		385F9ED32BD2A6310089BD28 /* EffectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsViewController.swift; sourceTree = "<group>"; };
-		385FA79B2BD2BCBB0089BD28 /* EffectProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectProperty.swift; sourceTree = "<group>"; };
 		385FA79D2BD2BCE70089BD28 /* EffectPropertyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectPropertyType.swift; sourceTree = "<group>"; };
-		385FA79F2BD2BF8F0089BD28 /* MutableEffectProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableEffectProperty.swift; sourceTree = "<group>"; };
 		385FA7A12BD2DE760089BD28 /* EffectControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectControl.swift; sourceTree = "<group>"; };
 		385FA7A32BD2DF5B0089BD28 /* EffectPropertyControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectPropertyControl.swift; sourceTree = "<group>"; };
 		385FA86B2BD315900089BD28 /* ChooseMelodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMelodyViewController.swift; sourceTree = "<group>"; };
@@ -257,7 +283,6 @@
 		385FA8832BD40EB20089BD28 /* MelodiesGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodiesGet.swift; sourceTree = "<group>"; };
 		385FA8852BD40ED20089BD28 /* MelodyMiniatureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyMiniatureResponse.swift; sourceTree = "<group>"; };
 		385FA8882BD4146E0089BD28 /* EditMelodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMelodyViewController.swift; sourceTree = "<group>"; };
-		385FA88A2BD461F60089BD28 /* MelodyKeyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyKeyCollectionViewCell.swift; sourceTree = "<group>"; };
 		385FA88C2BD46AD30089BD28 /* EditMelodyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMelodyViewModel.swift; sourceTree = "<group>"; };
 		385FA88E2BD51C940089BD28 /* NiceStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiceStepper.swift; sourceTree = "<group>"; };
 		385FA8902BD52A700089BD28 /* ClassicStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicStepper.swift; sourceTree = "<group>"; };
@@ -278,6 +303,41 @@
 		387340C32BCEE02200D1EBBF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		387340C52BCEE30700D1EBBF /* UserGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGet.swift; sourceTree = "<group>"; };
 		387340C72BCEE31D00D1EBBF /* UserCurrentGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCurrentGet.swift; sourceTree = "<group>"; };
+		38901C0D2BE599A30093837A /* AudioEngineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineManager.swift; sourceTree = "<group>"; };
+		38901C132BE706EF0093837A /* Metronome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metronome.swift; sourceTree = "<group>"; };
+		389024052BE957E20093837A /* BottomSheetTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTransitioningDelegate.swift; sourceTree = "<group>"; };
+		389024072BE958820093837A /* BottomSheetPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPresentationController.swift; sourceTree = "<group>"; };
+		389024092BE9760D0093837A /* EffectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsViewModel.swift; sourceTree = "<group>"; };
+		3890240B2BE9761C0093837A /* EffectsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsManager.swift; sourceTree = "<group>"; };
+		3890240D2BE980FA0093837A /* MutableEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableEffects.swift; sourceTree = "<group>"; };
+		3890240F2BE9A7C00093837A /* EffectEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectEditor.swift; sourceTree = "<group>"; };
+		389024122BEA1F670093837A /* ChooseKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseKeyboardViewController.swift; sourceTree = "<group>"; };
+		389024142BEA1FD00093837A /* ChooseKeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseKeyboardViewModel.swift; sourceTree = "<group>"; };
+		389024162BEA3A6B0093837A /* ChooseKeyboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseKeyboardTableViewCell.swift; sourceTree = "<group>"; };
+		389024182BEA3EF70093837A /* KeyboardMiniature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMiniature.swift; sourceTree = "<group>"; };
+		3890241A2BEA404C0093837A /* KeyboardMiniatureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMiniatureResponse.swift; sourceTree = "<group>"; };
+		3890241C2BEA41B20093837A /* KeyboardsGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardsGet.swift; sourceTree = "<group>"; };
+		3890241E2BEA42B40093837A /* KeyboardPreviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardPreviewManager.swift; sourceTree = "<group>"; };
+		38902C472BEA94210093837A /* ChooseKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseKeyboard.swift; sourceTree = "<group>"; };
+		38902C492BEAB4930093837A /* AVAudioPCMBuffer+initURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioPCMBuffer+initURL.swift"; sourceTree = "<group>"; };
+		389034382BED64990093837A /* Double+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Constants.swift"; sourceTree = "<group>"; };
+		3890343B2BED8CB80093837A /* Int+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Constants.swift"; sourceTree = "<group>"; };
+		38CA38702BE2686800BE34E8 /* MelodyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyManager.swift; sourceTree = "<group>"; };
+		38CA38722BE272A800BE34E8 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		38CA38742BE275C600BE34E8 /* MutableNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableNote.swift; sourceTree = "<group>"; };
+		38CA38762BE2881C00BE34E8 /* EditMelodyGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMelodyGrid.swift; sourceTree = "<group>"; };
+		38CA38782BE2887D00BE34E8 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		38CA387B2BE2C3E800BE34E8 /* EditMelodyGridNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMelodyGridNote.swift; sourceTree = "<group>"; };
+		38CA387D2BE2E9DB00BE34E8 /* MelodyResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyResolution.swift; sourceTree = "<group>"; };
+		38CA387F2BE2EC2800BE34E8 /* String+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UIImage.swift"; sourceTree = "<group>"; };
+		38CA38842BE3CA3C00BE34E8 /* ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapper.swift; sourceTree = "<group>"; };
+		38ED0D742BE1753F00C47271 /* MelodyEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyEditor.swift; sourceTree = "<group>"; };
+		38ED0D782BE1787300C47271 /* KeyboardCachingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCachingManager.swift; sourceTree = "<group>"; };
+		38ED0D7A2BE1788300C47271 /* SampleCachingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCachingManager.swift; sourceTree = "<group>"; };
+		38ED0D7C2BE18BC200C47271 /* SampleGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleGet.swift; sourceTree = "<group>"; };
+		38ED0D7E2BE18F6100C47271 /* DATA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DATA.swift; sourceTree = "<group>"; };
+		38ED0D812BE1945F00C47271 /* CachingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingError.swift; sourceTree = "<group>"; };
+		38ED0D842BE1964100C47271 /* KeyboardGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +360,7 @@
 				380EDF282BD079C700FCB5FB /* BlueprintResponse.swift */,
 				385FA87C2BD3D5A50089BD28 /* SampleMiniatureResponse.swift */,
 				385FA8852BD40ED20089BD28 /* MelodyMiniatureResponse.swift */,
+				3890241A2BEA404C0093837A /* KeyboardMiniatureResponse.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -376,6 +437,7 @@
 		382114B72BBEAE9C00FEECC8 /* music-ios */ = {
 			isa = PBXGroup;
 			children = (
+				38ED0D772BE175FF00C47271 /* AudioRendering */,
 				387340BC2BCEDF1900D1EBBF /* Entities */,
 				38347C152BCDD97100221CA6 /* UI */,
 				38347C092BCDD24A00221CA6 /* Common */,
@@ -421,6 +483,7 @@
 				38347BFE2BCDCD2100221CA6 /* PATCH.swift */,
 				38347C002BCDCD3500221CA6 /* DELETE.swift */,
 				380EDF0C2BD03A7000FCB5FB /* MultipartFormdataPOST.swift */,
+				38ED0D7E2BE18F6100C47271 /* DATA.swift */,
 				38347C022BCDCD7500221CA6 /* Request.swift */,
 			);
 			path = Presets;
@@ -454,10 +517,14 @@
 		38347C092BCDD24A00221CA6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3890343A2BED8CA30093837A /* GlobalConstants */,
 				380EDF092BD0364800FCB5FB /* Managers */,
 				38347C0A2BCDD25800221CA6 /* AuthTokenProvider.swift */,
 				38347C132BCDD64000221CA6 /* Stored.swift */,
 				38347C1C2BCDDADA00221CA6 /* CGFloat+Constants.swift */,
+				38CA387F2BE2EC2800BE34E8 /* String+UIImage.swift */,
+				38CA38842BE3CA3C00BE34E8 /* ObjectMapper.swift */,
+				38902C492BEAB4930093837A /* AVAudioPCMBuffer+initURL.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -465,6 +532,7 @@
 		38347C0C2BCDD2C000221CA6 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				38ED0D832BE195A100C47271 /* Keyboard */,
 				385FA8822BD40EA70089BD28 /* Melody */,
 				385FA8792BD3D5340089BD28 /* Sample */,
 				385F9A4E2BD1B39B0089BD28 /* Search */,
@@ -544,6 +612,7 @@
 		385F9A4F2BD1B3BE0089BD28 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				389024042BE957CB0093837A /* BottomSheetTransition */,
 				385FA8922BD52A730089BD28 /* Steppers */,
 				383482102BCE63A500221CA6 /* Loader */,
 				385F9A732BD1D74F0089BD28 /* UILabel+Role.swift */,
@@ -569,6 +638,7 @@
 		385F9A522BD1B4300089BD28 /* CompositionEditor */ = {
 			isa = PBXGroup;
 			children = (
+				389024112BEA178D0093837A /* ChooseKeyboardScreen */,
 				385FA8932BD554F50089BD28 /* RecordSampleScreen */,
 				385FA8872BD414470089BD28 /* EditMelodyScreen */,
 				385FA86A2BD309DC0089BD28 /* ChooseMelodyScreen */,
@@ -604,10 +674,10 @@
 			children = (
 				385F9A692BD1C8070089BD28 /* MutableComposition.swift */,
 				385F9A6B2BD1C83C0089BD28 /* MutableCombination.swift */,
-				385F9A6D2BD1C8610089BD28 /* MutableEffect.swift */,
-				385FA79F2BD2BF8F0089BD28 /* MutableEffectProperty.swift */,
 				385F9A6F2BD1C8AA0089BD28 /* MutableMelody.swift */,
 				385F9A712BD1C8B60089BD28 /* MutableSample.swift */,
+				38CA38742BE275C600BE34E8 /* MutableNote.swift */,
+				3890240D2BE980FA0093837A /* MutableEffects.swift */,
 			);
 			path = Mutable;
 			sourceTree = "<group>";
@@ -616,13 +686,12 @@
 			isa = PBXGroup;
 			children = (
 				385F9A5A2BD1B7150089BD28 /* Composition.swift */,
-				385F9A5D2BD1C75B0089BD28 /* Effect.swift */,
 				385F9A5F2BD1C7620089BD28 /* EffectType.swift */,
-				385FA79B2BD2BCBB0089BD28 /* EffectProperty.swift */,
 				385FA79D2BD2BCE70089BD28 /* EffectPropertyType.swift */,
 				385F9A612BD1C7860089BD28 /* Combination.swift */,
 				385F9A632BD1C7A10089BD28 /* Melody.swift */,
 				385F9A652BD1C7C80089BD28 /* Sample.swift */,
+				38CA38722BE272A800BE34E8 /* Note.swift */,
 			);
 			path = Immutable;
 			sourceTree = "<group>";
@@ -642,8 +711,10 @@
 			isa = PBXGroup;
 			children = (
 				385F9ED32BD2A6310089BD28 /* EffectsViewController.swift */,
+				389024092BE9760D0093837A /* EffectsViewModel.swift */,
 				385FA7A12BD2DE760089BD28 /* EffectControl.swift */,
 				385FA7A32BD2DF5B0089BD28 /* EffectPropertyControl.swift */,
+				3890240F2BE9A7C00093837A /* EffectEditor.swift */,
 			);
 			path = EffectsScreen;
 			sourceTree = "<group>";
@@ -672,6 +743,7 @@
 			isa = PBXGroup;
 			children = (
 				385FA87A2BD3D5400089BD28 /* SamplesGet.swift */,
+				38ED0D7C2BE18BC200C47271 /* SampleGet.swift */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -687,9 +759,11 @@
 		385FA8872BD414470089BD28 /* EditMelodyScreen */ = {
 			isa = PBXGroup;
 			children = (
+				38CA387A2BE2C3D500BE34E8 /* Grid */,
+				38CA387D2BE2E9DB00BE34E8 /* MelodyResolution.swift */,
 				385FA8882BD4146E0089BD28 /* EditMelodyViewController.swift */,
 				385FA88C2BD46AD30089BD28 /* EditMelodyViewModel.swift */,
-				385FA88A2BD461F60089BD28 /* MelodyKeyCollectionViewCell.swift */,
+				38ED0D742BE1753F00C47271 /* MelodyEditor.swift */,
 			);
 			path = EditMelodyScreen;
 			sourceTree = "<group>";
@@ -748,8 +822,80 @@
 				380EDF4D2BD12B7200FCB5FB /* SearchGroup.swift */,
 				385FA8752BD3BCCF0089BD28 /* SampleMiniature.swift */,
 				385FA87E2BD3FD550089BD28 /* MelodyMiniature.swift */,
+				389024182BEA3EF70093837A /* KeyboardMiniature.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		389024042BE957CB0093837A /* BottomSheetTransition */ = {
+			isa = PBXGroup;
+			children = (
+				389024052BE957E20093837A /* BottomSheetTransitioningDelegate.swift */,
+				389024072BE958820093837A /* BottomSheetPresentationController.swift */,
+			);
+			path = BottomSheetTransition;
+			sourceTree = "<group>";
+		};
+		389024112BEA178D0093837A /* ChooseKeyboardScreen */ = {
+			isa = PBXGroup;
+			children = (
+				389024122BEA1F670093837A /* ChooseKeyboardViewController.swift */,
+				389024142BEA1FD00093837A /* ChooseKeyboardViewModel.swift */,
+				389024162BEA3A6B0093837A /* ChooseKeyboardTableViewCell.swift */,
+				38902C472BEA94210093837A /* ChooseKeyboard.swift */,
+			);
+			path = ChooseKeyboardScreen;
+			sourceTree = "<group>";
+		};
+		3890343A2BED8CA30093837A /* GlobalConstants */ = {
+			isa = PBXGroup;
+			children = (
+				389034382BED64990093837A /* Double+Constants.swift */,
+				3890343B2BED8CB80093837A /* Int+Constants.swift */,
+			);
+			path = GlobalConstants;
+			sourceTree = "<group>";
+		};
+		38CA387A2BE2C3D500BE34E8 /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				38CA38762BE2881C00BE34E8 /* EditMelodyGrid.swift */,
+				38CA387B2BE2C3E800BE34E8 /* EditMelodyGridNote.swift */,
+				38CA38782BE2887D00BE34E8 /* NoteViewModel.swift */,
+			);
+			path = Grid;
+			sourceTree = "<group>";
+		};
+		38ED0D772BE175FF00C47271 /* AudioRendering */ = {
+			isa = PBXGroup;
+			children = (
+				38901C132BE706EF0093837A /* Metronome.swift */,
+				38901C0D2BE599A30093837A /* AudioEngineManager.swift */,
+				38CA38702BE2686800BE34E8 /* MelodyManager.swift */,
+				3890240B2BE9761C0093837A /* EffectsManager.swift */,
+				3890241E2BEA42B40093837A /* KeyboardPreviewManager.swift */,
+				38ED0D802BE1943000C47271 /* Caching */,
+			);
+			path = AudioRendering;
+			sourceTree = "<group>";
+		};
+		38ED0D802BE1943000C47271 /* Caching */ = {
+			isa = PBXGroup;
+			children = (
+				38ED0D782BE1787300C47271 /* KeyboardCachingManager.swift */,
+				38ED0D7A2BE1788300C47271 /* SampleCachingManager.swift */,
+				38ED0D812BE1945F00C47271 /* CachingError.swift */,
+			);
+			path = Caching;
+			sourceTree = "<group>";
+		};
+		38ED0D832BE195A100C47271 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				38ED0D842BE1964100C47271 /* KeyboardGet.swift */,
+				3890241C2BEA41B20093837A /* KeyboardsGet.swift */,
+			);
+			path = Keyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -822,7 +968,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38ED0D792BE1787300C47271 /* KeyboardCachingManager.swift in Sources */,
+				38CA38852BE3CA3C00BE34E8 /* ObjectMapper.swift in Sources */,
+				389024172BEA3A6B0093837A /* ChooseKeyboardTableViewCell.swift in Sources */,
 				385F9A592BD1B6E30089BD28 /* CombinationCollectionViewCell.swift in Sources */,
+				38CA38792BE2887D00BE34E8 /* NoteViewModel.swift in Sources */,
 				380EDF4A2BD10D8B00FCB5FB /* SearchUsers.swift in Sources */,
 				38347C082BCDD09D00221CA6 /* AuthView.swift in Sources */,
 				380EDF132BD05B2500FCB5FB /* UserDelete.swift in Sources */,
@@ -830,6 +980,7 @@
 				380EDF252BD0787A00FCB5FB /* CompositionVisibility.swift in Sources */,
 				380EDF232BD0782B00FCB5FB /* CompositionResponse.swift in Sources */,
 				385F9A7D2BD1F7000089BD28 /* CombinationViewModel.swift in Sources */,
+				389024132BEA1F670093837A /* ChooseKeyboardViewController.swift in Sources */,
 				380EDF442BD10C4800FCB5FB /* SearchViewModel.swift in Sources */,
 				380EDF1B2BD05E9C00FCB5FB /* CompositionsViewController.swift in Sources */,
 				387340BE2BCEDF6100D1EBBF /* CompositionMiniature.swift in Sources */,
@@ -843,21 +994,31 @@
 				38347BEA2BCDB59300221CA6 /* NetworkRequestDescription.swift in Sources */,
 				385F9B402BD201A10089BD28 /* MelodyTableViewCell.swift in Sources */,
 				385FA88D2BD46AD30089BD28 /* EditMelodyViewModel.swift in Sources */,
+				3890240A2BE9760D0093837A /* EffectsViewModel.swift in Sources */,
 				38347C032BCDCD7500221CA6 /* Request.swift in Sources */,
 				38347BEC2BCDB7EC00221CA6 /* NetworkModel.swift in Sources */,
 				380EDF272BD078B500FCB5FB /* UserResponse.swift in Sources */,
+				38CA38772BE2881C00BE34E8 /* EditMelodyGrid.swift in Sources */,
 				385F9ECD2BD26E1F0089BD28 /* CGSize+scaled.swift in Sources */,
 				38347C0B2BCDD25800221CA6 /* AuthTokenProvider.swift in Sources */,
+				3890240C2BE9761C0093837A /* EffectsManager.swift in Sources */,
 				380EDF462BD10C5500FCB5FB /* SearchViewController.swift in Sources */,
+				38ED0D752BE1753F00C47271 /* MelodyEditor.swift in Sources */,
+				38CA387C2BE2C3E800BE34E8 /* EditMelodyGridNote.swift in Sources */,
 				380EDF192BD05E9200FCB5FB /* CompositionsViewModel.swift in Sources */,
 				387340C02BCEDFC200D1EBBF /* UserManager.swift in Sources */,
 				380EDF362BD084E100FCB5FB /* FavouriteCompositionRemove.swift in Sources */,
 				385F9A702BD1C8AA0089BD28 /* MutableMelody.swift in Sources */,
 				380EDF0B2BD0370600FCB5FB /* UserEdit.swift in Sources */,
+				38CA38712BE2686800BE34E8 /* MelodyManager.swift in Sources */,
 				385FA8812BD3FDB90089BD28 /* ChooseMelodyTableViewCell.swift in Sources */,
 				387340BB2BCEDD2300D1EBBF /* ProfileViewController.swift in Sources */,
+				389024152BEA1FD00093837A /* ChooseKeyboardViewModel.swift in Sources */,
 				385F9A762BD1DF0C0089BD28 /* BPMStepper.swift in Sources */,
 				385F9A7B2BD1F6DA0089BD28 /* CombinationViewController.swift in Sources */,
+				38902C4A2BEAB4930093837A /* AVAudioPCMBuffer+initURL.swift in Sources */,
+				3890241B2BEA404C0093837A /* KeyboardMiniatureResponse.swift in Sources */,
+				389024192BEA3EF70093837A /* KeyboardMiniature.swift in Sources */,
 				38347C012BCDCD3500221CA6 /* DELETE.swift in Sources */,
 				380EDF3C2BD0852500FCB5FB /* FavouriteUserRemove.swift in Sources */,
 				3802CD902BDBC2C100421C7C /* EditProfileUserDataDiff.swift in Sources */,
@@ -873,16 +1034,17 @@
 				380EDF1D2BD0725F00FCB5FB /* CompositionManager.swift in Sources */,
 				383482122BCE63BF00221CA6 /* LoadingViewController.swift in Sources */,
 				38347C0E2BCDD2D800221CA6 /* UserAuth.swift in Sources */,
+				38CA387E2BE2E9DB00BE34E8 /* MelodyResolution.swift in Sources */,
 				387340AE2BCED60100D1EBBF /* RegistrationView.swift in Sources */,
 				38347C122BCDD5F800221CA6 /* NetworkEnvironments.swift in Sources */,
+				38ED0D852BE1964100C47271 /* KeyboardGet.swift in Sources */,
+				38ED0D7B2BE1788300C47271 /* SampleCachingManager.swift in Sources */,
 				380EDF062BD0362100FCB5FB /* EditProfileView.swift in Sources */,
 				385F9A722BD1C8B60089BD28 /* MutableSample.swift in Sources */,
-				385F9A5E2BD1C75B0089BD28 /* Effect.swift in Sources */,
 				385FA8892BD4146E0089BD28 /* EditMelodyViewController.swift in Sources */,
 				387340B92BCEDCDE00D1EBBF /* ProfileViewModel.swift in Sources */,
 				380EDF3E2BD0853B00FCB5FB /* FavouriteUsersGet.swift in Sources */,
 				380EDF422BD10B9900FCB5FB /* SearchView.swift in Sources */,
-				385FA7A02BD2BF8F0089BD28 /* MutableEffectProperty.swift in Sources */,
 				380EDF022BD024AC00FCB5FB /* AuthManager.swift in Sources */,
 				38347BF42BCDBFFF00221CA6 /* NetworkRequest.swift in Sources */,
 				387340B42BCED97800D1EBBF /* UserRegister.swift in Sources */,
@@ -894,16 +1056,24 @@
 				385FA8742BD3BAC00089BD28 /* ChooseSampleTableViewCell.swift in Sources */,
 				38347C1B2BCDDA4900221CA6 /* FontModifiers.swift in Sources */,
 				38347BFA2BCDC2B700221CA6 /* GET.swift in Sources */,
+				389034392BED64990093837A /* Double+Constants.swift in Sources */,
 				387340B72BCEDCD400D1EBBF /* ProfileView.swift in Sources */,
 				385FA79E2BD2BCE70089BD28 /* EffectPropertyType.swift in Sources */,
 				385F9B422BD201B30089BD28 /* SampleTableViewCell.swift in Sources */,
 				385FA8992BD5754E0089BD28 /* RecordSampleButton.swift in Sources */,
 				387340C42BCEE02200D1EBBF /* User.swift in Sources */,
+				389024082BE958820093837A /* BottomSheetPresentationController.swift in Sources */,
 				387340B02BCED60C00D1EBBF /* RegistrationViewModel.swift in Sources */,
+				3890240E2BE980FA0093837A /* MutableEffects.swift in Sources */,
 				380EDF2E2BD0805F00FCB5FB /* FavouritesViewModel.swift in Sources */,
+				38902C482BEA94210093837A /* ChooseKeyboard.swift in Sources */,
 				38347C142BCDD64000221CA6 /* Stored.swift in Sources */,
+				38901C0E2BE599A30093837A /* AudioEngineManager.swift in Sources */,
 				380EDF0D2BD03A7000FCB5FB /* MultipartFormdataPOST.swift in Sources */,
+				3890241D2BEA41B20093837A /* KeyboardsGet.swift in Sources */,
+				3890343C2BED8CB80093837A /* Int+Constants.swift in Sources */,
 				385F9A642BD1C7A10089BD28 /* Melody.swift in Sources */,
+				389024102BE9A7C00093837A /* EffectEditor.swift in Sources */,
 				385FA8722BD315B70089BD28 /* ChooseSampleViewModel.swift in Sources */,
 				385F9A572BD1B4570089BD28 /* CompositionViewModel.swift in Sources */,
 				380EDF302BD0806C00FCB5FB /* FavouritesViewController.swift in Sources */,
@@ -914,9 +1084,9 @@
 				3834820F2BCE62D000221CA6 /* AuthViewController.swift in Sources */,
 				382114B92BBEAE9C00FEECC8 /* AppDelegate.swift in Sources */,
 				38347C192BCDDA1300221CA6 /* NiceTextField.swift in Sources */,
+				38ED0D7D2BE18BC300C47271 /* SampleGet.swift in Sources */,
 				385FA8972BD555EE0089BD28 /* RecordSampleViewModel.swift in Sources */,
 				380EDF0F2BD0464000FCB5FB /* UserAvatarEdit.swift in Sources */,
-				385FA88B2BD461F60089BD28 /* MelodyKeyCollectionViewCell.swift in Sources */,
 				387340C82BCEE31D00D1EBBF /* UserCurrentGet.swift in Sources */,
 				38347C1D2BCDDADA00221CA6 /* CGFloat+Constants.swift in Sources */,
 				385F9A6C2BD1C83C0089BD28 /* MutableCombination.swift in Sources */,
@@ -927,29 +1097,35 @@
 				380EDF292BD079C700FCB5FB /* BlueprintResponse.swift in Sources */,
 				3834820B2BCE5E7200221CA6 /* NiceButton.swift in Sources */,
 				385F9A5B2BD1B7150089BD28 /* Composition.swift in Sources */,
+				38ED0D7F2BE18F6100C47271 /* DATA.swift in Sources */,
 				385FA8912BD52A700089BD28 /* ClassicStepper.swift in Sources */,
+				38CA38752BE275C600BE34E8 /* MutableNote.swift in Sources */,
 				385FA86E2BD3159B0089BD28 /* ChooseMelodyViewModel.swift in Sources */,
 				380EDF212BD077BE00FCB5FB /* CompositionCreate.swift in Sources */,
 				380EDF112BD050A400FCB5FB /* EditProfileViewController.swift in Sources */,
+				38ED0D822BE1945F00C47271 /* CachingError.swift in Sources */,
 				385F9A742BD1D74F0089BD28 /* UILabel+Role.swift in Sources */,
 				382114BB2BBEAE9C00FEECC8 /* SceneDelegate.swift in Sources */,
-				385FA79C2BD2BCBB0089BD28 /* EffectProperty.swift in Sources */,
 				385FA8762BD3BCCF0089BD28 /* SampleMiniature.swift in Sources */,
 				387340C22BCEE01D00D1EBBF /* CurrentUser.swift in Sources */,
 				380EDF4E2BD12B7200FCB5FB /* SearchGroup.swift in Sources */,
+				38CA38802BE2EC2800BE34E8 /* String+UIImage.swift in Sources */,
 				385F9ED12BD29B560089BD28 /* AddRowTableFooterView.swift in Sources */,
 				385F9ECF2BD27A5A0089BD28 /* UIButton+scaleImage.swift in Sources */,
+				389024062BE957E20093837A /* BottomSheetTransitioningDelegate.swift in Sources */,
 				385FA7A22BD2DE760089BD28 /* EffectControl.swift in Sources */,
 				385F9ED42BD2A6310089BD28 /* EffectsViewController.swift in Sources */,
 				380EDF4C2BD10D9600FCB5FB /* SearchCompositions.swift in Sources */,
 				380CC2282BCF14B200A8BA32 /* UserCompositions.swift in Sources */,
 				385F9A602BD1C7620089BD28 /* EffectType.swift in Sources */,
-				385F9A6E2BD1C8610089BD28 /* MutableEffect.swift in Sources */,
 				385FA7A42BD2DF5B0089BD28 /* EffectPropertyControl.swift in Sources */,
 				387340B22BCED61800D1EBBF /* RegistrationViewController.swift in Sources */,
 				385F9A622BD1C7860089BD28 /* Combination.swift in Sources */,
+				38901C142BE706EF0093837A /* Metronome.swift in Sources */,
 				387340C62BCEE30700D1EBBF /* UserGet.swift in Sources */,
+				38CA38732BE272A800BE34E8 /* Note.swift in Sources */,
 				385F9A552BD1B44E0089BD28 /* CompositionViewController.swift in Sources */,
+				3890241F2BEA42B40093837A /* KeyboardPreviewManager.swift in Sources */,
 				380EDEF72BCFF19C00FCB5FB /* AvatarView.swift in Sources */,
 				385FA87D2BD3D5A50089BD28 /* SampleMiniatureResponse.swift in Sources */,
 				380EDF482BD10C6700FCB5FB /* SearchManager.swift in Sources */,

@@ -30,9 +30,7 @@ extension CombinationViewModel: CombinationViewModelInput {
     }
     
     func didPressEffectsButtonOnSample(_ sample: MutableSample) {
-        let effectsViewController = UINavigationController(rootViewController: EffectsViewController(effects: sample.effects)) 
-        effectsViewController.modalPresentationStyle = .pageSheet
-        view?.present(effectsViewController, animated: true)
+        // TODO
     }
     
     func getSamples() -> [MutableSample] {

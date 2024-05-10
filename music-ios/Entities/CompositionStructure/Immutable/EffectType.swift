@@ -1,6 +1,6 @@
 import Foundation
 
-enum EffectType {
+enum EffectType: CaseIterable {
     case distortion
     case delay
     case reverb
@@ -16,6 +16,19 @@ enum EffectType {
             "Reverb"
         case .volume:
             "Volume"
+        }
+    }
+
+    var propertyTypes: [EffectPropertyType] {
+        switch self {
+        case .distortion:
+            [.distortionPreGain, .distortionWetDryMix]
+        case .delay:
+            [.delayTime, .delayFeedback, .delayWetDryMix]
+        case .reverb:
+            [.reverbWetDryMix]
+        case .volume:
+            [.volumeValue]
         }
     }
 }

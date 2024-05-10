@@ -10,16 +10,24 @@ extension EffectPropertyControl {
 }
 
 final class EffectPropertyControl: UIControl {
+    let type: EffectPropertyType
+    private(set) var value: Float
+
     private let stackView = UIStackView()
-    private let imageView = UIImageView()
     private let slider = UISlider()
     private let accelerometerButton = UIButton()
-    
-    private let effectProperty: MutableEffectProperty
-    
-    init(effectProperty: MutableEffectProperty) {
-        self.effectProperty = effectProperty
-        
+
+    override var intrinsicContentSize: CGSize {
+        .init(
+            width: UIView.noIntrinsicMetric,
+            height: Constants.controlHeight
+        )
+    }
+
+    init(type: EffectPropertyType, initialValue: Float) {
+        self.type = type
+        self.value = initialValue
+
         super.init(frame: .zero)
         
         configure()
@@ -32,43 +40,41 @@ final class EffectPropertyControl: UIControl {
     }
     
     private func configure() {
-        imageView.image = effectProperty.type.image
-        imageView.contentMode = .scaleAspectFill
-        slider.minimumValue = effectProperty.type.minValue
-        slider.maximumValue = effectProperty.type.maxValue
-        slider.value = effectProperty.value
+        slider.minimumValue = type.minValue
+        slider.maximumValue = type.maxValue
+        slider.value = value
+
+        slider.setThumbImage(.init(named: "effect_slider_thumb"), for: .normal)
+        slider.minimumValueImage = type.image
+        slider.tintColor = .imp.secondary
+        slider.minimumTrackTintColor = .imp.complementary
+
         accelerometerButton.setImage(.init(systemName: "rectangle.portrait.rotate"), for: .normal)
-        slider.addTarget(self, action: #selector(onSliderChangeValue(_:)), for: .touchUpInside)
+        slider.addTarget(self, action: #selector(onSliderChangeValue(_:)), for: .valueChanged)
     }
     
     private func layout() {
-        let stackView = UIStackView(arrangedSubviews: [imageView, slider, accelerometerButton])
-        [imageView, slider, accelerometerButton].forEach {
-            stackView.addArrangedSubview($0)
-        }
+        let stackView = UIStackView(arrangedSubviews: [slider, accelerometerButton])
         stackView.axis = .horizontal
         stackView.spacing = Constants.elementSpacing
         stackView.alignment = .center
+
         stackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stackView)
-        
-        accelerometerButton.scaleImage(toWidth: Constants.buttonWidth)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        let imageViewHeight = (imageView.image?.size.height ?? .zero) * Constants.buttonWidth / (imageView.image?.size.width ?? .zero)
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: Constants.buttonWidth),
-            imageView.heightAnchor.constraint(equalToConstant: imageViewHeight),
-            
             stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
             stackView.heightAnchor.constraint(equalToConstant: Constants.controlHeight)
         ])
+
+        accelerometerButton.scaleImage(toWidth: Constants.buttonWidth)
     }
     
     @objc
     private func onSliderChangeValue(_ sender: UISlider) {
-        effectProperty.value = sender.value
+        value = sender.value
+        sendActions(for: .valueChanged)
     }
 }

@@ -16,6 +16,10 @@ extension UIColor {
         static let secondary = UIColor(hex: "#8aa7ffff")!
         static let complementary = UIColor(hex: "#ffd557ff")!
         static let lightGray = UIColor(hex: "#f5f5f5ff")!
+
+        static let backgroundColor = UIColor.white
+        static let gridOddBeatBackgroundColor = UIColor.systemGray6
+        static let gridEvenBeatBackgroundColor = UIColor.systemGray5
     }
 }
 

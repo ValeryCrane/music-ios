@@ -3,6 +3,7 @@ import UIKit
 
 enum EffectPropertyType {
     case distortionWetDryMix
+    case distortionPreGain
     case delayTime
     case delayFeedback
     case delayWetDryMix
@@ -13,6 +14,8 @@ enum EffectPropertyType {
         switch self {
         case .distortionWetDryMix:
             .init(systemName: "arrow.triangle.merge")
+        case .distortionPreGain:
+            .init(systemName: "bolt.fill")
         case .delayTime:
             .init(systemName: "timer")
         case .delayFeedback:
@@ -30,6 +33,8 @@ enum EffectPropertyType {
         switch self {
         case .distortionWetDryMix:
             0
+        case .distortionPreGain:
+            -80
         case .delayTime:
             0
         case .delayFeedback:
@@ -47,6 +52,8 @@ enum EffectPropertyType {
         switch self {
         case .distortionWetDryMix:
             100
+        case .distortionPreGain:
+            20
         case .delayTime:
             2
         case .delayFeedback:
@@ -55,6 +62,25 @@ enum EffectPropertyType {
             100
         case .reverbWetDryMix:
             100
+        case .volumeValue:
+            1
+        }
+    }
+
+    var defaultValue: Float {
+        switch self {
+        case .distortionWetDryMix:
+            0
+        case .distortionPreGain:
+            -6
+        case .delayTime:
+            1
+        case .delayFeedback:
+            50
+        case .delayWetDryMix:
+            0
+        case .reverbWetDryMix:
+            0
         case .volumeValue:
             1
         }

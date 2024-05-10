@@ -4,7 +4,8 @@ struct Melody {
     let name: String
     let keyboardId: Int
     let isMuted: Bool
-    let resolution: Int
-    let effects: [Effect]
-    let keys: [Int?]
+    let isPedalActive: Bool
+    let effects: [EffectType: [EffectPropertyType: Float]]
+    let measures: Int
+    let notes: [Note]
 }
