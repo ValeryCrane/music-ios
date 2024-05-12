@@ -1,10 +1,6 @@
 import Foundation
 import UIKit
 
-protocol SampleTableViewCellDelegate: AnyObject {
-    func didPressEffectsButtonOnSample(_ sample: MutableSample)
-}
-
 extension SampleTableViewCell {
     enum Constants {
         static let buttonWidth: CGFloat = 28
@@ -18,16 +14,15 @@ extension SampleTableViewCell {
 final class SampleTableViewCell: UITableViewCell {
     static let reuseIdentifier = "SampleTableViewCell"
     
-    weak var delegate: SampleTableViewCellDelegate?
-    
     private let wrapperView = UIView()
     
     private let nameLabel = UILabel()
     private let effectsButton = UIButton()
     private let muteButton = UIButton()
-    
-    private var sample: MutableSample?
-    
+
+    private var onMuteButtonTapped: (() -> Void)?
+    private var onEffectsButtonTapped: (() -> Void)?
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -42,12 +37,21 @@ final class SampleTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(sample: MutableSample) {
-        self.sample = sample
-        nameLabel.text = sample.name
-        updateMuteButton()
+    func setup(
+        sampleMiniature: CombinationSampleMiniature,
+        onMuteButtonTapped: @escaping () -> Void,
+        onEffectsButtonTapped: @escaping () -> Void
+    ) {
+        self.onMuteButtonTapped = onMuteButtonTapped
+        self.onEffectsButtonTapped = onEffectsButtonTapped
+        update(sampleMiniature: sampleMiniature)
     }
-    
+
+    func update(sampleMiniature: CombinationSampleMiniature) {
+        nameLabel.text = sampleMiniature.name
+        updateMuteButton(isMuted: sampleMiniature.isMuted)
+    }
+
     private func configure() {
         nameLabel.role(.title)
         
@@ -58,10 +62,8 @@ final class SampleTableViewCell: UITableViewCell {
         effectsButton.setImage(effectsButtonImage, for: .normal)
         effectsButton.scaleImage(toWidth: Constants.buttonWidth)
         
-        effectsButton.addTarget(self, action: #selector(onEffectsButtonPressed(_:)), for: .touchUpInside)
-        muteButton.addTarget(self, action: #selector(onMuteButtonPressed(_:)), for: .touchUpInside)
-        
-        updateMuteButton()
+        effectsButton.addTarget(self, action: #selector(onEffectsButtonTapped(_:)), for: .touchUpInside)
+        muteButton.addTarget(self, action: #selector(onMuteButtonTapped(_:)), for: .touchUpInside)
     }
     
     private func layout() {
@@ -95,24 +97,19 @@ final class SampleTableViewCell: UITableViewCell {
         ])
     }
     
-    private func updateMuteButton() {
-        guard let sample = sample else { return }
-        
-        let muteButtonImage = UIImage(systemName: sample.isMuted ? "speaker.slash" : "speaker")
+    private func updateMuteButton(isMuted: Bool) {
+        let muteButtonImage = UIImage(systemName: isMuted ? "speaker.slash" : "speaker")
         muteButton.setImage(muteButtonImage, for: .normal)
         muteButton.scaleImage(toWidth: Constants.buttonWidth)
     }
     
     @objc
-    private func onMuteButtonPressed(_ sender: UIButton) {
-        sample?.isMuted.toggle()
-        updateMuteButton()
+    private func onMuteButtonTapped(_ sender: UIButton) {
+        onMuteButtonTapped?()
     }
     
     @objc
-    private func onEffectsButtonPressed(_ sender: UIButton) {
-        if let sample = sample {
-            delegate?.didPressEffectsButtonOnSample(sample)
-        }
+    private func onEffectsButtonTapped(_ sender: UIButton) {
+        onEffectsButtonTapped?()
     }
 }

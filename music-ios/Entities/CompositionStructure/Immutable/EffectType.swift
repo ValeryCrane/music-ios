@@ -1,6 +1,6 @@
 import Foundation
 
-enum EffectType: CaseIterable {
+enum EffectType: String, Codable, CodingKeyRepresentable, CaseIterable {
     case distortion
     case delay
     case reverb

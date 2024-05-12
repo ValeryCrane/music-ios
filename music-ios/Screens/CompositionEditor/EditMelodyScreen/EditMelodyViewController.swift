@@ -126,6 +126,10 @@ final class EditMelodyViewController: UIViewController {
         view.backgroundColor = .imp.backgroundColor
         configure()
         layout()
+
+        for noteViewModel in viewModel.getInitialNotes() {
+            createNote(noteViewModel: noteViewModel)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

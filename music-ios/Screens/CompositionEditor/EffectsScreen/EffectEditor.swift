@@ -3,20 +3,11 @@ import AVFoundation
 import UIKit
 
 final class EffectEditor {
-
-    var inputNode: AVAudioNode {
-        effectsManager.inputNode
-    }
-
-    var outputNode: AVAudioNode {
-        effectsManager.outputNode
-    }
-
     private let effectsManager: EffectsManager
     private let bottomSheetTransition = BottomSheetTransitioningDelegate()
 
-    init(effects: MutableEffects) {
-        effectsManager = .init(effects: effects)
+    init(effectsManager: EffectsManager) {
+        self.effectsManager = effectsManager
     }
 
     func getViewController() -> UIViewController {

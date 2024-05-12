@@ -44,6 +44,12 @@ final class MelodyManager {
         .init(id: keyboard.id, name: keyboard.name, numberOfKeys: keyboard.keys.count)
     }
 
+    var notes: [MutableNote] {
+        melody.notes
+    }
+
+    private(set) var metronome: Metronome
+
     // MARK: Private properties
 
     private let audioEngineManager = AudioEngineManager()
@@ -53,9 +59,10 @@ final class MelodyManager {
     private var keyboard: KeyboardCachingManager.Keyboard
 
     private let mainNode = AVAudioMixerNode()
+    private let previewPlayerNode = AVAudioPlayerNode()
+
     private var nodeMapping = ObjectMapper<MutableNote, AVAudioPlayerNode>()
     private var buffers: [AVAudioPCMBuffer]
-    private var metronome: Metronome
 
     private var volume: Float = 1
 
@@ -72,7 +79,30 @@ final class MelodyManager {
         self.buffers = try keyboard.keys.map { try .init(from: $0) }
 
         audioEngineManager.attachNode(mainNode)
+        audioEngineManager.attachNode(previewPlayerNode)
+        audioEngineManager.connect(previewPlayerNode, to: mainNode)
+
+        for note in melody.notes {
+            createNodeForNote(note)
+        }
+
         metronome.addListener(self)
+    }
+
+    deinit {
+        for note in melody.notes {
+            if let node = nodeMapping[note] {
+                audioEngineManager.detachNode(node)
+            }
+        }
+
+        audioEngineManager.detachNode(mainNode)
+    }
+
+    func startIfMetronomeIsPlaying() {
+        if metronome.isPlaying, let beat = self.metronome.getBeat(ofHostTime: mach_absolute_time()) {
+            startRenderingAt(beat: beat)
+        }
     }
 
     // MARK: Setters
@@ -174,20 +204,7 @@ final class MelodyManager {
 
     func addNote(_ note: MutableNote) {
         melody.notes.append(note)
-
-        let node = AVAudioPlayerNode()
-        audioEngineManager.attachNode(node)
-        audioEngineManager.connect(node, to: mainNode, format: buffers[note.keyNumber].format)
-        nodeMapping[note] = node
-        renderMissedLoops(ofNote: note)
-
-        for i in Array(0 ..< melody.notes.count).reversed() {
-            if areNotesIntersected(note, melody.notes[i]), let node = nodeMapping[melody.notes[i]] {
-                audioEngineManager.detachNode(node)
-                nodeMapping[melody.notes[i]] = nil
-                delegate?.melodyManager(self, didDeleteNote: melody.notes.remove(at: i))
-            }
-        }
+        createNodeForNote(note)
     }
     
     func deleteNote(_ note: MutableNote) {
@@ -285,6 +302,22 @@ final class MelodyManager {
     }
 
     // MARK: Private functions
+
+    private func createNodeForNote(_ note: MutableNote) {
+        let node = AVAudioPlayerNode()
+        audioEngineManager.attachNode(node)
+        audioEngineManager.connect(node, to: mainNode, format: buffers[note.keyNumber].format)
+        nodeMapping[note] = node
+        renderMissedLoops(ofNote: note)
+
+        for i in Array(0 ..< melody.notes.count).reversed() {
+            if areNotesIntersected(note, melody.notes[i]), let node = nodeMapping[melody.notes[i]] {
+                audioEngineManager.detachNode(node)
+                nodeMapping[melody.notes[i]] = nil
+                delegate?.melodyManager(self, didDeleteNote: melody.notes.remove(at: i))
+            }
+        }
+    }
 
     private func areNotesIntersected(_ lhs: MutableNote, _ rhs: MutableNote) -> Bool {
         if lhs.keyNumber != rhs.keyNumber {

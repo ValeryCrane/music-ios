@@ -33,10 +33,7 @@ extension CompositionViewModel: CompositionViewModelInput {
     }
     
     func onOpenCombination(_ combination: MutableCombination) {
-        let viewModel = CombinationViewModel(combination: combination)
-        let combinationController = CombinationViewController(viewModel: viewModel)
-        viewModel.view = combinationController
-        view?.navigationController?.pushViewController(combinationController, animated: true)
+        // TODO
     }
     
     func createFork(name: String) {

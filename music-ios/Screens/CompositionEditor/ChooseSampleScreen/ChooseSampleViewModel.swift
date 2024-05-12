@@ -15,7 +15,6 @@ protocol ChooseSampleViewModelOutput: UIViewController {
     func updateState(atIndex index: Int, state: ChooseSampleTableViewCell.State)
 }
 
-@MainActor
 final class ChooseSampleViewModel {
     weak var view: ChooseSampleViewModelOutput?
     
@@ -31,7 +30,9 @@ extension ChooseSampleViewModel: ChooseSampleViewModelInput {
             let samplesGetResponse = try await samplesGet.run(with: .init())
             samples = samplesGetResponse.samples.map { .init(from: $0) }
             sampleStates = .init(repeating: .paused, count: samplesGetResponse.samples.count)
-            view?.updateSamples()
+            await MainActor.run {
+                view?.updateSamples()
+            }
         }
     }
     

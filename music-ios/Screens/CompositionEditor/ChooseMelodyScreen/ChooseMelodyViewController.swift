@@ -1,13 +1,6 @@
 import Foundation
 import UIKit
 
-extension ChooseMelodyViewController {
-    private enum Constants {
-        static let verticalOffsets: CGFloat = 16
-        static let horizontalOffsets: CGFloat = 16
-    }
-}
-
 final class ChooseMelodyViewController: UIViewController {
     private let viewModel: ChooseMelodyViewModelInput
     
@@ -20,16 +13,30 @@ final class ChooseMelodyViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.separatorStyle = .none
-        tableView.allowsSelection = false
         tableView.register(
             ChooseMelodyTableViewCell.self,
             forCellReuseIdentifier: ChooseMelodyTableViewCell.reuseIdentifier
         )
+        tableView.delegate = self
         tableView.dataSource = self
+        tableView.isHidden = true
         return tableView
     }()
-    
+
+    private lazy var cancelButtonItem = UIBarButtonItem(
+        title: "Отмена",
+        style: .plain,
+        target: self,
+        action: #selector(onCancelButtonPressed(_:))
+    )
+
+    private lazy var createButtonItem = UIBarButtonItem(
+        title: "Создать",
+        style: .done,
+        target: self,
+        action: #selector(onCreateButtonPressed(_:))
+    )
+
     init(viewModel: ChooseMelodyViewModelInput) {
         self.viewModel = viewModel
         
@@ -49,21 +56,17 @@ final class ChooseMelodyViewController: UIViewController {
         layout()
         viewModel.loadMelodies()
     }
-    
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        viewModel.viewDidDisappear()
+    }
+
     private func configureNavigationItem() {
         title = "Мелодии"
-        navigationItem.leftBarButtonItem = .init(
-            title: "Отмена",
-            style: .plain,
-            target: self,
-            action: #selector(onCancelButtonPressed(_:))
-        )
-        navigationItem.rightBarButtonItem = .init(
-            title: "Создать",
-            style: .done,
-            target: self,
-            action: #selector(onCreateButtonPressed(_:))
-        )
+        navigationItem.leftBarButtonItem = cancelButtonItem
+        navigationItem.rightBarButtonItem = createButtonItem
     }
     
     private func layout() {
@@ -72,10 +75,10 @@ final class ChooseMelodyViewController: UIViewController {
         view.addSubview(tableView)
         view.addSubview(activityIndicator)
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.verticalOffsets),
-            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.horizontalOffsets),
-            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.horizontalOffsets),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.verticalOffsets),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
             activityIndicator.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: tableView.centerYAnchor)
@@ -84,12 +87,19 @@ final class ChooseMelodyViewController: UIViewController {
     
     @objc
     private func onCancelButtonPressed(_ sender: UIBarButtonItem) {
-        viewModel.onCancelButtonPressed()
+        viewModel.cancelButtonTapped()
     }
     
     @objc
     private func onCreateButtonPressed(_ sender: UIBarButtonItem) {
-        viewModel.onCreateButtonPressed()
+        viewModel.createButtonTapped()
+    }
+}
+
+extension ChooseMelodyViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.melodyChosen(atIndex: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -110,7 +120,7 @@ extension ChooseMelodyViewController: UITableViewDataSource {
             melody: melodies[indexPath.row],
             state: viewModel.getStates()[indexPath.row],
             onPlayButtonPressed: { [weak self] in
-                self?.viewModel.onPlayButtonPressed(atIndex: indexPath.row)
+                self?.viewModel.playButtonTapped(atIndex: indexPath.row)
             }
         )
         
@@ -119,8 +129,19 @@ extension ChooseMelodyViewController: UITableViewDataSource {
 }
 
 extension ChooseMelodyViewController: ChooseMelodyViewModelOutput {
+    func showLoader() {
+        activityIndicator.startAnimating()
+        tableView.isHidden = true
+    }
+
+    func setButtonsState(isEnabled: Bool) {
+        cancelButtonItem.isEnabled = isEnabled
+        createButtonItem.isEnabled = isEnabled
+    }
+
     func updateMelodies() {
         activityIndicator.stopAnimating()
+        tableView.isHidden = false
         tableView.reloadData()
     }
     

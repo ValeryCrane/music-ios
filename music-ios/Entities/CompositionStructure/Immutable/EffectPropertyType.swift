@@ -1,15 +1,15 @@
 import Foundation
 import UIKit
 
-enum EffectPropertyType {
-    case distortionWetDryMix
-    case distortionPreGain
-    case delayTime
-    case delayFeedback
-    case delayWetDryMix
-    case reverbWetDryMix
-    case volumeValue
-    
+enum EffectPropertyType: String, Codable, CodingKeyRepresentable {
+    case distortionWetDryMix = "distortion_wet_dry_mix"
+    case distortionPreGain = "distortion_pre_gain"
+    case delayTime = "delay_time"
+    case delayFeedback = "delay_feedback"
+    case delayWetDryMix = "delay_wet_dry_mix"
+    case reverbWetDryMix = "reverb_wet_dry_mix"
+    case volumeValue = "volume_value"
+
     var image: UIImage? {
         switch self {
         case .distortionWetDryMix:

@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3802CD902BDBC2C100421C7C /* EditProfileUserDataDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3802CD8F2BDBC2C100421C7C /* EditProfileUserDataDiff.swift */; };
+		380AF46C2BEEA24200907F73 /* CombinationEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380AF46B2BEEA24200907F73 /* CombinationEditor.swift */; };
+		380AF4702BEF905300907F73 /* CombinationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380AF46F2BEF905300907F73 /* CombinationManager.swift */; };
+		380AF4722BEFAD9700907F73 /* CombinationMelodyMiniature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380AF4712BEFAD9700907F73 /* CombinationMelodyMiniature.swift */; };
+		380AF4742BEFAE3200907F73 /* CombinationSampleMiniature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380AF4732BEFAE3200907F73 /* CombinationSampleMiniature.swift */; };
+		380AF4762BEFF21100907F73 /* MelodyGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380AF4752BEFF21100907F73 /* MelodyGet.swift */; };
+		380AF4782BF00EEA00907F73 /* RuntimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380AF4772BF00EEA00907F73 /* RuntimeError.swift */; };
+		380AF47A2BF0111000907F73 /* ChooseMelody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380AF4792BF0111000907F73 /* ChooseMelody.swift */; };
+		380AF4822BF1736900907F73 /* ChooseMelodyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380AF4812BF1736900907F73 /* ChooseMelodyResult.swift */; };
 		380CC2262BCF0FD500A8BA32 /* CompositionMiniatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380CC2252BCF0FD500A8BA32 /* CompositionMiniatureView.swift */; };
 		380CC2282BCF14B200A8BA32 /* UserCompositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380CC2272BCF14B200A8BA32 /* UserCompositions.swift */; };
 		380CC22B2BCF15DF00A8BA32 /* CompositionMiniatureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380CC22A2BCF15DF00A8BA32 /* CompositionMiniatureResponse.swift */; };
@@ -174,6 +182,14 @@
 
 /* Begin PBXFileReference section */
 		3802CD8F2BDBC2C100421C7C /* EditProfileUserDataDiff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileUserDataDiff.swift; sourceTree = "<group>"; };
+		380AF46B2BEEA24200907F73 /* CombinationEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationEditor.swift; sourceTree = "<group>"; };
+		380AF46F2BEF905300907F73 /* CombinationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationManager.swift; sourceTree = "<group>"; };
+		380AF4712BEFAD9700907F73 /* CombinationMelodyMiniature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationMelodyMiniature.swift; sourceTree = "<group>"; };
+		380AF4732BEFAE3200907F73 /* CombinationSampleMiniature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationSampleMiniature.swift; sourceTree = "<group>"; };
+		380AF4752BEFF21100907F73 /* MelodyGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyGet.swift; sourceTree = "<group>"; };
+		380AF4772BF00EEA00907F73 /* RuntimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeError.swift; sourceTree = "<group>"; };
+		380AF4792BF0111000907F73 /* ChooseMelody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMelody.swift; sourceTree = "<group>"; };
+		380AF4812BF1736900907F73 /* ChooseMelodyResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMelodyResult.swift; sourceTree = "<group>"; };
 		380CC2252BCF0FD500A8BA32 /* CompositionMiniatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionMiniatureView.swift; sourceTree = "<group>"; };
 		380CC2272BCF14B200A8BA32 /* UserCompositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCompositions.swift; sourceTree = "<group>"; };
 		380CC22A2BCF15DF00A8BA32 /* CompositionMiniatureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionMiniatureResponse.swift; sourceTree = "<group>"; };
@@ -525,6 +541,7 @@
 				38CA387F2BE2EC2800BE34E8 /* String+UIImage.swift */,
 				38CA38842BE3CA3C00BE34E8 /* ObjectMapper.swift */,
 				38902C492BEAB4930093837A /* AVAudioPCMBuffer+initURL.swift */,
+				380AF4772BF00EEA00907F73 /* RuntimeError.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -699,10 +716,13 @@
 		385F9A792BD1F6B70089BD28 /* CombinationScreen */ = {
 			isa = PBXGroup;
 			children = (
+				380AF4712BEFAD9700907F73 /* CombinationMelodyMiniature.swift */,
+				380AF4732BEFAE3200907F73 /* CombinationSampleMiniature.swift */,
 				385F9A7A2BD1F6DA0089BD28 /* CombinationViewController.swift */,
 				385F9A7C2BD1F7000089BD28 /* CombinationViewModel.swift */,
 				385F9B3F2BD201A10089BD28 /* MelodyTableViewCell.swift */,
 				385F9B412BD201B30089BD28 /* SampleTableViewCell.swift */,
+				380AF46B2BEEA24200907F73 /* CombinationEditor.swift */,
 			);
 			path = CombinationScreen;
 			sourceTree = "<group>";
@@ -732,9 +752,11 @@
 		385FA86A2BD309DC0089BD28 /* ChooseMelodyScreen */ = {
 			isa = PBXGroup;
 			children = (
+				380AF4812BF1736900907F73 /* ChooseMelodyResult.swift */,
 				385FA86B2BD315900089BD28 /* ChooseMelodyViewController.swift */,
 				385FA86D2BD3159B0089BD28 /* ChooseMelodyViewModel.swift */,
 				385FA8802BD3FDB90089BD28 /* ChooseMelodyTableViewCell.swift */,
+				380AF4792BF0111000907F73 /* ChooseMelody.swift */,
 			);
 			path = ChooseMelodyScreen;
 			sourceTree = "<group>";
@@ -752,6 +774,7 @@
 			isa = PBXGroup;
 			children = (
 				385FA8832BD40EB20089BD28 /* MelodiesGet.swift */,
+				380AF4752BEFF21100907F73 /* MelodyGet.swift */,
 			);
 			path = Melody;
 			sourceTree = "<group>";
@@ -869,12 +892,13 @@
 		38ED0D772BE175FF00C47271 /* AudioRendering */ = {
 			isa = PBXGroup;
 			children = (
+				38ED0D802BE1943000C47271 /* Caching */,
 				38901C132BE706EF0093837A /* Metronome.swift */,
 				38901C0D2BE599A30093837A /* AudioEngineManager.swift */,
 				38CA38702BE2686800BE34E8 /* MelodyManager.swift */,
 				3890240B2BE9761C0093837A /* EffectsManager.swift */,
 				3890241E2BEA42B40093837A /* KeyboardPreviewManager.swift */,
-				38ED0D802BE1943000C47271 /* Caching */,
+				380AF46F2BEF905300907F73 /* CombinationManager.swift */,
 			);
 			path = AudioRendering;
 			sourceTree = "<group>";
@@ -994,6 +1018,7 @@
 				38347BEA2BCDB59300221CA6 /* NetworkRequestDescription.swift in Sources */,
 				385F9B402BD201A10089BD28 /* MelodyTableViewCell.swift in Sources */,
 				385FA88D2BD46AD30089BD28 /* EditMelodyViewModel.swift in Sources */,
+				380AF4702BEF905300907F73 /* CombinationManager.swift in Sources */,
 				3890240A2BE9760D0093837A /* EffectsViewModel.swift in Sources */,
 				38347C032BCDCD7500221CA6 /* Request.swift in Sources */,
 				38347BEC2BCDB7EC00221CA6 /* NetworkModel.swift in Sources */,
@@ -1023,10 +1048,12 @@
 				380EDF3C2BD0852500FCB5FB /* FavouriteUserRemove.swift in Sources */,
 				3802CD902BDBC2C100421C7C /* EditProfileUserDataDiff.swift in Sources */,
 				385FA86C2BD315900089BD28 /* ChooseMelodyViewController.swift in Sources */,
+				380AF4782BF00EEA00907F73 /* RuntimeError.swift in Sources */,
 				380EDF3A2BD0851500FCB5FB /* FavouriteUserAdd.swift in Sources */,
 				385FA8952BD555DF0089BD28 /* RecordSampleViewController.swift in Sources */,
 				38347BF82BCDC15100221CA6 /* NetworkEnvironment.swift in Sources */,
 				380EDF2C2BD0805100FCB5FB /* FavouritesView.swift in Sources */,
+				380AF4762BEFF21100907F73 /* MelodyGet.swift in Sources */,
 				385FA88F2BD51C940089BD28 /* NiceStepper.swift in Sources */,
 				385F9A782BD1EA590089BD28 /* RecordToolbarView.swift in Sources */,
 				38347BEE2BCDB98100221CA6 /* NetworkError.swift in Sources */,
@@ -1053,6 +1080,8 @@
 				380EDF002BD0200F00FCB5FB /* AuthToken.swift in Sources */,
 				380EDF082BD0363100FCB5FB /* EditProfileViewModel.swift in Sources */,
 				380EDF1F2BD0729400FCB5FB /* CompositionsGet.swift in Sources */,
+				380AF4822BF1736900907F73 /* ChooseMelodyResult.swift in Sources */,
+				380AF4722BEFAD9700907F73 /* CombinationMelodyMiniature.swift in Sources */,
 				385FA8742BD3BAC00089BD28 /* ChooseSampleTableViewCell.swift in Sources */,
 				38347C1B2BCDDA4900221CA6 /* FontModifiers.swift in Sources */,
 				38347BFA2BCDC2B700221CA6 /* GET.swift in Sources */,
@@ -1086,6 +1115,7 @@
 				38347C192BCDDA1300221CA6 /* NiceTextField.swift in Sources */,
 				38ED0D7D2BE18BC300C47271 /* SampleGet.swift in Sources */,
 				385FA8972BD555EE0089BD28 /* RecordSampleViewModel.swift in Sources */,
+				380AF46C2BEEA24200907F73 /* CombinationEditor.swift in Sources */,
 				380EDF0F2BD0464000FCB5FB /* UserAvatarEdit.swift in Sources */,
 				387340C82BCEE31D00D1EBBF /* UserCurrentGet.swift in Sources */,
 				38347C1D2BCDDADA00221CA6 /* CGFloat+Constants.swift in Sources */,
@@ -1099,6 +1129,7 @@
 				385F9A5B2BD1B7150089BD28 /* Composition.swift in Sources */,
 				38ED0D7F2BE18F6100C47271 /* DATA.swift in Sources */,
 				385FA8912BD52A700089BD28 /* ClassicStepper.swift in Sources */,
+				380AF47A2BF0111000907F73 /* ChooseMelody.swift in Sources */,
 				38CA38752BE275C600BE34E8 /* MutableNote.swift in Sources */,
 				385FA86E2BD3159B0089BD28 /* ChooseMelodyViewModel.swift in Sources */,
 				380EDF212BD077BE00FCB5FB /* CompositionCreate.swift in Sources */,
@@ -1109,6 +1140,7 @@
 				385FA8762BD3BCCF0089BD28 /* SampleMiniature.swift in Sources */,
 				387340C22BCEE01D00D1EBBF /* CurrentUser.swift in Sources */,
 				380EDF4E2BD12B7200FCB5FB /* SearchGroup.swift in Sources */,
+				380AF4742BEFAE3200907F73 /* CombinationSampleMiniature.swift in Sources */,
 				38CA38802BE2EC2800BE34E8 /* String+UIImage.swift in Sources */,
 				385F9ED12BD29B560089BD28 /* AddRowTableFooterView.swift in Sources */,
 				385F9ECF2BD27A5A0089BD28 /* UIButton+scaleImage.swift in Sources */,

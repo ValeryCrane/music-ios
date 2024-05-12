@@ -12,7 +12,7 @@ class MutableMelody {
     init(_ melody: Melody) {
         self.name = melody.name
         self.keyboardId = melody.keyboardId
-        self.isMuted = melody.isMuted
+        self.isMuted = false
         self.isPedalActive = melody.isPedalActive
         self.effects = .init(effects: melody.effects)
         self.measures = melody.measures

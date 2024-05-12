@@ -22,7 +22,23 @@ final class CombinationViewController: UIViewController {
         tableView.dataSource = self
         return tableView
     }()
-    
+
+    private lazy var playButton: UIButton = {
+        let button = UIButton(configuration: .plain())
+        button.setImage(.init(
+            systemName: viewModel.getInitialPlayButtonState() ? "pause.fill" : "play.fill"
+        ), for: .normal)
+        button.addTarget(self, action: #selector(onPlayButtonTapped(_:)), for: .touchUpInside)
+        return button
+    }()
+
+    private lazy var effectsButtonItem: UIBarButtonItem = .init(
+        image: .init(systemName: "slider.horizontal.3"),
+        style: .plain,
+        target: self,
+        action: #selector(onEffectsButtonTapped(_:))
+    )
+
     init(viewModel: CombinationViewModelInput) {
         self.viewModel = viewModel
         
@@ -54,27 +70,47 @@ final class CombinationViewController: UIViewController {
     }
     
     private func configureNavigationItem() {
-        navigationItem.titleView = BPMStepper(value: 120, minimumValue: 30, maximumValue: 240)
-    }
-    
-    @objc 
-    private func onAddSampleButtonPressed(_ sender: AddRowTableFooterView) {
-        let viewModel = ChooseSampleViewModel()
-        let viewController = ChooseSampleViewController(viewModel: viewModel)
-        viewModel.view = viewController
-        present(UINavigationController(rootViewController: viewController), animated: true)
+        navigationItem.titleView = playButton
+        navigationItem.rightBarButtonItem = effectsButtonItem
     }
     
     @objc
-    private func onAddMelodyButtonPressed(_ sender: AddRowTableFooterView) {
-        let viewModel = ChooseMelodyViewModel()
-        let viewController = ChooseMelodyViewController(viewModel: viewModel)
-        viewModel.view = viewController
-        present(UINavigationController(rootViewController: viewController), animated: true)
+    private func onAddMelodyButtonTapped(_ sender: AddRowTableFooterView) {
+        viewModel.addMelodyButtonTapped()
+    }
+
+    @objc
+    private func onAddSampleButtonTapped(_ sender: AddRowTableFooterView) {
+        viewModel.addSampleButtonTapped()
+    }
+
+    @objc
+    private func onPlayButtonTapped(_ sender: UIButton) {
+        viewModel.playButtonTapped()
+    }
+
+    @objc
+    private func onEffectsButtonTapped(_ sender: UIBarButtonItem) {
+        viewModel.effectsButtonTapped()
     }
 }
 
-extension CombinationViewController: UITableViewDelegate { }
+extension CombinationViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        switch section {
+        case 0:
+            let view = AddRowTableFooterView(title: "Добавить сэмпл")
+            view.addTarget(self, action: #selector(onAddSampleButtonTapped(_:)), for: .touchUpInside)
+            return view
+        case 1:
+            let view = AddRowTableFooterView(title: "Добавить мелодию")
+            view.addTarget(self, action: #selector(onAddMelodyButtonTapped(_:)), for: .touchUpInside)
+            return view
+        default:
+            return nil
+        }
+    }
+}
 
 extension CombinationViewController: UITableViewDataSource {
     
@@ -86,21 +122,6 @@ extension CombinationViewController: UITableViewDataSource {
             "Мелодии"
         default:
             nil
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        switch section {
-        case 0:
-            let view = AddRowTableFooterView(title: "Добавить сэмпл")
-            view.addTarget(self, action: #selector(onAddSampleButtonPressed(_:)), for: .touchUpInside)
-            return view
-        case 1:
-            let view = AddRowTableFooterView(title: "Добавить мелодию")
-            view.addTarget(self, action: #selector(onAddMelodyButtonPressed(_:)), for: .touchUpInside)
-            return view
-        default:
-            return nil
         }
     }
     
@@ -130,9 +151,17 @@ extension CombinationViewController: UITableViewDataSource {
                 withIdentifier: SampleTableViewCell.reuseIdentifier,
                 for: indexPath
             ) as? SampleTableViewCell
-            
-            cell?.setup(sample: viewModel.getSamples()[indexPath.row])
-            cell?.delegate = self
+
+            cell?.setup(
+                sampleMiniature: viewModel.getSamples()[indexPath.row],
+                onMuteButtonTapped: { [weak self] in
+                    self?.viewModel.muteButtonTapped(atSampleIndex: indexPath.row)
+                },
+                onEffectsButtonTapped: { [weak self] in
+                    self?.viewModel.effectsButtonTapped(atSampleIndex: indexPath.row)
+                }
+            )
+
             return cell ?? UITableViewCell()
         case 1:
             let cell = tableView.dequeueReusableCell(
@@ -141,9 +170,15 @@ extension CombinationViewController: UITableViewDataSource {
             ) as? MelodyTableViewCell
             
             cell?.setup(
-                melody: viewModel.getMelodies()[indexPath.row],
-                onEditButtonPressed: { [weak self] in
-                    self?.viewModel.didPressEditButtonOnMelody(atIndex: indexPath.row)
+                melodyMiniature: viewModel.getMelodies()[indexPath.row],
+                onEditButtonTapped: { [weak self] in
+                    self?.viewModel.editButtonTapped(atMelodyIndex: indexPath.row)
+                },
+                onMuteButtonTapped: { [weak self] in
+                    self?.viewModel.muteButtonTapped(atMelodyIndex: indexPath.row)
+                },
+                onEffectsButtonTapped: { [weak self] in
+                    self?.viewModel.effectsButtonTapped(atMelodyIndex: indexPath.row)
                 }
             )
             
@@ -154,10 +189,22 @@ extension CombinationViewController: UITableViewDataSource {
     }
 }
 
-extension CombinationViewController: SampleTableViewCellDelegate {
-    func didPressEffectsButtonOnSample(_ sample: MutableSample) {
-        viewModel.didPressEffectsButtonOnSample(sample)
+extension CombinationViewController: CombinationViewModelOutput {
+    func updateMelodiesAndSamples() {
+        tableView.reloadData()
+    }
+    
+    func updateSample(atIndex index: Int, sampleMiniature: CombinationSampleMiniature) {
+        let cell = tableView.cellForRow(at: .init(row: index, section: 0)) as? SampleTableViewCell
+        cell?.update(sampleMiniature: sampleMiniature)
+    }
+    
+    func updateMelody(atIndex index: Int, melodyMiniature: CombinationMelodyMiniature) {
+        let cell = tableView.cellForRow(at: .init(row: index, section: 1)) as? MelodyTableViewCell
+        cell?.update(melodyMiniature: melodyMiniature)
+    }
+    
+    func updatePlayButtonState(isPlaying: Bool) {
+        playButton.setImage(.init(systemName: isPlaying ? "pause.fill" : "play.fill"), for: .normal)
     }
 }
-
-extension CombinationViewController: CombinationViewModelOutput { }

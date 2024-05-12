@@ -21,6 +21,7 @@ protocol EditMelodyViewModelInput {
     func getInitialMeasures() -> Int
     func getInitialKeyboardSize() -> Int
     func getInitialPedalState() -> Bool
+    func getInitialNotes() -> [NoteViewModel]
 
     func getMaxMeasures() -> Int
     func setMeasures(_ measures: Int)
@@ -69,16 +70,16 @@ final class EditMelodyViewModel {
     // MARK: Private properties
 
     private let metronome: Metronome
-    private let effectsEditor: EffectEditor
+    private let effectsManager: EffectsManager
     private var melodyManager: MelodyManager
     private var noteViewModelMapping = ObjectMapper<NoteViewModel, MutableNote>()
 
     // MARK: Init
 
-    init(metronome: Metronome, melodyManager: MelodyManager, effectsEditor: EffectEditor) {
+    init(metronome: Metronome, melodyManager: MelodyManager, effectsManager: EffectsManager) {
         self.metronome = metronome
         self.melodyManager = melodyManager
-        self.effectsEditor = effectsEditor
+        self.effectsManager = effectsManager
         metronome.addListener(self)
         melodyManager.delegate = self
     }
@@ -130,6 +131,7 @@ extension EditMelodyViewModel: EditMelodyViewModelInput {
     }
     
     func onEffectsButtonTapped() {
+        let effectsEditor = EffectEditor(effectsManager: effectsManager)
         let viewController = effectsEditor.getViewController()
         view?.present(viewController, animated: true)
     }
@@ -175,6 +177,14 @@ extension EditMelodyViewModel: EditMelodyViewModelInput {
     
     func getInitialPedalState() -> Bool {
         melodyManager.isPedalActive
+    }
+
+    func getInitialNotes() -> [NoteViewModel] {
+        melodyManager.notes.map { note in
+            let noteViewModel = NoteViewModel(key: note.keyNumber, start: note.start, end: note.end)
+            noteViewModelMapping[note] = noteViewModel
+            return noteViewModel
+        }
     }
 
     func getMaxMeasures() -> Int {

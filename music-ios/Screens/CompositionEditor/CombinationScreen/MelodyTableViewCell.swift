@@ -20,10 +20,11 @@ final class MelodyTableViewCell: UITableViewCell {
     private let editButton = UIButton()
     private let effectsButton = UIButton()
     private let muteButton = UIButton()
-    
-    private var melody: MutableMelody?
-    private var onEditButtonPressed: (() -> Void)?
-    
+
+    private var onEditButtonTapped: (() -> Void)?
+    private var onMuteButtonTapped: (() -> Void)?
+    private var onEffectsButtonTapped: (() -> Void)?
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -39,15 +40,22 @@ final class MelodyTableViewCell: UITableViewCell {
     }
     
     func setup(
-        melody: MutableMelody,
-        onEditButtonPressed: @escaping () -> Void
+        melodyMiniature: CombinationMelodyMiniature,
+        onEditButtonTapped: @escaping () -> Void,
+        onMuteButtonTapped: @escaping () -> Void,
+        onEffectsButtonTapped: @escaping () -> Void
     ) {
-        self.melody = melody
-        self.onEditButtonPressed = onEditButtonPressed
-        nameLabel.text = melody.name
-        updateMuteButton()
+        self.onEditButtonTapped = onEditButtonTapped
+        self.onMuteButtonTapped = onMuteButtonTapped
+        self.onEffectsButtonTapped = onEffectsButtonTapped
+        update(melodyMiniature: melodyMiniature)
     }
-    
+
+    func update(melodyMiniature: CombinationMelodyMiniature) {
+        nameLabel.text = melodyMiniature.name
+        updateMuteButton(isMuted: melodyMiniature.isMuted)
+    }
+
     private func configure() {
         nameLabel.role(.title)
         
@@ -63,11 +71,9 @@ final class MelodyTableViewCell: UITableViewCell {
         effectsButton.setImage(effectsButtonImage, for: .normal)
         effectsButton.scaleImage(toWidth: Constants.buttonWidth)
         
-        editButton.addTarget(self, action: #selector(onEditButtonPressed(_:)), for: .touchUpInside)
-        effectsButton.addTarget(self, action: #selector(onEffectsButtonPressed(_:)), for: .touchUpInside)
-        muteButton.addTarget(self, action: #selector(onMuteButtonPressed(_:)), for: .touchUpInside)
-        
-        updateMuteButton()
+        editButton.addTarget(self, action: #selector(onEditButtonTapped(_:)), for: .touchUpInside)
+        effectsButton.addTarget(self, action: #selector(onEffectsButtonTapped(_:)), for: .touchUpInside)
+        muteButton.addTarget(self, action: #selector(onMuteButtonTapped(_:)), for: .touchUpInside)
     }
     
     private func layout() {
@@ -101,27 +107,24 @@ final class MelodyTableViewCell: UITableViewCell {
         ])
     }
     
-    private func updateMuteButton() {
-        guard let melody = melody else { return }
-        
-        let muteButtonImage = UIImage(systemName: melody.isMuted ? "speaker.slash" : "speaker")
+    private func updateMuteButton(isMuted: Bool) {
+        let muteButtonImage = UIImage(systemName: isMuted ? "speaker.slash" : "speaker")
         muteButton.setImage(muteButtonImage, for: .normal)
         muteButton.scaleImage(toWidth: Constants.buttonWidth)
     }
     
     @objc
-    private func onMuteButtonPressed(_ sender: UIButton) {
-        melody?.isMuted.toggle()
-        updateMuteButton()
+    private func onMuteButtonTapped(_ sender: UIButton) {
+        onMuteButtonTapped?()
+    }
+
+    @objc
+    private func onEditButtonTapped(_ sender: UIButton) {
+        onEditButtonTapped?()
     }
     
     @objc
-    private func onEditButtonPressed(_ sender: UIButton) {
-        onEditButtonPressed?()
-    }
-    
-    @objc
-    private func onEffectsButtonPressed(_ sender: UIButton) {
-        // TODO
+    private func onEffectsButtonTapped(_ sender: UIButton) {
+        onEffectsButtonTapped?()
     }
 }
