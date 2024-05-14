@@ -1,8 +1,17 @@
 import Foundation
 
-struct Sample {
+struct Sample: Codable {
     let sampleId: Int
     let name: String
-    let isMuted: Bool
     let effects: [EffectType: [EffectPropertyType: Float]]
+}
+
+extension Sample {
+    init(_ mutableSample: MutableSample) {
+        self.init(
+            sampleId: mutableSample.sampleId,
+            name: mutableSample.name,
+            effects: mutableSample.effects.value
+        )
+    }
 }

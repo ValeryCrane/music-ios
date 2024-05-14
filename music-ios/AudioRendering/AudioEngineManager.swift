@@ -12,7 +12,7 @@ final class AudioEngineManager {
         Self.engine.detach(node)
     }
 
-    func addNodeToMainMixer(_ node: AVAudioNode, format: AVAudioFormat = engine.mainMixerNode.inputFormat(forBus: 0)) {
+    func addNodeToMainMixer(_ node: AVAudioNode, format: AVAudioFormat? = nil) {
         Self.engine.connect(node, to: Self.engine.mainMixerNode, format: format)
         do {
             try Self.engine.start()
@@ -24,5 +24,9 @@ final class AudioEngineManager {
 
     func connect(_ node: AVAudioNode, to: AVAudioNode, format: AVAudioFormat? = nil) {
         Self.engine.connect(node, to: to, format: format)
+    }
+
+    func disconnect(_ node: AVAudioNode) {
+        Self.engine.disconnectNodeOutput(node)
     }
 }

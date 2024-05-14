@@ -7,6 +7,10 @@ protocol MelodyManagerDelegate: AnyObject {
     func melodyManager(_ melodyManager: MelodyManager, didDeleteNote note: MutableNote)
 }
 
+protocol MelodyManagerRenderDelegate: AnyObject {
+    func melodyManagerDidChangeComposition(_ melodyManager: MelodyManager)
+}
+
 extension MelodyManager {
     private enum Constants {
         static let loopRenderingQueueSize = 2
@@ -17,6 +21,7 @@ extension MelodyManager {
 
 final class MelodyManager {
     weak var delegate: MelodyManagerDelegate?
+    weak var renderDelegate: MelodyManagerRenderDelegate?
 
     // MARK: Public properties
 
@@ -24,33 +29,9 @@ final class MelodyManager {
         mainNode
     }
 
-    var keyboardSize: Int {
-        keyboard.keys.count
-    }
-    
-    var measures: Int {
-        melody.measures
-    }
-
-    var isPedalActive: Bool {
-        melody.isPedalActive
-    }
-
-    var isMuted: Bool {
-        melody.isMuted
-    }
-
-    var keyboardMiniature: KeyboardMiniature {
-        .init(id: keyboard.id, name: keyboard.name, numberOfKeys: keyboard.keys.count)
-    }
-
-    var notes: [MutableNote] {
-        melody.notes
-    }
-
-    private(set) var metronome: Metronome
-
     // MARK: Private properties
+
+    private var metronome: Metronome
 
     private let audioEngineManager = AudioEngineManager()
     private let keyboardCachingManager = KeyboardCachingManager()
@@ -100,29 +81,43 @@ final class MelodyManager {
     }
 
     func startIfMetronomeIsPlaying() {
-        if metronome.isPlaying, let beat = self.metronome.getBeat(ofHostTime: mach_absolute_time()) {
+        if let beat = self.metronome.getBeat(ofHostTime: mach_absolute_time()) {
             startRenderingAt(beat: beat)
         }
     }
 
+    // MARK: Getters
+
+    func getKeyboardSize() -> Int {
+        keyboard.keys.count
+    }
+
+    func getMeasures() -> Int {
+        melody.measures
+    }
+
+    func getPedalState() -> Bool {
+        melody.isPedalActive
+    }
+
+    func getKeyboardMiniature() -> KeyboardMiniature {
+        .init(id: keyboard.id, name: keyboard.name, numberOfKeys: keyboard.keys.count)
+    }
+
+    func getNotes() -> [MutableNote] {
+        melody.notes
+    }
+
     // MARK: Setters
-
+    
+    /// Устанавливает громкость проигрывания мелодии. Используется для приглушения при переходе в соседние меню.
+    /// - Parameter volume: громкость.
     func setVolume(_ volume: Float) {
-        self.volume = volume
-        if !melody.isMuted {
-            mainNode.outputVolume = volume
-        }
+        mainNode.outputVolume = volume
     }
-
-    func setMuteState(isMuted: Bool) {
-        melody.isMuted = isMuted
-        if isMuted {
-            mainNode.outputVolume = 0
-        } else {
-            mainNode.outputVolume = volume
-        }
-    }
-
+    
+    /// Устанавливает новую клавиатуру для мелодии.
+    /// - Parameter keyboardId: id новой клавиатуры.
     func setKeyboard(keyboardId: Int) async throws {
         guard melody.keyboardId != keyboardId else { return }
 
@@ -132,61 +127,64 @@ final class MelodyManager {
         let previousKeyboardSize = keyboard.keys.count
         keyboard = try await keyboardCachingManager.loadKeyboard(id: keyboardId)
         buffers = try keyboard.keys.map { try .init(from: $0) }
+
         melody.keyboardId = keyboardId
+        renderDelegate?.melodyManagerDidChangeComposition(self)
 
         if previousKeyboardSize != keyboard.keys.count {
             metronome.reset()
-            for i in Array(0 ..< melody.notes.count).reversed() {
-                if let node = nodeMapping[melody.notes[i]] {
-                    audioEngineManager.detachNode(node)
-                    nodeMapping[melody.notes[i]] = nil
-                }
-                delegate?.melodyManager(self, didDeleteNote: melody.notes.removeLast())
-            }
-        } else if metronome.isPlaying, let beat = metronome.getBeat(ofHostTime: mach_absolute_time()) {
+            deleteAllNotes()
+        } else if let beat = metronome.getBeat(ofHostTime: mach_absolute_time()) {
             startRenderingAt(beat: beat)
         }
     }
-
+    
+    /// Устанавливает продолжительность мелодии в тактах.
+    /// - Parameter measures: количество тактов.
     func setMeasures(_ measures: Int) {
         guard melody.measures != measures else { return }
 
         stopRendering()
-        melody.measures = measures
 
-        let totalBeats = Double(melody.measures * .beatsInMeasure)
-        for i in Array(0 ..< melody.notes.count).reversed() {
-            if melody.notes[i].end - .eps > totalBeats, let node = nodeMapping[melody.notes[i]] {
-                audioEngineManager.detachNode(node)
-                nodeMapping[melody.notes[i]] = nil
-                delegate?.melodyManager(self, didDeleteNote: melody.notes.remove(at: i))
-            }
-        }
-        
+        melody.measures = measures
+        renderDelegate?.melodyManagerDidChangeComposition(self)
+        deleteNotesOutsideDefinedMeasures()
+
         if let beat = self.metronome.getBeat(ofHostTime: mach_absolute_time()) {
             startRenderingAt(beat: beat)
         }
     }
-
+    
+    /// Устанавливает состояние нажатия педали на клавиатуре.
+    /// - Parameter isActive: состояние педали.
     func setPedalState(_ isActive: Bool) {
         guard melody.isPedalActive != isActive else { return }
 
         stopRendering()
+
         melody.isPedalActive = isActive
+        renderDelegate?.melodyManagerDidChangeComposition(self)
+
+        if let beat = self.metronome.getBeat(ofHostTime: mach_absolute_time()) {
+            startRenderingAt(beat: beat)
+        }
+    }
+    
+    /// Устанавливает новый метроном для мелодии.
+    /// - Parameter metronome: новый метроном.
+    func setMetronome(_ metronome: Metronome) {
+        stopRendering()
+
+        self.metronome.removeListener(self)
+        self.metronome = metronome
+        self.metronome.addListener(self)
+
         if let beat = self.metronome.getBeat(ofHostTime: mach_absolute_time()) {
             startRenderingAt(beat: beat)
         }
     }
 
-    func setMetronome(_ metronome: Metronome) {
-        stopRendering()
-        self.metronome.removeListener(self)
-        self.metronome = metronome
-        self.metronome.addListener(self)
-        if self.metronome.isPlaying, let beat = self.metronome.getBeat(ofHostTime: mach_absolute_time()) {
-            startRenderingAt(beat: beat)
-        }
-    }
+    // MARK: Utils
 
     func willDeleteNotesSettingMeasures(_ measures: Int) -> Bool {
         let totalBeats = Double(measures * .beatsInMeasure)
@@ -204,6 +202,7 @@ final class MelodyManager {
 
     func addNote(_ note: MutableNote) {
         melody.notes.append(note)
+        renderDelegate?.melodyManagerDidChangeComposition(self)
         createNodeForNote(note)
     }
     
@@ -215,13 +214,35 @@ final class MelodyManager {
 
         nodeMapping[note] = nil
         melody.notes.removeAll(where: { $0 === note })
+        renderDelegate?.melodyManagerDidChangeComposition(self)
+    }
+
+    private func deleteAllNotes() {
+        for i in Array(0 ..< melody.notes.count).reversed() {
+            if let node = nodeMapping[melody.notes[i]] {
+                audioEngineManager.detachNode(node)
+                nodeMapping[melody.notes[i]] = nil
+            }
+            delegate?.melodyManager(self, didDeleteNote: melody.notes.removeLast())
+        }
+    }
+
+    private func deleteNotesOutsideDefinedMeasures() {
+        let totalBeats = Double(melody.measures * .beatsInMeasure)
+        for i in Array(0 ..< melody.notes.count).reversed() {
+            if melody.notes[i].end - .eps > totalBeats, let node = nodeMapping[melody.notes[i]] {
+                audioEngineManager.detachNode(node)
+                nodeMapping[melody.notes[i]] = nil
+                delegate?.melodyManager(self, didDeleteNote: melody.notes.remove(at: i))
+            }
+        }
     }
 
     // MARK: Rendering
 
     private func startRenderingAt(beat: Double) {
         isRendering = true
-        let startLoop = beat / Double(measures * .beatsInMeasure)
+        let startLoop = beat / Double(melody.measures * .beatsInMeasure)
         lastRenderedLoop = Int(startLoop) - 1
         melody.notes.forEach { nodeMapping[$0]?.play() }
         loopRenderingCycle()
@@ -236,7 +257,7 @@ final class MelodyManager {
     private func renderMissedLoops(ofNote note: MutableNote) {
         guard isRendering, let currentBeat = metronome.getBeat(ofHostTime: mach_absolute_time()) else { return }
 
-        let currentLoop = Int(currentBeat / Double(measures * .beatsInMeasure))
+        let currentLoop = Int(currentBeat / Double(melody.measures * .beatsInMeasure))
         if let node = nodeMapping[note], currentLoop <= lastRenderedLoop {
             for loop in currentLoop ... lastRenderedLoop {
                 render(note: note, atLoop: loop)
@@ -247,7 +268,7 @@ final class MelodyManager {
     }
 
     private func render(note: MutableNote, atLoop loop: Int) {
-        let noteBeat = Double(measures * loop * .beatsInMeasure) + note.start
+        let noteBeat = Double(melody.measures * loop * .beatsInMeasure) + note.start
         if let node = nodeMapping[note], let scheduleHostTime = metronome.getHostTime(ofBeat: noteBeat) {
             if !melody.isPedalActive {
                 let noteDuration = metronome.getDuration(ofBeats: note.end - note.start)
@@ -281,7 +302,7 @@ final class MelodyManager {
     private func loopRenderingCycle() {
         guard isRendering, let currentBeat = metronome.getBeat(ofHostTime: mach_absolute_time()) else { return }
 
-        let currentLoop = Int(currentBeat / Double(measures * .beatsInMeasure))
+        let currentLoop = Int(currentBeat / Double(melody.measures * .beatsInMeasure))
         let loopToRender = currentLoop + Constants.loopRenderingQueueSize
         if loopToRender > lastRenderedLoop {
             for loop in (lastRenderedLoop + 1) ... loopToRender {
@@ -290,7 +311,7 @@ final class MelodyManager {
         }
 
         if let currentBeat = metronome.getBeat(ofHostTime: mach_absolute_time()) {
-            let nextLoopStartBeat = measures * .beatsInMeasure * (currentLoop + 1)
+            let nextLoopStartBeat = melody.measures * .beatsInMeasure * (currentLoop + 1)
             let dispatchDelay = metronome.getDuration(ofBeats: Double(nextLoopStartBeat) - currentBeat)
 
             let timer = Timer(timeInterval: dispatchDelay, repeats: false) { [weak self] _ in
@@ -345,6 +366,9 @@ extension MelodyManager: MetronomeListener {
     }
     
     func metronome(_ metronome: Metronome, didUpdateBPM bpm: Double) {
-        // TODO.
+        stopRendering()
+        if let currentBeat = metronome.getBeat(ofHostTime: mach_absolute_time()) {
+            startRenderingAt(beat: currentBeat)
+        }
     }
 }

@@ -6,20 +6,27 @@ extension CompositionViewController {
         static let combinationSpacing: CGFloat = 16
         static let horizontalOffsets: CGFloat = 16
         static let verticalOffsets: CGFloat = 16
+
+        static let combinationsNotFoundLabelTopOffset: CGFloat = 32
     }
 }
 
 final class CompositionViewController: UIViewController {
     
     private let viewModel: CompositionViewModelInput
-    
-    private var isFavourite: Bool
-    private var combinations: [MutableCombination]
-    
+
+    private let combinationsNotFoundLabel = UILabel()
+
     private lazy var combinationsView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
         flowLayout.minimumLineSpacing = Constants.combinationSpacing
+        flowLayout.sectionInset = .init(
+            top: Constants.verticalOffsets,
+            left: Constants.horizontalOffsets,
+            bottom: Constants.verticalOffsets,
+            right: Constants.horizontalOffsets
+        )
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.alwaysBounceVertical = true
         collectionView.register(
@@ -28,34 +35,40 @@ final class CompositionViewController: UIViewController {
         )
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.clipsToBounds = false
         return collectionView
     }()
-    
+
+    private lazy var infoButtonItem: UIBarButtonItem = .init(image: .init(systemName: "ellipsis.circle"), menu: infoMenu)
+    private lazy var createCombinationButtonItem: UIBarButtonItem = .init(
+        image: .init(systemName: "plus.square"),
+        style: .plain,
+        target: self,
+        action: #selector(onCreateCombinationButtonTapped(_:))
+    )
+
     private var infoMenu: UIMenu {
         let menuItems: [UIAction] = [
             .init(title: "Параметры", image: .init(systemName: "doc"), handler: { [weak self] _ in
-                self?.viewModel.onCompositionsParametersButtonPressed()
+                self?.viewModel.compositionParametersButtonTapped()
             }),
             .init(
-                title: isFavourite ? "Убрать из избранного" : "Добавить в избранное",
+                title: "Добавить в избранное",
                 image: .init(systemName: "heart"),
                 handler: { [weak self] _ in
-                    self?.isFavourite.toggle()
-                    self?.viewModel.onFavouriteButtonPressed()
+                    self?.viewModel.favouriteButtonTapped()
                 }
             ),
             .init(title: "Сделать форк", image: .init(systemName: "arrow.triangle.branch"), handler: { [weak self] _ in
-                // TODO
+                self?.viewModel.forkButtonTapped()
             })
         ]
         
         return .init(children: menuItems)
     }
-    
+
     init(viewModel: CompositionViewModelInput) {
         self.viewModel = viewModel
-        self.combinations = viewModel.getCombinations()
-        self.isFavourite = viewModel.getIsFavourite()
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -69,51 +82,63 @@ final class CompositionViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        view.addSubview(combinationsView)
-        combinationsView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            combinationsView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.verticalOffsets),
-            combinationsView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.horizontalOffsets),
-            combinationsView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.horizontalOffsets),
-            combinationsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.verticalOffsets)
-        ])
         
-        configureNavigationItem()
-        configureRecordToolbar()
+        layout()
+        configure()
+        updateCombinations()
     }
     
-    private func configureNavigationItem() {
-        navigationItem.titleView = BPMStepper(value: 120, minimumValue: 30, maximumValue: 240)
+    private func configure() {
+        let bpmStepper = BPMStepper(value: viewModel.getInitialBPM(), minimumValue: 30, maximumValue: 240)
+        bpmStepper.addTarget(self, action: #selector(onBPMStepperValueChanged), for: .valueChanged)
+        navigationItem.titleView = bpmStepper
         navigationItem.titleView?.isUserInteractionEnabled = true
         
-        navigationItem.rightBarButtonItem = .init(image: .init(systemName: "ellipsis.circle"), menu: infoMenu)
+        navigationItem.rightBarButtonItems = [infoButtonItem, createCombinationButtonItem]
         navigationItem.leftBarButtonItem = .init(
             image: .init(systemName: "xmark"),
             style: .plain,
             target: self,
             action: #selector(onCloseButtonPressed(_:))
         )
+
+        combinationsNotFoundLabel.text = "Комбинации отсутствуют"
+        combinationsNotFoundLabel.role(.secondary)
+        combinationsNotFoundLabel.textColor = .secondaryLabel
     }
-    
-    private func configureRecordToolbar() {
-        guard let navigationController = navigationController else { return }
-        
-        let recordToolbar = RecordToolbarView()
-        recordToolbar.translatesAutoresizingMaskIntoConstraints = false
-        navigationController.view.addSubview(recordToolbar)
-        navigationController.view.bringSubviewToFront(recordToolbar)
-        
+
+    private func layout() {
+        view.addSubview(combinationsView)
+        view.addSubview(combinationsNotFoundLabel)
+        combinationsView.translatesAutoresizingMaskIntoConstraints = false
+        combinationsNotFoundLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            recordToolbar.leadingAnchor.constraint(equalTo: navigationController.view.leadingAnchor),
-            recordToolbar.trailingAnchor.constraint(equalTo: navigationController.view.trailingAnchor),
-            recordToolbar.bottomAnchor.constraint(equalTo: navigationController.view.bottomAnchor)
+            combinationsView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            combinationsView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            combinationsView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            combinationsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+
+            combinationsNotFoundLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            combinationsNotFoundLabel.topAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.topAnchor,
+                constant: Constants.combinationsNotFoundLabelTopOffset
+            )
         ])
-        
     }
-    
+
+    @objc
+    private func onCreateCombinationButtonTapped(_ sender: UIBarButtonItem) {
+        viewModel.createCombinationButtonTapped()
+    }
+
     @objc
     private func onCloseButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
+    }
+
+    @objc
+    private func onBPMStepperValueChanged(_ sender: BPMStepper) {
+        viewModel.setBPM(sender.value)
     }
 }
 
@@ -124,18 +149,18 @@ extension CompositionViewController: UICollectionViewDelegateFlowLayout {
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
         let viewWidth = combinationsView.bounds.width
-        let itemSize = (viewWidth - Constants.combinationSpacing) / 2
+        let itemSize = (viewWidth - Constants.combinationSpacing - 2 * Constants.horizontalOffsets) / 2
         return .init(width: itemSize, height: itemSize)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.onOpenCombination(combinations[indexPath.row])
+        viewModel.combinationTapped(atIndex: indexPath.row)
     }
 }
 
 extension CompositionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        combinations.count
+        viewModel.getCombinationNames().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -144,9 +169,29 @@ extension CompositionViewController: UICollectionViewDataSource {
             for: indexPath
         ) as? CombinationCollectionViewCell
         
-        cell?.setup(combination: combinations[indexPath.row])
+        cell?.setup(
+            combinationName: viewModel.getCombinationNames()[indexPath.row],
+            isPlaying: viewModel.getCombinationsIsPlaying()[indexPath.row],
+            onPlayButtonTapped: { [weak self] in
+                self?.viewModel.combinationPlayButtonTapped(atIndex: indexPath.row)
+            }, onEffectsButtonTapped: { [weak self] in
+                self?.viewModel.combinationEffectsButtonTapped(atIndex: indexPath.row)
+            }
+        )
+
         return cell ?? UICollectionViewCell()
     }
 }
 
-extension CompositionViewController: CompositionViewModelOutput { }
+extension CompositionViewController: CompositionViewModelOutput { 
+    func updateCombinations() {
+        if viewModel.getCombinationNames().count == 0 {
+            combinationsNotFoundLabel.isHidden = false
+            combinationsView.isHidden = true
+        } else {
+            combinationsView.reloadData()
+            combinationsNotFoundLabel.isHidden = true
+            combinationsView.isHidden = false
+        }
+    }
+}

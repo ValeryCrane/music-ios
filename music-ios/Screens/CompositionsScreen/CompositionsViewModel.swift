@@ -33,9 +33,22 @@ final class CompositionsViewModel: ObservableObject {
     func onCreateComposition(name: String) {
         Task {
             viewController?.startLoader()
-            try await compositionManager.createComposition(name: name)
+            let composition = try await compositionManager.createComposition(name: name)
+            let compositionScreen = try await CompositionScreen(composition: composition)
             viewController?.stopLoader()
+
+            viewController?.present(compositionScreen.getViewController(), animated: true)
         }
     }
 
+    func onOpenComposition(id: Int) {
+        Task {
+            viewController?.startLoader()
+            let composition = try await compositionManager.getComposition(id: id)
+            let compositionScreen = try await CompositionScreen(composition: composition)
+            viewController?.stopLoader()
+
+            viewController?.present(compositionScreen.getViewController(), animated: true)
+        }
+    }
 }

@@ -1,20 +1,12 @@
 import Foundation
 import UIKit
 
-// MARK: - EditMelodyViewModelDelegate
-
-protocol EditMelodyViewModelDelegate: AnyObject {
-    func editMelodyViewModelStartedEditing(_ editMelodyViewModel: EditMelodyViewModel)
-    func editMelodyViewModelEndedEditing(_ editMelodyViewModel: EditMelodyViewModel)
-}
-
 // MARK: - EditMelodyViewModelInput
 
 protocol EditMelodyViewModelInput {
     func onPlayButtonTapped()
     func onEffectsButtonTapped()
     func onChooseKeyboardButtonTapped()
-    func onCloseButtonTapped()
     func onPedalButtonTapped()
     func onDoneButtonTapped()
 
@@ -30,9 +22,6 @@ protocol EditMelodyViewModelInput {
     func deleteNote(noteViewModel: NoteViewModel)
 
     func getPlayIndicatorPosition() -> Double
-
-    func viewWillAppear()
-    func viewWillDisappear()
 }
 
 // MARK: - EditMelodyViewModelOutput
@@ -65,21 +54,27 @@ extension EditMelodyViewModel {
 
 final class EditMelodyViewModel {
     weak var view: EditMelodyViewModelOutput?
-    weak var delegate: EditMelodyViewModelDelegate?
 
     // MARK: Private properties
 
     private let metronome: Metronome
     private let effectsManager: EffectsManager
-    private var melodyManager: MelodyManager
+    private let melodyManager: MelodyManager
+    private let onClose: () -> Void
     private var noteViewModelMapping = ObjectMapper<NoteViewModel, MutableNote>()
 
     // MARK: Init
 
-    init(metronome: Metronome, melodyManager: MelodyManager, effectsManager: EffectsManager) {
+    init(
+        metronome: Metronome,
+        melodyManager: MelodyManager,
+        effectsManager: EffectsManager,
+        onClose: @escaping () -> Void
+    ) {
         self.metronome = metronome
         self.melodyManager = melodyManager
         self.effectsManager = effectsManager
+        self.onClose = onClose
         metronome.addListener(self)
         melodyManager.delegate = self
     }
@@ -95,7 +90,7 @@ final class EditMelodyViewModel {
                 keyboardId: keyboardMiniature.id
             )
             await MainActor.run {
-                view?.updateKeyboardSize(melodyManager.keyboardSize)
+                view?.updateKeyboardSize(melodyManager.getKeyboardSize())
                 view?.loadingCompleted()
             }
         }
@@ -147,40 +142,36 @@ extension EditMelodyViewModel: EditMelodyViewModelInput {
         }
 
         let chooseKeyboard = ChooseKeyboard(
-            currentKeyboard: melodyManager.keyboardMiniature,
+            currentKeyboard: melodyManager.getKeyboardMiniature(),
             completion: chooseKeyboardCompletion
         )
 
         view?.present(chooseKeyboard.getViewController(), animated: true)
     }
     
-    func onCloseButtonTapped() {
-        view?.dismiss(animated: true)
-    }
-    
     func onPedalButtonTapped() {
-        melodyManager.setPedalState(!melodyManager.isPedalActive)
-        view?.updatePedalButtonState(isActive: melodyManager.isPedalActive)
+        melodyManager.setPedalState(!melodyManager.getPedalState())
+        view?.updatePedalButtonState(isActive: melodyManager.getPedalState())
     }
 
     func onDoneButtonTapped() {
-        view?.dismiss(animated: true)
+        view?.dismiss(animated: true, completion: onClose)
     }
 
     func getInitialMeasures() -> Int {
-        melodyManager.measures
+        melodyManager.getMeasures()
     }
     
     func getInitialKeyboardSize() -> Int {
-        melodyManager.keyboardSize
+        melodyManager.getKeyboardSize()
     }
     
     func getInitialPedalState() -> Bool {
-        melodyManager.isPedalActive
+        melodyManager.getPedalState()
     }
 
     func getInitialNotes() -> [NoteViewModel] {
-        melodyManager.notes.map { note in
+        melodyManager.getNotes().map { note in
             let noteViewModel = NoteViewModel(key: note.keyNumber, start: note.start, end: note.end)
             noteViewModelMapping[note] = noteViewModel
             return noteViewModel
@@ -216,20 +207,12 @@ extension EditMelodyViewModel: EditMelodyViewModelInput {
     
     func getPlayIndicatorPosition() -> Double {
         if let currentBeat = metronome.getBeat(ofHostTime: mach_absolute_time()) {
-            let beats = melodyManager.measures * .beatsInMeasure
+            let beats = melodyManager.getMeasures() * .beatsInMeasure
             let remainderBeat = currentBeat - floor(currentBeat / Double(beats)) * Double(beats)
             return remainderBeat / Double(beats)
         } else {
             return 0
         }
-    }
-
-    func viewWillAppear() {
-        delegate?.editMelodyViewModelStartedEditing(self)
-    }
-
-    func viewWillDisappear() {
-        delegate?.editMelodyViewModelEndedEditing(self)
     }
 }
 

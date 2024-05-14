@@ -2,7 +2,13 @@ import Foundation
 import UIKit
 import AVFoundation
 
+protocol EffectsManagerRenderDelegate: AnyObject {
+    func effectsManagerDidUpdateComposition(_ effectsManager: EffectsManager)
+}
+
 final class EffectsManager {
+    weak var renderDelegate: EffectsManagerRenderDelegate?
+
     var inputNode: AVAudioNode {
         delayAudioUnit
     }
@@ -11,7 +17,7 @@ final class EffectsManager {
         mixerNode
     }
 
-    let effects: MutableEffects
+    private let effects: MutableEffects
 
     private let audioEngineManager = AudioEngineManager()
     private let delayAudioUnit = AVAudioUnitDelay()
@@ -35,6 +41,7 @@ final class EffectsManager {
 
     func update(effectPropertyType: EffectPropertyType, value: Float) {
         apply(value: value, to: effectPropertyType)
+        renderDelegate?.effectsManagerDidUpdateComposition(self)
     }
 
     func getValueOfPropertyType(_ effectPropertyType: EffectPropertyType) -> Float {
@@ -71,24 +78,31 @@ final class EffectsManager {
         switch effectPropertyType {
         case .distortionWetDryMix:
             distortionAudioUnit.wetDryMix = value
+            effects.value[.distortion] = effects.value[.distortion] ?? [:]
             effects.value[.distortion]?[.delayWetDryMix] = value
         case .distortionPreGain:
             distortionAudioUnit.preGain = value
+            effects.value[.distortion] = effects.value[.distortion] ?? [:]
             effects.value[.distortion]?[.distortionPreGain] = value
         case .delayTime:
             delayAudioUnit.delayTime = TimeInterval(value)
+            effects.value[.delay] = effects.value[.delay] ?? [:]
             effects.value[.delay]?[.delayTime] = value
         case .delayFeedback:
             delayAudioUnit.feedback = value
+            effects.value[.delay] = effects.value[.delay] ?? [:]
             effects.value[.delay]?[.delayFeedback] = value
         case .delayWetDryMix:
             delayAudioUnit.wetDryMix = value
+            effects.value[.delay] = effects.value[.delay] ?? [:]
             effects.value[.delay]?[.delayWetDryMix] = value
         case .reverbWetDryMix:
             reverbAudioUnit.wetDryMix = value
+            effects.value[.reverb] = effects.value[.reverb] ?? [:]
             effects.value[.reverb]?[.reverbWetDryMix] = value
         case .volumeValue:
             mixerNode.outputVolume = value
+            effects.value[.volume] = effects.value[.volume] ?? [:]
             effects.value[.volume]?[.volumeValue] = value
         }
     }

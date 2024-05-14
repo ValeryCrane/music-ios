@@ -12,7 +12,8 @@ final class CompositionsViewController: UIHostingController<CompositionsView> {
         self.viewModel = viewModel
         
         super.init(rootView: rootView)
-        
+
+        viewModel.viewController = self
         configureNavigationItem()
     }
     

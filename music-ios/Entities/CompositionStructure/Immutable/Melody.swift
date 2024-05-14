@@ -1,6 +1,6 @@
 import Foundation
 
-struct Melody {
+struct Melody: Codable {
     let name: String
     let keyboardId: Int
     let isPedalActive: Bool
@@ -58,3 +58,15 @@ extension Melody {
     }
 }
 
+extension Melody {
+    init(_ mutableMelody: MutableMelody) {
+        self.init(
+            name: mutableMelody.name,
+            keyboardId: mutableMelody.keyboardId,
+            isPedalActive: mutableMelody.isPedalActive,
+            effects: mutableMelody.effects.value,
+            measures: mutableMelody.measures,
+            notes: mutableMelody.notes.map { .init($0) }
+        )
+    }
+}

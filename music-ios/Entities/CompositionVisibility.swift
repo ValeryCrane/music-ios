@@ -1,6 +1,6 @@
 import Foundation
 
-enum CompositionVisibility: Codable {
+enum CompositionVisibility: String, Codable {
     case `private`
     case `public`
 }

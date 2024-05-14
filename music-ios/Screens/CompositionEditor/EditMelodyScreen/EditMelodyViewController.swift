@@ -132,18 +132,6 @@ final class EditMelodyViewController: UIViewController {
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        viewModel.viewWillAppear()
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        viewModel.viewWillDisappear()
-    }
-
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -221,11 +209,6 @@ final class EditMelodyViewController: UIViewController {
     @objc 
     private func onPlayButtonTapped(_ sender: UIButton) {
         viewModel.onPlayButtonTapped()
-    }
-    
-    @objc
-    private func onCloseButtonTapped(_ sender: UIBarButtonItem) {
-        viewModel.onCloseButtonTapped()
     }
 
     @objc

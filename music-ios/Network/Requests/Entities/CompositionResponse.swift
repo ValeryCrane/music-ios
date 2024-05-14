@@ -12,7 +12,7 @@ struct CompositionResponse: Decodable {
     private enum CodingKeys: String, CodingKey {
         case id
         case name
-        case isFavourite = "isFavourite"
+        case isFavourite = "is_favourite"
         case visibility
         case creator
         case editors

@@ -27,8 +27,7 @@ protocol CombinationViewModelOutput: UIViewController {
 final class CombinationViewModel {
     
     weak var view: CombinationViewModelOutput?
-    
-    private let metronome: Metronome
+
     private let combinationManager: CombinationManager
     private let effectsManager: EffectsManager
 
@@ -36,16 +35,20 @@ final class CombinationViewModel {
     private var chooseMelody: ChooseMelody?
 
     init(combinationManager: CombinationManager, effectsManager: EffectsManager) {
-        self.metronome = combinationManager.metronome
         self.combinationManager = combinationManager
         self.effectsManager = effectsManager
-        metronome.addListener(self)
     }
 
     private func showMelodyEditor(atIndex index: Int) {
+        let internalMetronome = Metronome(bpm: combinationManager.getBPM())
+        combinationManager.prepareMelodyForEditing(atIndex: index, withMetronome: internalMetronome)
         let melodyEditor = MelodyEditor(
+            internalMetronome: internalMetronome,
             melodyManager: combinationManager.melodyManagers[index],
-            effectsManager: combinationManager.melodyEffectsManagers[index]
+            effectsManager: combinationManager.melodyEffectsManagers[index],
+            onClose: { [weak self] in
+                self?.combinationManager.restoreMelodyFromEditing(atIndex: index)
+            }
         )
 
         self.melodyEditor = melodyEditor
@@ -57,13 +60,13 @@ final class CombinationViewModel {
 
 extension CombinationViewModel: CombinationViewModelInput {
     func getInitialPlayButtonState() -> Bool {
-        metronome.isPlaying
+        !combinationManager.getMuteState()
     }
     
     func getMelodies() -> [CombinationMelodyMiniature] {
-        combinationManager.combination.melodies.map { melody in
-            .init(name: melody.name, isMuted: melody.isMuted)
-        }
+        let melodyNames = combinationManager.getMelodyNames()
+        let melodyMuteStates = combinationManager.getMelodyMuteStates()
+        return (0 ..< melodyNames.count).map { .init(name: melodyNames[$0], isMuted: melodyMuteStates[$0]) }
     }
     
     func getSamples() -> [CombinationSampleMiniature] {
@@ -75,10 +78,18 @@ extension CombinationViewModel: CombinationViewModelInput {
     }
 
     func muteButtonTapped(atMelodyIndex index: Int) {
-        let melodyManager = combinationManager.melodyManagers[index]
-        melodyManager.setMuteState(isMuted: !melodyManager.isMuted)
-        let melody = combinationManager.combination.melodies[index]
-        view?.updateMelody(atIndex: index, melodyMiniature: .init(name: melody.name, isMuted: melody.isMuted))
+        combinationManager.setMuteState(
+            forMelodyAtIndex: index,
+            isMuted: !combinationManager.getMelodyMuteStates()[index]
+        )
+        
+        view?.updateMelody(
+            atIndex: index,
+            melodyMiniature: .init(
+                name: combinationManager.getMelodyNames()[index],
+                isMuted: combinationManager.getMelodyMuteStates()[index]
+            )
+        )
     }
 
     func effectsButtonTapped(atSampleIndex index: Int) {
@@ -96,11 +107,8 @@ extension CombinationViewModel: CombinationViewModelInput {
     }
     
     func playButtonTapped() {
-        if metronome.isPlaying {
-            metronome.reset()
-        } else {
-            metronome.play()
-        }
+        combinationManager.setMuteState(isMuted: !combinationManager.getMuteState())
+        view?.updatePlayButtonState(isPlaying: !combinationManager.getMuteState())
     }
     
     func effectsButtonTapped() {
@@ -112,7 +120,7 @@ extension CombinationViewModel: CombinationViewModelInput {
     func addMelodyButtonTapped() {
         var melodyWasUserCreated = false
         let chooseMelody = ChooseMelody(
-            metronomeBPM: metronome.bpm,
+            metronomeBPM: combinationManager.getBPM(),
             melodyCreationHandler: { [weak self] chooseMelodyResult in
                 do {
                     melodyWasUserCreated = chooseMelodyResult.userCreated
@@ -125,10 +133,13 @@ extension CombinationViewModel: CombinationViewModelInput {
                 if melodyWasUserCreated, let melodyCount = self?.combinationManager.melodyManagers.count {
                     self?.showMelodyEditor(atIndex: melodyCount - 1)
                 }
+
+                self?.combinationManager.setOverallVolume(1)
             }
         )
 
         self.chooseMelody = chooseMelody
+        combinationManager.setOverallVolume(0.25)
         view?.present(chooseMelody.getViewController(), animated: true)
     }
 
@@ -144,19 +155,5 @@ extension CombinationViewModel: CombinationViewModelInput {
         let viewController = ChooseSampleViewController(viewModel: viewModel)
         viewModel.view = viewController
         view?.present(UINavigationController(rootViewController: viewController), animated: true)
-    }
-}
-
-extension CombinationViewModel: MetronomeListener {
-    func metronome(_ metronome: Metronome, didStartPlayingAtBeat beat: Double) {
-        view?.updatePlayButtonState(isPlaying: true)
-    }
-    
-    func metronome(_ metronome: Metronome, didStopPlayingAtBeat beat: Double) {
-        view?.updatePlayButtonState(isPlaying: false)
-    }
-    
-    func metronome(_ metronome: Metronome, didUpdateBPM bpm: Double) {
-        // TODO.
     }
 }

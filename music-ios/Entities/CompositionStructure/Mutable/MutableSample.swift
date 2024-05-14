@@ -9,7 +9,7 @@ class MutableSample {
     init(_ sample: Sample) {
         self.sampleId = sample.sampleId
         self.name = sample.name
-        self.isMuted = sample.isMuted
+        self.isMuted = false
         self.effects = .init(effects: sample.effects)
     }
 }

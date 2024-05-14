@@ -11,3 +11,13 @@ struct Note: Codable {
         case end
     }
 }
+
+extension Note {
+    init(_ mutableNote: MutableNote) {
+        self.init(
+            keyNumber: mutableNote.keyNumber,
+            start: mutableNote.start,
+            end: mutableNote.end
+        )
+    }
+}

@@ -28,6 +28,9 @@ struct CompositionsView: View {
                                 onPlayButtonTap: { },
                                 isFavourite: .constant(composition.isFavourite)
                             )
+                            .onTapGesture {
+                                viewModel.onOpenComposition(id: composition.id)
+                            }
                         }
                     })
                     .padding(16)

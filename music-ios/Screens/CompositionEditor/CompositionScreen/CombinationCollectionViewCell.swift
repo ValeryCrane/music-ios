@@ -14,17 +14,15 @@ final class CombinationCollectionViewCell: UICollectionViewCell {
     private let nameLabel = UILabel()
     private let effectsButton = UIButton()
     private let playButton = UIButton()
-    
-    private var combination: MutableCombination? {
-        didSet {
-            nameLabel.text = combination?.name
-        }
-    }
-    
+
+    private var onPlayButtonTapped: (() -> Void)?
+    private var onEffectsButtonTapped: (() -> Void)?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         configure()
+        layout()
     }
     
     @available(*, unavailable)
@@ -32,60 +30,60 @@ final class CombinationCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(combination: MutableCombination) {
-        self.combination = combination
+    func setup(
+        combinationName: String,
+        isPlaying: Bool,
+        onPlayButtonTapped: @escaping () -> Void,
+        onEffectsButtonTapped: @escaping () -> Void
+    ) {
+        nameLabel.text = combinationName
+        playButton.setImage(.init(systemName: isPlaying ? "pause.fill" : "play.fill"), for: .normal)
+        playButton.scaleImage(toHeight: Constants.buttonHeight)
+
+        self.onPlayButtonTapped = onPlayButtonTapped
+        self.onEffectsButtonTapped = onEffectsButtonTapped
     }
     
     private func configure() {
         contentView.backgroundColor = .imp.lightGray
         contentView.layer.cornerRadius = .defaultCornerRadius
-        
-        configureNameLabel()
-        configureButtons()
-    }
-    
-    private func configureNameLabel() {
+
         nameLabel.role(.title)
         nameLabel.numberOfLines = 2
-        
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(nameLabel)
+
+        effectsButton.setImage(.init(systemName: "slider.horizontal.3"), for: .normal)
+        effectsButton.scaleImage(toHeight: Constants.buttonHeight)
+
+        playButton.addTarget(self, action: #selector(onPlayButtonTapped(_:)), for: .touchUpInside)
+        effectsButton.addTarget(self, action: #selector(onEffectsButtonTapped(_:)), for: .touchUpInside)
+    }
+
+    private func layout() {
+        [nameLabel, effectsButton, playButton].forEach { view in
+            view.translatesAutoresizingMaskIntoConstraints = false
+            contentView.addSubview(view)
+        }
+
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.paddings),
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.paddings),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.paddings)
-        ])
-    }
-    
-    private func configureButtons() {
-        let effectsImage = UIImage(systemName: "slider.horizontal.3")
-        let effectsButtonWidth = (effectsImage?.size.width ?? 0) * Constants.buttonHeight / (effectsImage?.size.height ?? 0)
-        effectsButton.setImage(effectsImage, for: .normal)
-        effectsButton.tintColor = .imp.primary
-        effectsButton.contentVerticalAlignment = .fill
-        effectsButton.contentHorizontalAlignment = .fill
-        
-        let playImage = UIImage(systemName: "play.fill")
-        let playButtonWidth = (playImage?.size.width ?? 0) * Constants.buttonHeight / (playImage?.size.height ?? 0)
-        playButton.setImage(playImage, for: .normal)
-        playButton.tintColor = .imp.primary
-        playButton.contentVerticalAlignment = .fill
-        playButton.contentHorizontalAlignment = .fill
-        
-        effectsButton.translatesAutoresizingMaskIntoConstraints = false
-        playButton.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(effectsButton)
-        contentView.addSubview(playButton)
-        NSLayoutConstraint.activate([
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.paddings),
+
             effectsButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.paddings),
             effectsButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.paddings),
-            effectsButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
-            effectsButton.widthAnchor.constraint(equalToConstant: effectsButtonWidth),
-            
+
             playButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.paddings),
-            playButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.paddings),
-            playButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
-            playButton.widthAnchor.constraint(equalToConstant: playButtonWidth)
+            playButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.paddings)
         ])
+    }
+
+    @objc
+    private func onPlayButtonTapped(_ sender: UIButton) {
+        onPlayButtonTapped?()
+    }
+
+    @objc
+    private func onEffectsButtonTapped(_ sender: UIButton) {
+        onEffectsButtonTapped?()
     }
 }
