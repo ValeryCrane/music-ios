@@ -3,13 +3,18 @@ import UIKit
 
 final class CompositionEditor {
     private let compositionManager: CompositionRenderManager
+    private let compositionParametersScreen: CompositionParametersScreen
 
-    init(compositionManager: CompositionRenderManager) {
+    init(compositionManager: CompositionRenderManager, compositionParametersScreen: CompositionParametersScreen) {
         self.compositionManager = compositionManager
+        self.compositionParametersScreen = compositionParametersScreen
     }
 
     func getViewController() -> UIViewController {
-        let viewModel = CompositionViewModel(compositionManager: compositionManager)
+        let viewModel = CompositionViewModel(
+            compositionManager: compositionManager,
+            compositionParametersScreen: compositionParametersScreen
+        )
         let viewController = CompositionViewController(viewModel: viewModel)
         viewModel.view = viewController
 

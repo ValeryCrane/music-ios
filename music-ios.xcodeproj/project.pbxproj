@@ -90,6 +90,23 @@
 		3834820F2BCE62D000221CA6 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834820E2BCE62D000221CA6 /* AuthViewController.swift */; };
 		383482122BCE63BF00221CA6 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383482112BCE63BF00221CA6 /* LoadingViewController.swift */; };
 		383482142BCE63E100221CA6 /* UIViewController+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383482132BCE63E100221CA6 /* UIViewController+Loader.swift */; };
+		384AF0EE2BF2F112007EC055 /* CompositionParametersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF0ED2BF2F112007EC055 /* CompositionParametersViewController.swift */; };
+		384AF0F02BF2F120007EC055 /* CompositionParametersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF0EF2BF2F120007EC055 /* CompositionParametersViewModel.swift */; };
+		384AF0F22BF2F13D007EC055 /* CompositionParametersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF0F12BF2F13D007EC055 /* CompositionParametersManager.swift */; };
+		384AF0F42BF2F40F007EC055 /* CompositionVisibilityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF0F32BF2F40F007EC055 /* CompositionVisibilityTableViewCell.swift */; };
+		384AF0F62BF2FA81007EC055 /* CompositionUserMiniatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF0F52BF2FA81007EC055 /* CompositionUserMiniatureTableViewCell.swift */; };
+		384AF7B22BF39CE4007EC055 /* CompositionNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7B12BF39CE4007EC055 /* CompositionNameTableViewCell.swift */; };
+		384AF7B42BF3A42B007EC055 /* WrapperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7B32BF3A42B007EC055 /* WrapperTableViewCell.swift */; };
+		384AF7B62BF3BB09007EC055 /* CompositionDeleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7B52BF3BB09007EC055 /* CompositionDeleteTableViewCell.swift */; };
+		384AF7BA2BF3D60C007EC055 /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7B92BF3D60C007EC055 /* UserSearchViewController.swift */; };
+		384AF7BC2BF3D616007EC055 /* UserSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7BB2BF3D616007EC055 /* UserSearchViewModel.swift */; };
+		384AF7BE2BF3D67D007EC055 /* UserSearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7BD2BF3D67D007EC055 /* UserSearchScreen.swift */; };
+		384AF7C02BF3D688007EC055 /* UserSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7BF2BF3D688007EC055 /* UserSearchTableViewCell.swift */; };
+		384AF7C22BF42703007EC055 /* CompositionParametersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7C12BF42703007EC055 /* CompositionParametersScreen.swift */; };
+		384AF7C42BF42AFE007EC055 /* CompositionVisibilityEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7C32BF42AFE007EC055 /* CompositionVisibilityEdit.swift */; };
+		384AF7C62BF42B38007EC055 /* CompositionAddEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7C52BF42B38007EC055 /* CompositionAddEditor.swift */; };
+		384AF7C82BF42B45007EC055 /* CompositionRemoveEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7C72BF42B45007EC055 /* CompositionRemoveEditor.swift */; };
+		384AF7CC2BF42B5E007EC055 /* CompositionDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7CB2BF42B5E007EC055 /* CompositionDelete.swift */; };
 		385F9A552BD1B44E0089BD28 /* CompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A542BD1B44E0089BD28 /* CompositionViewController.swift */; };
 		385F9A572BD1B4570089BD28 /* CompositionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A562BD1B4570089BD28 /* CompositionViewModel.swift */; };
 		385F9A592BD1B6E30089BD28 /* CombinationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A582BD1B6E30089BD28 /* CombinationCollectionViewCell.swift */; };
@@ -272,6 +289,23 @@
 		3834820E2BCE62D000221CA6 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		383482112BCE63BF00221CA6 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		383482132BCE63E100221CA6 /* UIViewController+Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Loader.swift"; sourceTree = "<group>"; };
+		384AF0ED2BF2F112007EC055 /* CompositionParametersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionParametersViewController.swift; sourceTree = "<group>"; };
+		384AF0EF2BF2F120007EC055 /* CompositionParametersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionParametersViewModel.swift; sourceTree = "<group>"; };
+		384AF0F12BF2F13D007EC055 /* CompositionParametersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionParametersManager.swift; sourceTree = "<group>"; };
+		384AF0F32BF2F40F007EC055 /* CompositionVisibilityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionVisibilityTableViewCell.swift; sourceTree = "<group>"; };
+		384AF0F52BF2FA81007EC055 /* CompositionUserMiniatureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionUserMiniatureTableViewCell.swift; sourceTree = "<group>"; };
+		384AF7B12BF39CE4007EC055 /* CompositionNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionNameTableViewCell.swift; sourceTree = "<group>"; };
+		384AF7B32BF3A42B007EC055 /* WrapperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperTableViewCell.swift; sourceTree = "<group>"; };
+		384AF7B52BF3BB09007EC055 /* CompositionDeleteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionDeleteTableViewCell.swift; sourceTree = "<group>"; };
+		384AF7B92BF3D60C007EC055 /* UserSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewController.swift; sourceTree = "<group>"; };
+		384AF7BB2BF3D616007EC055 /* UserSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewModel.swift; sourceTree = "<group>"; };
+		384AF7BD2BF3D67D007EC055 /* UserSearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchScreen.swift; sourceTree = "<group>"; };
+		384AF7BF2BF3D688007EC055 /* UserSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchTableViewCell.swift; sourceTree = "<group>"; };
+		384AF7C12BF42703007EC055 /* CompositionParametersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionParametersScreen.swift; sourceTree = "<group>"; };
+		384AF7C32BF42AFE007EC055 /* CompositionVisibilityEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionVisibilityEdit.swift; sourceTree = "<group>"; };
+		384AF7C52BF42B38007EC055 /* CompositionAddEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionAddEditor.swift; sourceTree = "<group>"; };
+		384AF7C72BF42B45007EC055 /* CompositionRemoveEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRemoveEditor.swift; sourceTree = "<group>"; };
+		384AF7CB2BF42B5E007EC055 /* CompositionDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionDelete.swift; sourceTree = "<group>"; };
 		385F9A542BD1B44E0089BD28 /* CompositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionViewController.swift; sourceTree = "<group>"; };
 		385F9A562BD1B4570089BD28 /* CompositionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionViewModel.swift; sourceTree = "<group>"; };
 		385F9A582BD1B6E30089BD28 /* CombinationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -412,6 +446,7 @@
 				380EDF1C2BD0725F00FCB5FB /* CompositionManager.swift */,
 				380EDF312BD0808300FCB5FB /* FavouritesManager.swift */,
 				380EDF472BD10C6700FCB5FB /* SearchManager.swift */,
+				384AF0F12BF2F13D007EC055 /* CompositionParametersManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -592,6 +627,39 @@
 			path = Loader;
 			sourceTree = "<group>";
 		};
+		384AF0EC2BF2F0E9007EC055 /* CompositionParametersScreen */ = {
+			isa = PBXGroup;
+			children = (
+				384AF7B72BF3D5BB007EC055 /* TableViewCells */,
+				384AF0ED2BF2F112007EC055 /* CompositionParametersViewController.swift */,
+				384AF0EF2BF2F120007EC055 /* CompositionParametersViewModel.swift */,
+				384AF7C12BF42703007EC055 /* CompositionParametersScreen.swift */,
+			);
+			path = CompositionParametersScreen;
+			sourceTree = "<group>";
+		};
+		384AF7B72BF3D5BB007EC055 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				384AF0F32BF2F40F007EC055 /* CompositionVisibilityTableViewCell.swift */,
+				384AF0F52BF2FA81007EC055 /* CompositionUserMiniatureTableViewCell.swift */,
+				384AF7B12BF39CE4007EC055 /* CompositionNameTableViewCell.swift */,
+				384AF7B52BF3BB09007EC055 /* CompositionDeleteTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		384AF7B82BF3D5EE007EC055 /* UserSearchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				384AF7B92BF3D60C007EC055 /* UserSearchViewController.swift */,
+				384AF7BB2BF3D616007EC055 /* UserSearchViewModel.swift */,
+				384AF7BF2BF3D688007EC055 /* UserSearchTableViewCell.swift */,
+				384AF7BD2BF3D67D007EC055 /* UserSearchScreen.swift */,
+			);
+			path = UserSearchScreen;
+			sourceTree = "<group>";
+		};
 		385F9A4B2BD1B3580089BD28 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,6 +682,10 @@
 				380EDF202BD077BE00FCB5FB /* CompositionCreate.swift */,
 				380AF48D2BF1CA3400907F73 /* CompositionGet.swift */,
 				380AF4912BF1E6DC00907F73 /* CompositionBlueprintEdit.swift */,
+				384AF7C32BF42AFE007EC055 /* CompositionVisibilityEdit.swift */,
+				384AF7C52BF42B38007EC055 /* CompositionAddEditor.swift */,
+				384AF7C72BF42B45007EC055 /* CompositionRemoveEditor.swift */,
+				384AF7CB2BF42B5E007EC055 /* CompositionDelete.swift */,
 			);
 			path = Composition;
 			sourceTree = "<group>";
@@ -651,6 +723,7 @@
 				385F9ECC2BD26E1F0089BD28 /* CGSize+scaled.swift */,
 				385F9ECE2BD27A5A0089BD28 /* UIButton+scaleImage.swift */,
 				385F9ED02BD29B560089BD28 /* AddRowTableFooterView.swift */,
+				384AF7B32BF3A42B007EC055 /* WrapperTableViewCell.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -669,6 +742,8 @@
 		385F9A522BD1B4300089BD28 /* CompositionEditor */ = {
 			isa = PBXGroup;
 			children = (
+				384AF7B82BF3D5EE007EC055 /* UserSearchScreen */,
+				384AF0EC2BF2F0E9007EC055 /* CompositionParametersScreen */,
 				389024112BEA178D0093837A /* ChooseKeyboardScreen */,
 				385FA8932BD554F50089BD28 /* RecordSampleScreen */,
 				385FA8872BD414470089BD28 /* EditMelodyScreen */,
@@ -1015,6 +1090,7 @@
 				389024172BEA3A6B0093837A /* ChooseKeyboardTableViewCell.swift in Sources */,
 				385F9A592BD1B6E30089BD28 /* CombinationCollectionViewCell.swift in Sources */,
 				38CA38792BE2887D00BE34E8 /* NoteViewModel.swift in Sources */,
+				384AF0F02BF2F120007EC055 /* CompositionParametersViewModel.swift in Sources */,
 				380EDF4A2BD10D8B00FCB5FB /* SearchUsers.swift in Sources */,
 				38347C082BCDD09D00221CA6 /* AuthView.swift in Sources */,
 				380EDF132BD05B2500FCB5FB /* UserDelete.swift in Sources */,
@@ -1043,6 +1119,7 @@
 				380EDF272BD078B500FCB5FB /* UserResponse.swift in Sources */,
 				38CA38772BE2881C00BE34E8 /* EditMelodyGrid.swift in Sources */,
 				385F9ECD2BD26E1F0089BD28 /* CGSize+scaled.swift in Sources */,
+				384AF7BE2BF3D67D007EC055 /* UserSearchScreen.swift in Sources */,
 				38347C0B2BCDD25800221CA6 /* AuthTokenProvider.swift in Sources */,
 				3890240C2BE9761C0093837A /* EffectsManager.swift in Sources */,
 				380EDF462BD10C5500FCB5FB /* SearchViewController.swift in Sources */,
@@ -1055,6 +1132,7 @@
 				380EDF0B2BD0370600FCB5FB /* UserEdit.swift in Sources */,
 				38CA38712BE2686800BE34E8 /* MelodyManager.swift in Sources */,
 				385FA8812BD3FDB90089BD28 /* ChooseMelodyTableViewCell.swift in Sources */,
+				384AF0F62BF2FA81007EC055 /* CompositionUserMiniatureTableViewCell.swift in Sources */,
 				387340BB2BCEDD2300D1EBBF /* ProfileViewController.swift in Sources */,
 				389024152BEA1FD00093837A /* ChooseKeyboardViewModel.swift in Sources */,
 				385F9A762BD1DF0C0089BD28 /* BPMStepper.swift in Sources */,
@@ -1070,6 +1148,7 @@
 				380EDF3A2BD0851500FCB5FB /* FavouriteUserAdd.swift in Sources */,
 				385FA8952BD555DF0089BD28 /* RecordSampleViewController.swift in Sources */,
 				38347BF82BCDC15100221CA6 /* NetworkEnvironment.swift in Sources */,
+				384AF7C82BF42B45007EC055 /* CompositionRemoveEditor.swift in Sources */,
 				380EDF2C2BD0805100FCB5FB /* FavouritesView.swift in Sources */,
 				380AF4762BEFF21100907F73 /* MelodyGet.swift in Sources */,
 				385FA88F2BD51C940089BD28 /* NiceStepper.swift in Sources */,
@@ -1088,19 +1167,24 @@
 				38ED0D7B2BE1788300C47271 /* SampleCachingManager.swift in Sources */,
 				380EDF062BD0362100FCB5FB /* EditProfileView.swift in Sources */,
 				385F9A722BD1C8B60089BD28 /* MutableSample.swift in Sources */,
+				384AF7B22BF39CE4007EC055 /* CompositionNameTableViewCell.swift in Sources */,
 				385FA8892BD4146E0089BD28 /* EditMelodyViewController.swift in Sources */,
 				387340B92BCEDCDE00D1EBBF /* ProfileViewModel.swift in Sources */,
 				380EDF3E2BD0853B00FCB5FB /* FavouriteUsersGet.swift in Sources */,
 				380EDF422BD10B9900FCB5FB /* SearchView.swift in Sources */,
 				380EDF022BD024AC00FCB5FB /* AuthManager.swift in Sources */,
 				38347BF42BCDBFFF00221CA6 /* NetworkRequest.swift in Sources */,
+				384AF7CC2BF42B5E007EC055 /* CompositionDelete.swift in Sources */,
 				387340B42BCED97800D1EBBF /* UserRegister.swift in Sources */,
 				385FA89B2BD57EAF0089BD28 /* BeatRecordCollectionViewCell.swift in Sources */,
 				385FA8862BD40ED20089BD28 /* MelodyMiniatureResponse.swift in Sources */,
 				380EDF002BD0200F00FCB5FB /* AuthToken.swift in Sources */,
 				380EDF082BD0363100FCB5FB /* EditProfileViewModel.swift in Sources */,
 				380EDF1F2BD0729400FCB5FB /* CompositionsGet.swift in Sources */,
+				384AF7BC2BF3D616007EC055 /* UserSearchViewModel.swift in Sources */,
+				384AF7B42BF3A42B007EC055 /* WrapperTableViewCell.swift in Sources */,
 				380AF4822BF1736900907F73 /* ChooseMelodyResult.swift in Sources */,
+				384AF0EE2BF2F112007EC055 /* CompositionParametersViewController.swift in Sources */,
 				380AF4722BEFAD9700907F73 /* CombinationMelodyMiniature.swift in Sources */,
 				385FA8742BD3BAC00089BD28 /* ChooseSampleTableViewCell.swift in Sources */,
 				38347C1B2BCDDA4900221CA6 /* FontModifiers.swift in Sources */,
@@ -1131,6 +1215,7 @@
 				383482142BCE63E100221CA6 /* UIViewController+Loader.swift in Sources */,
 				380CC22B2BCF15DF00A8BA32 /* CompositionMiniatureResponse.swift in Sources */,
 				3834820F2BCE62D000221CA6 /* AuthViewController.swift in Sources */,
+				384AF7C42BF42AFE007EC055 /* CompositionVisibilityEdit.swift in Sources */,
 				382114B92BBEAE9C00FEECC8 /* AppDelegate.swift in Sources */,
 				38347C192BCDDA1300221CA6 /* NiceTextField.swift in Sources */,
 				38ED0D7D2BE18BC300C47271 /* SampleGet.swift in Sources */,
@@ -1143,11 +1228,14 @@
 				3834820D2BCE62AD00221CA6 /* AuthViewModel.swift in Sources */,
 				38347BFF2BCDCD2100221CA6 /* PATCH.swift in Sources */,
 				380EDF382BD084F900FCB5FB /* FavouriteCompositionsGet.swift in Sources */,
+				384AF7C22BF42703007EC055 /* CompositionParametersScreen.swift in Sources */,
 				385F9A6A2BD1C8070089BD28 /* MutableComposition.swift in Sources */,
 				380EDF292BD079C700FCB5FB /* BlueprintResponse.swift in Sources */,
 				3834820B2BCE5E7200221CA6 /* NiceButton.swift in Sources */,
+				384AF7BA2BF3D60C007EC055 /* UserSearchViewController.swift in Sources */,
 				385F9A5B2BD1B7150089BD28 /* Composition.swift in Sources */,
 				38ED0D7F2BE18F6100C47271 /* DATA.swift in Sources */,
+				384AF0F22BF2F13D007EC055 /* CompositionParametersManager.swift in Sources */,
 				385FA8912BD52A700089BD28 /* ClassicStepper.swift in Sources */,
 				380AF47A2BF0111000907F73 /* ChooseMelody.swift in Sources */,
 				38CA38752BE275C600BE34E8 /* MutableNote.swift in Sources */,
@@ -1155,6 +1243,7 @@
 				380EDF212BD077BE00FCB5FB /* CompositionCreate.swift in Sources */,
 				380EDF112BD050A400FCB5FB /* EditProfileViewController.swift in Sources */,
 				38ED0D822BE1945F00C47271 /* CachingError.swift in Sources */,
+				384AF0F42BF2F40F007EC055 /* CompositionVisibilityTableViewCell.swift in Sources */,
 				385F9A742BD1D74F0089BD28 /* UILabel+Role.swift in Sources */,
 				382114BB2BBEAE9C00FEECC8 /* SceneDelegate.swift in Sources */,
 				385FA8762BD3BCCF0089BD28 /* SampleMiniature.swift in Sources */,
@@ -1167,6 +1256,7 @@
 				385F9ED12BD29B560089BD28 /* AddRowTableFooterView.swift in Sources */,
 				385F9ECF2BD27A5A0089BD28 /* UIButton+scaleImage.swift in Sources */,
 				389024062BE957E20093837A /* BottomSheetTransitioningDelegate.swift in Sources */,
+				384AF7B62BF3BB09007EC055 /* CompositionDeleteTableViewCell.swift in Sources */,
 				385FA7A22BD2DE760089BD28 /* EffectControl.swift in Sources */,
 				385F9ED42BD2A6310089BD28 /* EffectsViewController.swift in Sources */,
 				380EDF4C2BD10D9600FCB5FB /* SearchCompositions.swift in Sources */,
@@ -1178,6 +1268,8 @@
 				385F9A622BD1C7860089BD28 /* Combination.swift in Sources */,
 				38901C142BE706EF0093837A /* Metronome.swift in Sources */,
 				387340C62BCEE30700D1EBBF /* UserGet.swift in Sources */,
+				384AF7C62BF42B38007EC055 /* CompositionAddEditor.swift in Sources */,
+				384AF7C02BF3D688007EC055 /* UserSearchTableViewCell.swift in Sources */,
 				38CA38732BE272A800BE34E8 /* Note.swift in Sources */,
 				385F9A552BD1B44E0089BD28 /* CompositionViewController.swift in Sources */,
 				3890241F2BEA42B40093837A /* KeyboardPreviewManager.swift in Sources */,

@@ -28,12 +28,14 @@ final class CompositionViewModel {
     private let compositionBlueprintEdit = Requests.CompositionBlueprintEdit()
 
     private let compositionManager: CompositionRenderManager
+    private let compositionParametersScreen: CompositionParametersScreen
 
     private var createCombinationAlertAction: UIAlertAction?
     private var combinationEditor: CombinationEditor?
 
-    init(compositionManager: CompositionRenderManager) {
+    init(compositionManager: CompositionRenderManager, compositionParametersScreen: CompositionParametersScreen) {
         self.compositionManager = compositionManager
+        self.compositionParametersScreen = compositionParametersScreen
         compositionManager.delegate = self
     }
 
@@ -151,7 +153,8 @@ extension CompositionViewModel: CompositionViewModelInput {
     }
 
     func compositionParametersButtonTapped() {
-        // TODO.
+        let viewController = compositionParametersScreen.getViewController()
+        view?.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func favouriteButtonTapped() {

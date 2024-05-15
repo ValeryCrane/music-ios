@@ -7,11 +7,19 @@ final class CompositionScreen {
 
     init(composition: Composition) async throws {
         let metronome = Metronome(bpm: Double(composition.bpm))
-        let compositionManager = try await CompositionRenderManager(composition: .init(composition))
-        compositionEditor = CompositionEditor(compositionManager: compositionManager)
+        let mutableComposition = MutableComposition(composition)
+        let compositionManager = try await CompositionRenderManager(composition: mutableComposition)
+        let compositionParametersScreen = CompositionParametersScreen(
+            composition: mutableComposition,
+            onCompositionDeleted: {}
+        )
+        compositionEditor = CompositionEditor(
+            compositionManager: compositionManager,
+            compositionParametersScreen: compositionParametersScreen
+        )
     }
 
-    func getViewController()  -> UIViewController {
+    func getViewController() -> UIViewController {
         compositionEditor.getViewController()
     }
 }
