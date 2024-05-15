@@ -107,6 +107,14 @@
 		384AF7C62BF42B38007EC055 /* CompositionAddEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7C52BF42B38007EC055 /* CompositionAddEditor.swift */; };
 		384AF7C82BF42B45007EC055 /* CompositionRemoveEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7C72BF42B45007EC055 /* CompositionRemoveEditor.swift */; };
 		384AF7CC2BF42B5E007EC055 /* CompositionDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7CB2BF42B5E007EC055 /* CompositionDelete.swift */; };
+		384AF7D42BF44607007EC055 /* CompositionHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7D32BF44607007EC055 /* CompositionHistoryViewController.swift */; };
+		384AF7D92BF44647007EC055 /* CompositionHistoryEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7D82BF44647007EC055 /* CompositionHistoryEventTableViewCell.swift */; };
+		384AF7DB2BF44655007EC055 /* CompositionHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7DA2BF44655007EC055 /* CompositionHistoryViewModel.swift */; };
+		384AF7DD2BF44660007EC055 /* CompositionHistoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7DC2BF44660007EC055 /* CompositionHistoryScreen.swift */; };
+		384AF7DF2BF446F6007EC055 /* CompositionHistoryGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7DE2BF446F6007EC055 /* CompositionHistoryGet.swift */; };
+		384AF7E12BF448BE007EC055 /* CompositionHistoryEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AF7E02BF448BE007EC055 /* CompositionHistoryEvent.swift */; };
+		385877482BF6BF0D00EED7FB /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385877472BF6BF0D00EED7FB /* ChatViewController.swift */; };
+		3858774A2BF6BF2A00EED7FB /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385877492BF6BF2A00EED7FB /* ChatTableViewCell.swift */; };
 		385F9A552BD1B44E0089BD28 /* CompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A542BD1B44E0089BD28 /* CompositionViewController.swift */; };
 		385F9A572BD1B4570089BD28 /* CompositionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A562BD1B4570089BD28 /* CompositionViewModel.swift */; };
 		385F9A592BD1B6E30089BD28 /* CombinationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F9A582BD1B6E30089BD28 /* CombinationCollectionViewCell.swift */; };
@@ -153,6 +161,18 @@
 		385FA8972BD555EE0089BD28 /* RecordSampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8962BD555EE0089BD28 /* RecordSampleViewModel.swift */; };
 		385FA8992BD5754E0089BD28 /* RecordSampleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA8982BD5754E0089BD28 /* RecordSampleButton.swift */; };
 		385FA89B2BD57EAF0089BD28 /* BeatRecordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385FA89A2BD57EAF0089BD28 /* BeatRecordCollectionViewCell.swift */; };
+		38716A452BF7787E006031D1 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38716A442BF7787E006031D1 /* ChatMessage.swift */; };
+		38716A472BF78768006031D1 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38716A462BF78768006031D1 /* ChatViewModel.swift */; };
+		38716A492BF788F0006031D1 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38716A482BF788F0006031D1 /* ChatManager.swift */; };
+		38716A4B2BF78912006031D1 /* CompositionChatLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38716A4A2BF78912006031D1 /* CompositionChatLoad.swift */; };
+		38716A4D2BF78A60006031D1 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38716A4C2BF78A60006031D1 /* MessageResponse.swift */; };
+		38716A512BF900DE006031D1 /* CompositionChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38716A502BF900DE006031D1 /* CompositionChat.swift */; };
+		38716A532BF900E9006031D1 /* CompositionChatSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38716A522BF900E9006031D1 /* CompositionChatSend.swift */; };
+		38716A552BF97A72006031D1 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38716A542BF97A71006031D1 /* ChatScreen.swift */; };
+		38716A572BFB98BC006031D1 /* RecordSampleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38716A562BFB98BC006031D1 /* RecordSampleManager.swift */; };
+		38716D9F2BFC1D35006031D1 /* ChooseSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38716D9E2BFC1D35006031D1 /* ChooseSample.swift */; };
+		38716DA12BFC267F006031D1 /* RecordSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38716DA02BFC267F006031D1 /* RecordSample.swift */; };
+		38717A292BFCCDCE006031D1 /* SampleRenderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38717A282BFCCDCE006031D1 /* SampleRenderManager.swift */; };
 		387340AE2BCED60100D1EBBF /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340AD2BCED60100D1EBBF /* RegistrationView.swift */; };
 		387340B02BCED60C00D1EBBF /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340AF2BCED60C00D1EBBF /* RegistrationViewModel.swift */; };
 		387340B22BCED61800D1EBBF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387340B12BCED61800D1EBBF /* RegistrationViewController.swift */; };
@@ -194,6 +214,7 @@
 		38CA387E2BE2E9DB00BE34E8 /* MelodyResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA387D2BE2E9DB00BE34E8 /* MelodyResolution.swift */; };
 		38CA38802BE2EC2800BE34E8 /* String+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA387F2BE2EC2800BE34E8 /* String+UIImage.swift */; };
 		38CA38852BE3CA3C00BE34E8 /* ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA38842BE3CA3C00BE34E8 /* ObjectMapper.swift */; };
+		38EA046D2BFED225009C8858 /* CompositionPreviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EA046C2BFED225009C8858 /* CompositionPreviewManager.swift */; };
 		38ED0D752BE1753F00C47271 /* MelodyEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED0D742BE1753F00C47271 /* MelodyEditor.swift */; };
 		38ED0D792BE1787300C47271 /* KeyboardCachingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED0D782BE1787300C47271 /* KeyboardCachingManager.swift */; };
 		38ED0D7B2BE1788300C47271 /* SampleCachingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED0D7A2BE1788300C47271 /* SampleCachingManager.swift */; };
@@ -201,6 +222,8 @@
 		38ED0D7F2BE18F6100C47271 /* DATA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED0D7E2BE18F6100C47271 /* DATA.swift */; };
 		38ED0D822BE1945F00C47271 /* CachingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED0D812BE1945F00C47271 /* CachingError.swift */; };
 		38ED0D852BE1964100C47271 /* KeyboardGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ED0D842BE1964100C47271 /* KeyboardGet.swift */; };
+		38EE3EB82BFD39E6000E78B0 /* SampleCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE3EB72BFD39E6000E78B0 /* SampleCreate.swift */; };
+		38F97B9C2BFFC9A70053BCA2 /* RecordCompositionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F97B9B2BFFC9A70053BCA2 /* RecordCompositionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -306,6 +329,14 @@
 		384AF7C52BF42B38007EC055 /* CompositionAddEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionAddEditor.swift; sourceTree = "<group>"; };
 		384AF7C72BF42B45007EC055 /* CompositionRemoveEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRemoveEditor.swift; sourceTree = "<group>"; };
 		384AF7CB2BF42B5E007EC055 /* CompositionDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionDelete.swift; sourceTree = "<group>"; };
+		384AF7D32BF44607007EC055 /* CompositionHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionHistoryViewController.swift; sourceTree = "<group>"; };
+		384AF7D82BF44647007EC055 /* CompositionHistoryEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionHistoryEventTableViewCell.swift; sourceTree = "<group>"; };
+		384AF7DA2BF44655007EC055 /* CompositionHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionHistoryViewModel.swift; sourceTree = "<group>"; };
+		384AF7DC2BF44660007EC055 /* CompositionHistoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionHistoryScreen.swift; sourceTree = "<group>"; };
+		384AF7DE2BF446F6007EC055 /* CompositionHistoryGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionHistoryGet.swift; sourceTree = "<group>"; };
+		384AF7E02BF448BE007EC055 /* CompositionHistoryEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionHistoryEvent.swift; sourceTree = "<group>"; };
+		385877472BF6BF0D00EED7FB /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		385877492BF6BF2A00EED7FB /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		385F9A542BD1B44E0089BD28 /* CompositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionViewController.swift; sourceTree = "<group>"; };
 		385F9A562BD1B4570089BD28 /* CompositionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionViewModel.swift; sourceTree = "<group>"; };
 		385F9A582BD1B6E30089BD28 /* CombinationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -352,6 +383,18 @@
 		385FA8962BD555EE0089BD28 /* RecordSampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSampleViewModel.swift; sourceTree = "<group>"; };
 		385FA8982BD5754E0089BD28 /* RecordSampleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSampleButton.swift; sourceTree = "<group>"; };
 		385FA89A2BD57EAF0089BD28 /* BeatRecordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatRecordCollectionViewCell.swift; sourceTree = "<group>"; };
+		38716A442BF7787E006031D1 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		38716A462BF78768006031D1 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		38716A482BF788F0006031D1 /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
+		38716A4A2BF78912006031D1 /* CompositionChatLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionChatLoad.swift; sourceTree = "<group>"; };
+		38716A4C2BF78A60006031D1 /* MessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
+		38716A502BF900DE006031D1 /* CompositionChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionChat.swift; sourceTree = "<group>"; };
+		38716A522BF900E9006031D1 /* CompositionChatSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionChatSend.swift; sourceTree = "<group>"; };
+		38716A542BF97A71006031D1 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
+		38716A562BFB98BC006031D1 /* RecordSampleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSampleManager.swift; sourceTree = "<group>"; };
+		38716D9E2BFC1D35006031D1 /* ChooseSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSample.swift; sourceTree = "<group>"; };
+		38716DA02BFC267F006031D1 /* RecordSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSample.swift; sourceTree = "<group>"; };
+		38717A282BFCCDCE006031D1 /* SampleRenderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleRenderManager.swift; sourceTree = "<group>"; };
 		387340AD2BCED60100D1EBBF /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		387340AF2BCED60C00D1EBBF /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		387340B12BCED61800D1EBBF /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -393,6 +436,7 @@
 		38CA387D2BE2E9DB00BE34E8 /* MelodyResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyResolution.swift; sourceTree = "<group>"; };
 		38CA387F2BE2EC2800BE34E8 /* String+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UIImage.swift"; sourceTree = "<group>"; };
 		38CA38842BE3CA3C00BE34E8 /* ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapper.swift; sourceTree = "<group>"; };
+		38EA046C2BFED225009C8858 /* CompositionPreviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionPreviewManager.swift; sourceTree = "<group>"; };
 		38ED0D742BE1753F00C47271 /* MelodyEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyEditor.swift; sourceTree = "<group>"; };
 		38ED0D782BE1787300C47271 /* KeyboardCachingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCachingManager.swift; sourceTree = "<group>"; };
 		38ED0D7A2BE1788300C47271 /* SampleCachingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCachingManager.swift; sourceTree = "<group>"; };
@@ -400,6 +444,8 @@
 		38ED0D7E2BE18F6100C47271 /* DATA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DATA.swift; sourceTree = "<group>"; };
 		38ED0D812BE1945F00C47271 /* CachingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingError.swift; sourceTree = "<group>"; };
 		38ED0D842BE1964100C47271 /* KeyboardGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGet.swift; sourceTree = "<group>"; };
+		38EE3EB72BFD39E6000E78B0 /* SampleCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCreate.swift; sourceTree = "<group>"; };
+		38F97B9B2BFFC9A70053BCA2 /* RecordCompositionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCompositionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,6 +469,7 @@
 				385FA87C2BD3D5A50089BD28 /* SampleMiniatureResponse.swift */,
 				385FA8852BD40ED20089BD28 /* MelodyMiniatureResponse.swift */,
 				3890241A2BEA404C0093837A /* KeyboardMiniatureResponse.swift */,
+				38716A4C2BF78A60006031D1 /* MessageResponse.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -660,6 +707,30 @@
 			path = UserSearchScreen;
 			sourceTree = "<group>";
 		};
+		384AF7D22BF445EC007EC055 /* CompositionHistoryScreen */ = {
+			isa = PBXGroup;
+			children = (
+				384AF7D32BF44607007EC055 /* CompositionHistoryViewController.swift */,
+				384AF7D82BF44647007EC055 /* CompositionHistoryEventTableViewCell.swift */,
+				384AF7DA2BF44655007EC055 /* CompositionHistoryViewModel.swift */,
+				384AF7DC2BF44660007EC055 /* CompositionHistoryScreen.swift */,
+			);
+			path = CompositionHistoryScreen;
+			sourceTree = "<group>";
+		};
+		385877462BF6BEFE00EED7FB /* ChatScreen */ = {
+			isa = PBXGroup;
+			children = (
+				385877472BF6BF0D00EED7FB /* ChatViewController.swift */,
+				385877492BF6BF2A00EED7FB /* ChatTableViewCell.swift */,
+				38716A442BF7787E006031D1 /* ChatMessage.swift */,
+				38716A462BF78768006031D1 /* ChatViewModel.swift */,
+				38716A482BF788F0006031D1 /* ChatManager.swift */,
+				38716A542BF97A71006031D1 /* ChatScreen.swift */,
+			);
+			path = ChatScreen;
+			sourceTree = "<group>";
+		};
 		385F9A4B2BD1B3580089BD28 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -686,6 +757,10 @@
 				384AF7C52BF42B38007EC055 /* CompositionAddEditor.swift */,
 				384AF7C72BF42B45007EC055 /* CompositionRemoveEditor.swift */,
 				384AF7CB2BF42B5E007EC055 /* CompositionDelete.swift */,
+				384AF7DE2BF446F6007EC055 /* CompositionHistoryGet.swift */,
+				38716A4A2BF78912006031D1 /* CompositionChatLoad.swift */,
+				38716A502BF900DE006031D1 /* CompositionChat.swift */,
+				38716A522BF900E9006031D1 /* CompositionChatSend.swift */,
 			);
 			path = Composition;
 			sourceTree = "<group>";
@@ -742,6 +817,8 @@
 		385F9A522BD1B4300089BD28 /* CompositionEditor */ = {
 			isa = PBXGroup;
 			children = (
+				385877462BF6BEFE00EED7FB /* ChatScreen */,
+				384AF7D22BF445EC007EC055 /* CompositionHistoryScreen */,
 				384AF7B82BF3D5EE007EC055 /* UserSearchScreen */,
 				384AF0EC2BF2F0E9007EC055 /* CompositionParametersScreen */,
 				389024112BEA178D0093837A /* ChooseKeyboardScreen */,
@@ -837,6 +914,7 @@
 				385FA86F2BD315AC0089BD28 /* ChooseSampleViewController.swift */,
 				385FA8712BD315B70089BD28 /* ChooseSampleViewModel.swift */,
 				385FA8732BD3BAC00089BD28 /* ChooseSampleTableViewCell.swift */,
+				38716D9E2BFC1D35006031D1 /* ChooseSample.swift */,
 			);
 			path = ChooseSampleScreen;
 			sourceTree = "<group>";
@@ -858,6 +936,7 @@
 			children = (
 				385FA87A2BD3D5400089BD28 /* SamplesGet.swift */,
 				38ED0D7C2BE18BC200C47271 /* SampleGet.swift */,
+				38EE3EB72BFD39E6000E78B0 /* SampleCreate.swift */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -900,6 +979,8 @@
 				385FA8962BD555EE0089BD28 /* RecordSampleViewModel.swift */,
 				385FA8982BD5754E0089BD28 /* RecordSampleButton.swift */,
 				385FA89A2BD57EAF0089BD28 /* BeatRecordCollectionViewCell.swift */,
+				38716A562BFB98BC006031D1 /* RecordSampleManager.swift */,
+				38716DA02BFC267F006031D1 /* RecordSample.swift */,
 			);
 			path = RecordSampleScreen;
 			sourceTree = "<group>";
@@ -938,6 +1019,7 @@
 				385FA8752BD3BCCF0089BD28 /* SampleMiniature.swift */,
 				385FA87E2BD3FD550089BD28 /* MelodyMiniature.swift */,
 				389024182BEA3EF70093837A /* KeyboardMiniature.swift */,
+				384AF7E02BF448BE007EC055 /* CompositionHistoryEvent.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -992,6 +1074,9 @@
 				3890241E2BEA42B40093837A /* KeyboardPreviewManager.swift */,
 				380AF46F2BEF905300907F73 /* CombinationManager.swift */,
 				380AF4832BF1933500907F73 /* CompositionRenderManager.swift */,
+				38717A282BFCCDCE006031D1 /* SampleRenderManager.swift */,
+				38EA046C2BFED225009C8858 /* CompositionPreviewManager.swift */,
+				38F97B9B2BFFC9A70053BCA2 /* RecordCompositionManager.swift */,
 			);
 			path = AudioRendering;
 			sourceTree = "<group>";
@@ -1088,6 +1173,7 @@
 				38ED0D792BE1787300C47271 /* KeyboardCachingManager.swift in Sources */,
 				38CA38852BE3CA3C00BE34E8 /* ObjectMapper.swift in Sources */,
 				389024172BEA3A6B0093837A /* ChooseKeyboardTableViewCell.swift in Sources */,
+				384AF7DD2BF44660007EC055 /* CompositionHistoryScreen.swift in Sources */,
 				385F9A592BD1B6E30089BD28 /* CombinationCollectionViewCell.swift in Sources */,
 				38CA38792BE2887D00BE34E8 /* NoteViewModel.swift in Sources */,
 				384AF0F02BF2F120007EC055 /* CompositionParametersViewModel.swift in Sources */,
@@ -1101,10 +1187,13 @@
 				389024132BEA1F670093837A /* ChooseKeyboardViewController.swift in Sources */,
 				380EDF442BD10C4800FCB5FB /* SearchViewModel.swift in Sources */,
 				380EDF1B2BD05E9C00FCB5FB /* CompositionsViewController.swift in Sources */,
+				38717A292BFCCDCE006031D1 /* SampleRenderManager.swift in Sources */,
 				387340BE2BCEDF6100D1EBBF /* CompositionMiniature.swift in Sources */,
+				38716A492BF788F0006031D1 /* ChatManager.swift in Sources */,
 				385FA8702BD315AC0089BD28 /* ChooseSampleViewController.swift in Sources */,
 				385F9A662BD1C7C80089BD28 /* Sample.swift in Sources */,
 				380CC2262BCF0FD500A8BA32 /* CompositionMiniatureView.swift in Sources */,
+				384AF7D92BF44647007EC055 /* CompositionHistoryEventTableViewCell.swift in Sources */,
 				385FA8842BD40EB20089BD28 /* MelodiesGet.swift in Sources */,
 				385FA87F2BD3FD550089BD28 /* MelodyMiniature.swift in Sources */,
 				383482092BCE5D6400221CA6 /* Colors.swift in Sources */,
@@ -1116,8 +1205,10 @@
 				3890240A2BE9760D0093837A /* EffectsViewModel.swift in Sources */,
 				38347C032BCDCD7500221CA6 /* Request.swift in Sources */,
 				38347BEC2BCDB7EC00221CA6 /* NetworkModel.swift in Sources */,
+				38716D9F2BFC1D35006031D1 /* ChooseSample.swift in Sources */,
 				380EDF272BD078B500FCB5FB /* UserResponse.swift in Sources */,
 				38CA38772BE2881C00BE34E8 /* EditMelodyGrid.swift in Sources */,
+				38F97B9C2BFFC9A70053BCA2 /* RecordCompositionManager.swift in Sources */,
 				385F9ECD2BD26E1F0089BD28 /* CGSize+scaled.swift in Sources */,
 				384AF7BE2BF3D67D007EC055 /* UserSearchScreen.swift in Sources */,
 				38347C0B2BCDD25800221CA6 /* AuthTokenProvider.swift in Sources */,
@@ -1135,6 +1226,7 @@
 				384AF0F62BF2FA81007EC055 /* CompositionUserMiniatureTableViewCell.swift in Sources */,
 				387340BB2BCEDD2300D1EBBF /* ProfileViewController.swift in Sources */,
 				389024152BEA1FD00093837A /* ChooseKeyboardViewModel.swift in Sources */,
+				384AF7E12BF448BE007EC055 /* CompositionHistoryEvent.swift in Sources */,
 				385F9A762BD1DF0C0089BD28 /* BPMStepper.swift in Sources */,
 				385F9A7B2BD1F6DA0089BD28 /* CombinationViewController.swift in Sources */,
 				38902C4A2BEAB4930093837A /* AVAudioPCMBuffer+initURL.swift in Sources */,
@@ -1144,6 +1236,7 @@
 				380EDF3C2BD0852500FCB5FB /* FavouriteUserRemove.swift in Sources */,
 				3802CD902BDBC2C100421C7C /* EditProfileUserDataDiff.swift in Sources */,
 				385FA86C2BD315900089BD28 /* ChooseMelodyViewController.swift in Sources */,
+				38716A572BFB98BC006031D1 /* RecordSampleManager.swift in Sources */,
 				380AF4782BF00EEA00907F73 /* RuntimeError.swift in Sources */,
 				380EDF3A2BD0851500FCB5FB /* FavouriteUserAdd.swift in Sources */,
 				385FA8952BD555DF0089BD28 /* RecordSampleViewController.swift in Sources */,
@@ -1166,15 +1259,20 @@
 				38ED0D852BE1964100C47271 /* KeyboardGet.swift in Sources */,
 				38ED0D7B2BE1788300C47271 /* SampleCachingManager.swift in Sources */,
 				380EDF062BD0362100FCB5FB /* EditProfileView.swift in Sources */,
+				38716A4D2BF78A60006031D1 /* MessageResponse.swift in Sources */,
 				385F9A722BD1C8B60089BD28 /* MutableSample.swift in Sources */,
 				384AF7B22BF39CE4007EC055 /* CompositionNameTableViewCell.swift in Sources */,
 				385FA8892BD4146E0089BD28 /* EditMelodyViewController.swift in Sources */,
 				387340B92BCEDCDE00D1EBBF /* ProfileViewModel.swift in Sources */,
 				380EDF3E2BD0853B00FCB5FB /* FavouriteUsersGet.swift in Sources */,
 				380EDF422BD10B9900FCB5FB /* SearchView.swift in Sources */,
+				38EE3EB82BFD39E6000E78B0 /* SampleCreate.swift in Sources */,
 				380EDF022BD024AC00FCB5FB /* AuthManager.swift in Sources */,
 				38347BF42BCDBFFF00221CA6 /* NetworkRequest.swift in Sources */,
+				384AF7D42BF44607007EC055 /* CompositionHistoryViewController.swift in Sources */,
 				384AF7CC2BF42B5E007EC055 /* CompositionDelete.swift in Sources */,
+				384AF7DB2BF44655007EC055 /* CompositionHistoryViewModel.swift in Sources */,
+				38716A532BF900E9006031D1 /* CompositionChatSend.swift in Sources */,
 				387340B42BCED97800D1EBBF /* UserRegister.swift in Sources */,
 				385FA89B2BD57EAF0089BD28 /* BeatRecordCollectionViewCell.swift in Sources */,
 				385FA8862BD40ED20089BD28 /* MelodyMiniatureResponse.swift in Sources */,
@@ -1208,8 +1306,11 @@
 				385F9A642BD1C7A10089BD28 /* Melody.swift in Sources */,
 				389024102BE9A7C00093837A /* EffectEditor.swift in Sources */,
 				385FA8722BD315B70089BD28 /* ChooseSampleViewModel.swift in Sources */,
+				38EA046D2BFED225009C8858 /* CompositionPreviewManager.swift in Sources */,
+				385877482BF6BF0D00EED7FB /* ChatViewController.swift in Sources */,
 				385F9A572BD1B4570089BD28 /* CompositionViewModel.swift in Sources */,
 				380EDF302BD0806C00FCB5FB /* FavouritesViewController.swift in Sources */,
+				38716A4B2BF78912006031D1 /* CompositionChatLoad.swift in Sources */,
 				380EDF172BD05E8600FCB5FB /* CompositionsView.swift in Sources */,
 				380EDF322BD0808300FCB5FB /* FavouritesManager.swift in Sources */,
 				383482142BCE63E100221CA6 /* UIViewController+Loader.swift in Sources */,
@@ -1217,6 +1318,7 @@
 				3834820F2BCE62D000221CA6 /* AuthViewController.swift in Sources */,
 				384AF7C42BF42AFE007EC055 /* CompositionVisibilityEdit.swift in Sources */,
 				382114B92BBEAE9C00FEECC8 /* AppDelegate.swift in Sources */,
+				38716DA12BFC267F006031D1 /* RecordSample.swift in Sources */,
 				38347C192BCDDA1300221CA6 /* NiceTextField.swift in Sources */,
 				38ED0D7D2BE18BC300C47271 /* SampleGet.swift in Sources */,
 				385FA8972BD555EE0089BD28 /* RecordSampleViewModel.swift in Sources */,
@@ -1236,7 +1338,9 @@
 				385F9A5B2BD1B7150089BD28 /* Composition.swift in Sources */,
 				38ED0D7F2BE18F6100C47271 /* DATA.swift in Sources */,
 				384AF0F22BF2F13D007EC055 /* CompositionParametersManager.swift in Sources */,
+				3858774A2BF6BF2A00EED7FB /* ChatTableViewCell.swift in Sources */,
 				385FA8912BD52A700089BD28 /* ClassicStepper.swift in Sources */,
+				38716A512BF900DE006031D1 /* CompositionChat.swift in Sources */,
 				380AF47A2BF0111000907F73 /* ChooseMelody.swift in Sources */,
 				38CA38752BE275C600BE34E8 /* MutableNote.swift in Sources */,
 				385FA86E2BD3159B0089BD28 /* ChooseMelodyViewModel.swift in Sources */,
@@ -1248,18 +1352,21 @@
 				382114BB2BBEAE9C00FEECC8 /* SceneDelegate.swift in Sources */,
 				385FA8762BD3BCCF0089BD28 /* SampleMiniature.swift in Sources */,
 				380AF4922BF1E6DC00907F73 /* CompositionBlueprintEdit.swift in Sources */,
+				384AF7DF2BF446F6007EC055 /* CompositionHistoryGet.swift in Sources */,
 				387340C22BCEE01D00D1EBBF /* CurrentUser.swift in Sources */,
 				380EDF4E2BD12B7200FCB5FB /* SearchGroup.swift in Sources */,
 				380AF4742BEFAE3200907F73 /* CombinationSampleMiniature.swift in Sources */,
 				380AF4862BF195A200907F73 /* CompositionEditor.swift in Sources */,
 				38CA38802BE2EC2800BE34E8 /* String+UIImage.swift in Sources */,
 				385F9ED12BD29B560089BD28 /* AddRowTableFooterView.swift in Sources */,
+				38716A452BF7787E006031D1 /* ChatMessage.swift in Sources */,
 				385F9ECF2BD27A5A0089BD28 /* UIButton+scaleImage.swift in Sources */,
 				389024062BE957E20093837A /* BottomSheetTransitioningDelegate.swift in Sources */,
 				384AF7B62BF3BB09007EC055 /* CompositionDeleteTableViewCell.swift in Sources */,
 				385FA7A22BD2DE760089BD28 /* EffectControl.swift in Sources */,
 				385F9ED42BD2A6310089BD28 /* EffectsViewController.swift in Sources */,
 				380EDF4C2BD10D9600FCB5FB /* SearchCompositions.swift in Sources */,
+				38716A472BF78768006031D1 /* ChatViewModel.swift in Sources */,
 				380AF4882BF196AB00907F73 /* CompositionNavigationController.swift in Sources */,
 				380CC2282BCF14B200A8BA32 /* UserCompositions.swift in Sources */,
 				385F9A602BD1C7620089BD28 /* EffectType.swift in Sources */,
@@ -1273,6 +1380,7 @@
 				38CA38732BE272A800BE34E8 /* Note.swift in Sources */,
 				385F9A552BD1B44E0089BD28 /* CompositionViewController.swift in Sources */,
 				3890241F2BEA42B40093837A /* KeyboardPreviewManager.swift in Sources */,
+				38716A552BF97A72006031D1 /* ChatScreen.swift in Sources */,
 				380EDEF72BCFF19C00FCB5FB /* AvatarView.swift in Sources */,
 				385FA87D2BD3D5A50089BD28 /* SampleMiniatureResponse.swift in Sources */,
 				380AF4842BF1933500907F73 /* CompositionRenderManager.swift in Sources */,

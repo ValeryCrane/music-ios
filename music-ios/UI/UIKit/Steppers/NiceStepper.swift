@@ -10,7 +10,13 @@ extension NiceStepper {
 class NiceStepper: UIControl {
     let minimumValue: Int
     let maximumValue: Int
-    
+
+    override var isEnabled: Bool {
+        didSet {
+            updateState()
+        }
+    }
+
     private(set) var value: Int
     
     private let wrappedView: UIView?
@@ -68,8 +74,8 @@ class NiceStepper: UIControl {
     }
     
     private func updateState() {
-        minusButton.isEnabled = value != minimumValue
-        plusButton.isEnabled = value != maximumValue
+        minusButton.isEnabled = value != minimumValue && isEnabled
+        plusButton.isEnabled = value != maximumValue && isEnabled
     }
     
     @objc

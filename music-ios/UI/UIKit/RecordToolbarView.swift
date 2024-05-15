@@ -11,7 +11,7 @@ protocol RecordToolbarViewDelegate: AnyObject {
 extension RecordToolbarView {
     private enum Constants {
         static let buttonSize: CGFloat = 48
-        static let buttonSpacing: CGFloat = 8
+        static let buttonSpacing: CGFloat = 32
         static let horizontalOffsets: CGFloat = 16
         static let verticalOffsets: CGFloat = 16
     }
@@ -104,7 +104,8 @@ final class RecordToolbarView: UIView {
 
         placeholderLabel.role(.title)
         placeholderLabel.text = "Запись композиции"
-        
+        placeholderLabel.isHidden = true
+
         micButton.addTarget(self, action: #selector(onMicButtonPressed(_:)), for: .touchUpInside)
         recordButton.addTarget(self, action: #selector(onRecordButtonPressed(_:)), for: .touchUpInside)
         saveCompositionButton.addTarget(self, action: #selector(onSaveCompositionButtonPressed(_:)), for: .touchUpInside)
@@ -136,7 +137,7 @@ final class RecordToolbarView: UIView {
 
             buttonStackView.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: Constants.verticalOffsets),
             buttonStackView.bottomAnchor.constraint(lessThanOrEqualTo: backgroundView.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.verticalOffsets),
-            buttonStackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -Constants.horizontalOffsets),
+            buttonStackView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
             buttonStackView.heightAnchor.constraint(equalToConstant: Constants.buttonSize),
             
             micButton.widthAnchor.constraint(equalToConstant: Constants.buttonSize),

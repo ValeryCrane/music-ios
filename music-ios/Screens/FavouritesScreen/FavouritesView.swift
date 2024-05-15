@@ -34,13 +34,20 @@ struct FavouritesView: View {
                                 .padding(32)
                         } else {
                             LazyVGrid(columns: columns, spacing: 16) {
-                                ForEach(compositions, id: \.id) { composition in
+                                ForEach(Array(compositions.enumerated()), id: \.offset) { index, composition in
                                     CompositionMiniatureView(
-                                        title: composition.name,
-                                        playState: .paused,
-                                        onPlayButtonTap: { },
-                                        isFavourite: .constant(composition.isFavourite)
+                                        miniature: composition,
+                                        playState: viewModel.compositionStates[index],
+                                        onPlayButtonTap: {
+                                            viewModel.compositionPlayButtonTapped(atIndex: index)
+                                        },
+                                        onFavouriteButtonTap: {
+                                            viewModel.compositionFavouriteButtonTapped(atIndex: index)
+                                        }
                                     )
+                                    .onTapGesture {
+                                        viewModel.compositionTapped(atIndex: index)
+                                    }
                                 }
                             }
                         }

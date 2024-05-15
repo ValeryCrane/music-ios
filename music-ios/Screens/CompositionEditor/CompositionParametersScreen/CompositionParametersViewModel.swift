@@ -12,6 +12,7 @@ protocol CompositionParametersViewModelInput {
     func editorLongTapped(atIndex index: Int)
     func historyButtonTapped()
     func deleteButtonTapped()
+    func closeButtonTapped()
 }
 
 protocol CompositionParametersViewModelOutput: UIViewController {
@@ -200,11 +201,19 @@ extension CompositionParametersViewModel: CompositionParametersViewModelInput {
     }
 
     func historyButtonTapped() {
-        // TODO.
+        let viewController = CompositionHistoryScreen(
+            composition: composition, compositionParametersManager: compositionParametersManager
+        ).getViewController()
+
+        view?.navigationController?.pushViewController(viewController, animated: true)
     }
 
     func deleteButtonTapped() {
         showDeleteCompositionAlert()
+    }
+
+    func closeButtonTapped() {
+        view?.dismiss(animated: true)
     }
 }
 

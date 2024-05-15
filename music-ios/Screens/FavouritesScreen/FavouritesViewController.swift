@@ -9,7 +9,9 @@ final class FavouritesViewController: UIHostingController<FavouritesView> {
         let rootView = FavouritesView(viewModel: viewModel)
         
         super.init(rootView: rootView)
-        
+
+        viewModel.viewController = self
+
         title = "Избранное"
     }
     

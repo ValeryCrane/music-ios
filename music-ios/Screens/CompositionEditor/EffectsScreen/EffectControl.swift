@@ -7,6 +7,7 @@ protocol EffectControlDelegate: AnyObject {
         didChangeValue value: Float,
         ofPropertyType propertyType: EffectPropertyType
     )
+    func effectControlDidEnableAccelerometer(_ effectControl: EffectControl)
 }
 
 extension EffectControl {
@@ -47,7 +48,15 @@ final class EffectControl: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
+    func disableAccelerometer() {
+        for subview in sliderStackView.arrangedSubviews {
+            if let slider = subview as? EffectPropertyControl {
+                slider.isAcceletometerEnabled = false
+            }
+        }
+    }
+
     private func configure() {
         nameLabel.text = type.name
         nameLabel.role(.title)
@@ -72,6 +81,12 @@ final class EffectControl: UIView {
                 for: .valueChanged
             )
 
+            effectPropertyControl.addTarget(
+                self,
+                action: #selector(didEffectPropertyCotrolAcceletometerStateChanged(_:)),
+                for: .primaryActionTriggered
+            )
+
             sliderStackView.addArrangedSubview(effectPropertyControl)
         }
         
@@ -89,5 +104,17 @@ final class EffectControl: UIView {
     private func didEffectPropertyControlChangeValue(_ sender: EffectPropertyControl) {
         properties[sender.type] = sender.value
         delegate?.effectControl(self, didChangeValue: sender.value, ofPropertyType: sender.type)
+    }
+
+    @objc
+    private func didEffectPropertyCotrolAcceletometerStateChanged(_ sender: EffectPropertyControl) {
+        if sender.isAcceletometerEnabled {
+            delegate?.effectControlDidEnableAccelerometer(self)
+            for subview in sliderStackView.arrangedSubviews {
+                if subview !== sender, let slider = subview as? EffectPropertyControl {
+                    slider.isAcceletometerEnabled = false
+                }
+            }
+        }
     }
 }

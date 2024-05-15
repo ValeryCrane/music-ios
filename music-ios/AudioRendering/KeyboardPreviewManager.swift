@@ -37,6 +37,11 @@ final class KeyboardPreviewManager {
         self.nodes = nodes
     }
 
+    deinit {
+        nodes.forEach { audioEngineManager.detachNode($0) }
+        audioEngineManager.detachNode(mainNode)
+    }
+
     func preview(keyboardId: Int) async throws {
         nodes.forEach { $0.stop() }
 

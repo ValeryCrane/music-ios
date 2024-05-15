@@ -17,11 +17,19 @@ protocol ChooseSampleViewModelOutput: UIViewController {
 
 final class ChooseSampleViewModel {
     weak var view: ChooseSampleViewModelOutput?
-    
+
+    private let sampleCreationHandler: (MutableSample) async -> Void
+    private let recordSampleHandler: () -> Void
+
     private var samples: [SampleMiniature]?
     private var sampleStates: [ChooseSampleTableViewCell.State] = []
-    
+
     private let samplesGet = Requests.SamplesGet()
+
+    init(sampleCreationHandler: @escaping (MutableSample) async -> Void, recordSampleHandler: @escaping () -> Void) {
+        self.sampleCreationHandler = sampleCreationHandler
+        self.recordSampleHandler = recordSampleHandler
+    }
 }
 
 extension ChooseSampleViewModel: ChooseSampleViewModelInput {
@@ -53,6 +61,6 @@ extension ChooseSampleViewModel: ChooseSampleViewModelInput {
     }
     
     func onCreateButtonPressed() {
-        // TODO
+        view?.dismiss(animated: true, completion: recordSampleHandler)
     }
 }

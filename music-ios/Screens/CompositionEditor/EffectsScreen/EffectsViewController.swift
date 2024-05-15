@@ -86,4 +86,12 @@ extension EffectsViewController: EffectControlDelegate {
     ) {
         viewModel.setValue(value, ofPropertyType: propertyType)
     }
+
+    func effectControlDidEnableAccelerometer(_ effectControl: EffectControl) {
+        for subview in stackView.arrangedSubviews {
+            if subview !== effectControl, let effectControl = subview as? EffectControl {
+                effectControl.disableAccelerometer()
+            }
+        }
+    }
 }

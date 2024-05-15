@@ -10,7 +10,17 @@ extension ChooseSampleViewController {
 
 final class ChooseSampleViewController: UIViewController {
     private let viewModel: ChooseSampleViewModelInput
-    
+
+    private lazy var noSamplesLabel: UILabel = {
+        let noSamplesLabel = UILabel()
+        noSamplesLabel.role(.secondary)
+        noSamplesLabel.textColor = .secondaryLabel
+        noSamplesLabel.text = "Сэмплов не найдено"
+        noSamplesLabel.textAlignment = .center
+        noSamplesLabel.isHidden = true
+        return noSamplesLabel
+    }()
+
     private lazy var activityIndicator: UIActivityIndicatorView  = {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.hidesWhenStopped = true
@@ -27,6 +37,7 @@ final class ChooseSampleViewController: UIViewController {
             forCellReuseIdentifier: ChooseSampleTableViewCell.reuseIdentifier
         )
         tableView.dataSource = self
+        tableView.isHidden = true
         return tableView
     }()
     
@@ -67,10 +78,10 @@ final class ChooseSampleViewController: UIViewController {
     }
     
     private func layout() {
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(tableView)
-        view.addSubview(activityIndicator)
+        [tableView, activityIndicator, noSamplesLabel].forEach { subview in
+            subview.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(subview)
+        }
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.verticalOffsets),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.horizontalOffsets),
@@ -78,7 +89,11 @@ final class ChooseSampleViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.verticalOffsets),
             
             activityIndicator.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: tableView.centerYAnchor)
+            activityIndicator.centerYAnchor.constraint(equalTo: tableView.centerYAnchor),
+
+            noSamplesLabel.leadingAnchor.constraint(equalTo: tableView.leadingAnchor),
+            noSamplesLabel.trailingAnchor.constraint(equalTo: tableView.trailingAnchor),
+            noSamplesLabel.centerYAnchor.constraint(equalTo: tableView.centerYAnchor)
         ])
     }
     
@@ -120,8 +135,12 @@ extension ChooseSampleViewController: UITableViewDataSource {
 
 extension ChooseSampleViewController: ChooseSampleViewModelOutput {
     func updateSamples() {
-        activityIndicator.stopAnimating()
-        tableView.reloadData()
+        if let samples = viewModel.getSamples() {
+            activityIndicator.stopAnimating()
+            tableView.reloadData()
+            tableView.isHidden = !samples.isEmpty
+            noSamplesLabel.isHidden = !samples.isEmpty
+        }
     }
     
     func updateState(atIndex index: Int, state: ChooseSampleTableViewCell.State) {

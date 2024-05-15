@@ -10,6 +10,10 @@ protocol CompositionRenderManagerDelegate: AnyObject {
 final class CompositionRenderManager {
     weak var delegate: CompositionRenderManagerDelegate?
 
+    var compositionId: Int {
+        composition.id
+    }
+
     private(set) var effectsManagers: [EffectsManager] = []
     private(set) var combinationManagers: [CombinationManager] = []
     private var muteMixerNodes: [AVAudioMixerNode] = []
@@ -55,6 +59,12 @@ final class CompositionRenderManager {
         }
 
         audioEngineManager.addNodeToMainMixer(mainNode)
+    }
+
+    deinit {
+        muteMixerNodes.forEach { audioEngineManager.detachNode($0) }
+        audioEngineManager.detachNode(serviceNode)
+        audioEngineManager.detachNode(mainNode)
     }
 
     func getComposition() -> Composition {

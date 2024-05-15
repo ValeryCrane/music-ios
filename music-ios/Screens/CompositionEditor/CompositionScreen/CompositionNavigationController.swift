@@ -14,6 +14,7 @@ final class CompositionNavigationController: UINavigationController {
     weak var output: CompositionNavigationControllerOutput?
 
     private let recordToolbar = RecordToolbarView()
+    private let recordCompositionManager = RecordCompositionManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,11 +52,13 @@ extension CompositionNavigationController: RecordToolbarViewDelegate {
     }
     
     func recordToolbarViewDidStartRecording() {
-        // TODO.
+        try? recordCompositionManager.startRecording()
     }
     
     func recordToolbarViewDidEndRecording() {
-        // TODO.
+        let url = recordCompositionManager.stopRecording()
+        let activityController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        present(activityController, animated: true)
     }
     
     func saveButtonTapped() {

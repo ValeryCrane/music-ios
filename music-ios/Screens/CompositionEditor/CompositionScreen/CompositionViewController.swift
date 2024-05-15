@@ -47,6 +47,20 @@ final class CompositionViewController: UIViewController {
         action: #selector(onCreateCombinationButtonTapped(_:))
     )
 
+    private lazy var chatButtonItem: UIBarButtonItem = .init(
+        image: .init(systemName: "message"),
+        style: .plain,
+        target: self,
+        action: #selector(onChatButtonPressed(_:))
+    )
+
+    private lazy var closeButtonItem: UIBarButtonItem = .init(
+        image: .init(systemName: "xmark"),
+        style: .plain,
+        target: self,
+        action: #selector(onCloseButtonPressed(_:))
+    )
+
     private var infoMenu: UIMenu {
         let menuItems: [UIAction] = [
             .init(title: "Параметры", image: .init(systemName: "doc"), handler: { [weak self] _ in
@@ -95,12 +109,7 @@ final class CompositionViewController: UIViewController {
         navigationItem.titleView?.isUserInteractionEnabled = true
         
         navigationItem.rightBarButtonItems = [infoButtonItem, createCombinationButtonItem]
-        navigationItem.leftBarButtonItem = .init(
-            image: .init(systemName: "xmark"),
-            style: .plain,
-            target: self,
-            action: #selector(onCloseButtonPressed(_:))
-        )
+        navigationItem.leftBarButtonItems = [closeButtonItem, chatButtonItem]
 
         combinationsNotFoundLabel.text = "Комбинации отсутствуют"
         combinationsNotFoundLabel.role(.secondary)
@@ -129,6 +138,11 @@ final class CompositionViewController: UIViewController {
     @objc
     private func onCreateCombinationButtonTapped(_ sender: UIBarButtonItem) {
         viewModel.createCombinationButtonTapped()
+    }
+
+    @objc
+    private func onChatButtonPressed(_ sender: UIBarButtonItem) {
+        viewModel.chatButtonTapped()
     }
 
     @objc

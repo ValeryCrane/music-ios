@@ -36,10 +36,10 @@ struct SearchView: View {
                             LazyVGrid(columns: columns, spacing: 16) {
                                 ForEach(compositions, id: \.id) { composition in
                                     CompositionMiniatureView(
-                                        title: composition.name,
+                                        miniature: composition,
                                         playState: .paused,
-                                        onPlayButtonTap: { },
-                                        isFavourite: .constant(composition.isFavourite)
+                                        onPlayButtonTap: {},
+                                        onFavouriteButtonTap: {}
                                     )
                                 }
                             }

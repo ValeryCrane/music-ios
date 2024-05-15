@@ -16,7 +16,10 @@ final class CombinationManager {
 
     private(set) var melodyManagers: [MelodyManager] = []
     private(set) var melodyEffectsManagers: [EffectsManager] = []
-    private var muteMixerNodes: [AVAudioMixerNode] = []
+    private(set) var sampleManagers: [SampleRenderManager] = []
+    private(set) var sampleEffectsManagers: [EffectsManager] = []
+    private var melodyMuteMixerNodes: [AVAudioMixerNode] = []
+    private var sampleMuteMixerNodes: [AVAudioMixerNode] = []
 
     private let metronome: Metronome
     private let combination: MutableCombination
@@ -45,6 +48,22 @@ final class CombinationManager {
             return (0 ..< combination.melodies.count).compactMap { keyMap[$0] }
         }
 
+        let sampleManagers = try await withThrowingTaskGroup(of: (Int, SampleRenderManager).self) { group in
+            var keyMap = [Int: SampleRenderManager]()
+
+            combination.samples.enumerated().forEach { (index, sample) in
+                group.addTask {
+                    return (index, try await SampleRenderManager(sample: sample, metronome: metronome))
+                }
+            }
+
+            for try await sampleManagerInfo in group {
+                keyMap[sampleManagerInfo.0] = sampleManagerInfo.1
+            }
+
+            return (0 ..< combination.samples.count).compactMap { keyMap[$0] }
+        }
+
         mainNode = AVAudioMixerNode()
         audioEngineManager.attachNode(mainNode)
         audioEngineManager.attachNode(serviceNode)
@@ -53,6 +72,17 @@ final class CombinationManager {
         for i in 0 ..< combination.melodies.count {
             createNodesForMelodyManager(melodyManagers[i], melody: combination.melodies[i])
         }
+
+        for i in 0 ..< combination.samples.count {
+            createNodesForSampleManager(sampleManagers[i], sample: combination.samples[i])
+        }
+    }
+
+    deinit {
+        melodyMuteMixerNodes.forEach { audioEngineManager.detachNode($0) }
+        sampleMuteMixerNodes.forEach { audioEngineManager.detachNode($0) }
+        audioEngineManager.detachNode(serviceNode)
+        audioEngineManager.detachNode(mainNode)
     }
 
     func startIfMetronomeIsPlaying() {
@@ -71,6 +101,14 @@ final class CombinationManager {
         combination.melodies.map(\.isMuted)
     }
 
+    func getSampleNames() -> [String] {
+        combination.samples.map(\.name)
+    }
+
+    func getSampleMuteStates() -> [Bool] {
+        combination.samples.map(\.isMuted)
+    }
+
     func getBPM() -> Double {
         metronome.bpm
     }
@@ -80,8 +118,13 @@ final class CombinationManager {
     }
 
     func setMuteState(forMelodyAtIndex index: Int, isMuted: Bool) {
-        muteMixerNodes[index].outputVolume = isMuted ? 0 : 1
+        melodyMuteMixerNodes[index].outputVolume = isMuted ? 0 : 1
         combination.melodies[index].isMuted = isMuted
+    }
+
+    func setMuteState(forSampleAtIndex index: Int, isMuted: Bool) {
+        sampleMuteMixerNodes[index].outputVolume = isMuted ? 0 : 1
+        combination.samples[index].isMuted = isMuted
     }
 
     func setOverallVolume(_ volume: Float) {
@@ -97,6 +140,15 @@ final class CombinationManager {
         melodyManager.startIfMetronomeIsPlaying()
     }
 
+    func addSample(_ sample: MutableSample) async throws {
+        combination.samples.append(sample)
+        renderDelegate?.combinationManagerDidChangeComposition(self)
+
+        let sampleManager = try await SampleRenderManager(sample: sample, metronome: metronome)
+        createNodesForSampleManager(sampleManager, sample: sample)
+        sampleManager.startIfMetronomeIsPlaying()
+    }
+
     func prepareMelodyForEditing(atIndex index: Int, withMetronome internalMetronome: Metronome) {
         metronome.pause()
         melodyManagers[index].setMetronome(internalMetronome)
@@ -107,7 +159,7 @@ final class CombinationManager {
     func restoreMelodyFromEditing(atIndex index: Int) {
         melodyManagers[index].setMetronome(metronome)
         audioEngineManager.disconnect(melodyEffectsManagers[index].outputNode)
-        audioEngineManager.connect(melodyEffectsManagers[index].outputNode, to: muteMixerNodes[index])
+        audioEngineManager.connect(melodyEffectsManagers[index].outputNode, to: melodyMuteMixerNodes[index])
     }
 
     private func createNodesForMelodyManager(_ melodyManager: MelodyManager, melody: MutableMelody) {
@@ -123,9 +175,26 @@ final class CombinationManager {
         effectsManager.renderDelegate = self
         melodyManager.renderDelegate = self
 
-        muteMixerNodes.append(muteMixerNode)
+        melodyMuteMixerNodes.append(muteMixerNode)
         melodyEffectsManagers.append(effectsManager)
         melodyManagers.append(melodyManager)
+    }
+
+    private func createNodesForSampleManager(_ sampleManager: SampleRenderManager, sample: MutableSample) {
+        let muteMixerNode = AVAudioMixerNode()
+        let effectsManager = EffectsManager(effects: sample.effects)
+
+        audioEngineManager.attachNode(muteMixerNode)
+        audioEngineManager.connect(sampleManager.outputNode, to: effectsManager.inputNode)
+        audioEngineManager.connect(effectsManager.outputNode, to: muteMixerNode)
+        audioEngineManager.connect(muteMixerNode, to: mainNode)
+
+        muteMixerNode.outputVolume = sample.isMuted ? 0 : 1
+        effectsManager.renderDelegate = self
+
+        sampleMuteMixerNodes.append(muteMixerNode)
+        sampleEffectsManagers.append(effectsManager)
+        sampleManagers.append(sampleManager)
     }
 }
 

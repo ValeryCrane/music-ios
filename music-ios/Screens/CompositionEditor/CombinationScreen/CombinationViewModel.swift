@@ -70,11 +70,24 @@ extension CombinationViewModel: CombinationViewModelInput {
     }
     
     func getSamples() -> [CombinationSampleMiniature] {
-        []  // TODO.
+        let sampleNames = combinationManager.getSampleNames()
+        let sampleMuteStates = combinationManager.getSampleMuteStates()
+        return (0 ..< sampleNames.count).map { .init(name: sampleNames[$0], isMuted: sampleMuteStates[$0]) }
     }
 
     func muteButtonTapped(atSampleIndex index: Int) {
-        // TODO.
+        combinationManager.setMuteState(
+            forSampleAtIndex: index,
+            isMuted: !combinationManager.getSampleMuteStates()[index]
+        )
+
+        view?.updateSample(
+            atIndex: index,
+            sampleMiniature: .init(
+                name: combinationManager.getSampleNames()[index],
+                isMuted: combinationManager.getSampleMuteStates()[index]
+            )
+        )
     }
 
     func muteButtonTapped(atMelodyIndex index: Int) {
@@ -151,9 +164,18 @@ extension CombinationViewModel: CombinationViewModelInput {
     }
 
     func addSampleButtonTapped() {
-        let viewModel = ChooseSampleViewModel()
-        let viewController = ChooseSampleViewController(viewModel: viewModel)
-        viewModel.view = viewController
-        view?.present(UINavigationController(rootViewController: viewController), animated: true)
+        let chooseSample = ChooseSample(sampleCreationHandler: { [weak self] sample in
+            try? await self?.combinationManager.addSample(sample)
+        }, recordSampleHandler: { [weak self] in
+            self?.showRecordSampleScreen()
+        })
+        view?.present(chooseSample.getViewController(), animated: true)
+    }
+
+    private func showRecordSampleScreen() {
+        let recordSampleViewController = RecordSample(bpm: 120, createSampleHandler: { [weak self] sample in
+            try? await self?.combinationManager.addSample(.init(sample))
+        }).getViewController()
+        view?.present(recordSampleViewController, animated: true)
     }
 }

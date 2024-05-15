@@ -3,7 +3,7 @@ import UIKit
 
 extension RecordSampleViewController {
     private enum Constants {
-        static let beatsInRow: Int = 4
+        static let beatsInRow: Int = .beatsInMeasure
         static let horizontalOffsets: CGFloat = 16
         static let beatsHorizontalSpacing: CGFloat = 8
         static let beatsVerticalSpacing: CGFloat = 8
@@ -14,21 +14,23 @@ extension RecordSampleViewController {
     }
 }
 
+extension RecordSampleViewController {
+    enum State {
+        case initial
+        case recording
+        case finished
+    }
+}
+
 final class RecordSampleViewController: UIViewController {
     private let viewModel: RecordSampleViewModelInput
-    
-    private let beatStepper = ClassicStepper(value: 4, minimumValue: 1, maximumValue: 32)
-    private let beatStepperTitle = UILabel()
-    
+
+    private let measureStepperTitle = UILabel()
+    private lazy var measureStepper = ClassicStepper(value: viewModel.getInitialMeasures(), minimumValue: 1, maximumValue: 8)
+
     private let recordButton = RecordSampleButton(
         icon: .init(systemName: "record.circle"),
         foregroundColor: .systemRed,
-        backgroundColor: .imp.lightGray
-    )
-    
-    private let pauseButton = RecordSampleButton(
-        icon: .init(systemName: "pause.fill"),
-        foregroundColor: .darkGray,
         backgroundColor: .imp.lightGray
     )
     
@@ -50,7 +52,7 @@ final class RecordSampleViewController: UIViewController {
         backgroundColor: .imp.lightGray
     )
     
-    private let deleteButton = RecordSampleButton(
+    private let clearButton = RecordSampleButton(
         icon: .init(systemName: "trash.fill"),
         foregroundColor: .white,
         backgroundColor: .systemRed
@@ -95,22 +97,31 @@ final class RecordSampleViewController: UIViewController {
     
     private func configure() {
         title = "Запись"
-        beatStepperTitle.text = "биты"
-        beatStepperTitle.role(.secondary)
-        beatStepper.addTarget(self, action: #selector(beatStepperValueChanged(_:)), for: .valueChanged)
+        measureStepperTitle.text = "такты"
+        measureStepperTitle.role(.secondary)
+        measureStepper.addTarget(self, action: #selector(measureStepperValueChanged(_:)), for: .valueChanged)
         navigationItem.leftBarButtonItem = .init(
             image: .init(systemName: "xmark"),
             style: .plain,
             target: self,
-            action: #selector(onCloseButtonPressed(_:))
+            action: #selector(onCloseButtonTapped(_:))
         )
-        
+        navigationItem.rightBarButtonItem = .init(
+            image: .init(systemName: "slider.horizontal.3"),
+            style: .plain,
+            target: self,
+            action: #selector(onEffectsButtonTapped(_:))
+        )
+
         buttonStackView.axis = .horizontal
         buttonStackView.spacing = Constants.buttonSpacing
         buttonStackView.addArrangedSubview(recordButton)
         
-        recordButton.addTarget(self, action: #selector(onPlayButtonPressed(_:)), for: .touchUpInside)
-        stopButton.addTarget(self, action: #selector(onStopButtonPressed(_:)), for: .touchUpInside)
+        recordButton.addTarget(self, action: #selector(onRecordButtonTapped(_:)), for: .touchUpInside)
+        stopButton.addTarget(self, action: #selector(onStopButtonTapped(_:)), for: .touchUpInside)
+        saveButton.addTarget(self, action: #selector(onSaveButtonTapped(_:)), for: .touchUpInside)
+        playButton.addTarget(self, action: #selector(onPlayButtonTapped(_:)), for: .touchUpInside)
+        clearButton.addTarget(self, action: #selector(onClearButtonTapped(_:)), for: .touchUpInside)
     }
     
     private func layout() {
@@ -123,15 +134,15 @@ final class RecordSampleViewController: UIViewController {
             beatCollectionView.heightAnchor.constraint(equalToConstant: 128)
         ])
         
-        view.addSubview(beatStepper)
-        view.addSubview(beatStepperTitle)
-        beatStepper.translatesAutoresizingMaskIntoConstraints = false
-        beatStepperTitle.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(measureStepper)
+        view.addSubview(measureStepperTitle)
+        measureStepper.translatesAutoresizingMaskIntoConstraints = false
+        measureStepperTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            beatStepper.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.verticalOffsets),
-            beatStepper.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            beatStepperTitle.centerXAnchor.constraint(equalTo: beatStepper.centerXAnchor),
-            beatStepperTitle.topAnchor.constraint(equalTo: beatStepper.bottomAnchor, constant: Constants.beatsStepperTitleOffset)
+            measureStepper.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.verticalOffsets),
+            measureStepper.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            measureStepperTitle.centerXAnchor.constraint(equalTo: measureStepper.centerXAnchor),
+            measureStepperTitle.topAnchor.constraint(equalTo: measureStepper.bottomAnchor, constant: Constants.beatsStepperTitleOffset)
         ])
         
         view.addSubview(buttonStackView)
@@ -141,57 +152,54 @@ final class RecordSampleViewController: UIViewController {
             buttonStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.verticalOffsets)
         ])
     }
-    
+
     @objc
-    private func beatStepperValueChanged(_ sender: ClassicStepper) {
+    private func onRecordButtonTapped(_ sender: RecordSampleButton) {
+        viewModel.startButtonTapped()
+    }
+
+    @objc
+    private func onStopButtonTapped(_ sender: RecordSampleButton) {
+        viewModel.stopButtonTapped()
+    }
+
+    @objc
+    private func measureStepperValueChanged(_ sender: ClassicStepper) {
+        viewModel.setMeasures(sender.value)
         beatCollectionView.reloadData()
     }
     
     @objc
-    private func onCloseButtonPressed(_ sender: UIBarButtonItem) {
-        viewModel.onCloseButtonPressed()
+    private func onCloseButtonTapped(_ sender: UIBarButtonItem) {
+        viewModel.closeButtonTapped()
     }
-    
+
     @objc
-    private func onPlayButtonPressed(_ sender: RecordSampleButton) {
-        startRecordingAnimation()
-        showRecordingButtons()
-        viewModel.startRecording(beats: beatStepper.value)
+    private func onSaveButtonTapped(_ sender: UIButton) {
+        viewModel.saveButtonTapped()
     }
-    
+
     @objc
-    private func onStopButtonPressed(_ sender: RecordSampleButton) {
-        showFinishButtons()
+    private func onPlayButtonTapped(_ sender: RecordSampleButton) {
+        viewModel.playButtonTapped()
     }
-    
-    private func startRecordingAnimation() {
-        for i in 0 ..< beatStepper.value {
-            let cell = beatCollectionView.cellForItem(
-                at: .init(row: i, section: 0)
-            ) as? BeatRecordCollectionViewCell
-            
-            cell?.start(beatDuration: 0.5, delay: 0.5 * Double(i))
+
+    @objc
+    private func onClearButtonTapped(_ sender: UIButton) {
+        viewModel.clearButtonTapped()
+    }
+
+    @objc
+    private func onEffectsButtonTapped(_ sender: UIBarButtonItem) {
+        viewModel.effectsButtonTapped()
+    }
+
+    private func removeAllButtonsFromStackView() {
+        for subview in buttonStackView.arrangedSubviews {
+            buttonStackView.removeArrangedSubview(subview)
+            subview.removeFromSuperview()
         }
     }
-    
-    private func showRecordingButtons() {
-        buttonStackView.removeArrangedSubview(recordButton)
-        recordButton.removeFromSuperview()
-        buttonStackView.addArrangedSubview(pauseButton)
-        buttonStackView.addArrangedSubview(stopButton)
-    }
-    
-    private func showFinishButtons() {
-        buttonStackView.removeArrangedSubview(pauseButton)
-        buttonStackView.removeArrangedSubview(stopButton)
-        pauseButton.removeFromSuperview()
-        stopButton.removeFromSuperview()
-        
-        buttonStackView.addArrangedSubview(deleteButton)
-        buttonStackView.addArrangedSubview(playButton)
-        buttonStackView.addArrangedSubview(saveButton)
-    }
-    
 }
 
 extension RecordSampleViewController: UICollectionViewDelegateFlowLayout {
@@ -211,7 +219,7 @@ extension RecordSampleViewController: UICollectionViewDelegateFlowLayout {
 
 extension RecordSampleViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        beatStepper.value
+        measureStepper.value * .beatsInMeasure
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -224,4 +232,44 @@ extension RecordSampleViewController: UICollectionViewDataSource {
     }
 }
 
-extension RecordSampleViewController: RecordSampleViewModelOutput { }
+extension RecordSampleViewController: RecordSampleViewModelOutput {
+    func setState(_ state: State) {
+        removeAllButtonsFromStackView()
+
+        switch state {
+        case .initial:
+            measureStepper.isEnabled = true
+            buttonStackView.addArrangedSubview(recordButton)
+        case .recording:
+            measureStepper.isEnabled = false
+            buttonStackView.addArrangedSubview(stopButton)
+        case .finished:
+            measureStepper.isEnabled = false
+            buttonStackView.addArrangedSubview(clearButton)
+            buttonStackView.addArrangedSubview(playButton)
+            buttonStackView.addArrangedSubview(saveButton)
+        }
+    }
+    
+    func startAnimation(forBeat beat: Int, delay: TimeInterval, duration: TimeInterval) {
+        let cell = beatCollectionView.cellForItem(
+            at: .init(row: beat, section: 0)
+        ) as? BeatRecordCollectionViewCell
+
+        cell?.start(beatDuration: duration, delay: delay)
+    }
+    
+    func finishAllAnimations() {
+        for cell in beatCollectionView.visibleCells {
+            let beatCell = cell as? BeatRecordCollectionViewCell
+            beatCell?.stop()
+        }
+    }
+
+    func resetAllAnimations() {
+        for cell in beatCollectionView.visibleCells {
+            let beatCell = cell as? BeatRecordCollectionViewCell
+            beatCell?.reset()
+        }
+    }
+}

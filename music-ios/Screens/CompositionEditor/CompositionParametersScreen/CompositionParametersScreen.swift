@@ -18,7 +18,9 @@ final class CompositionParametersScreen {
         )
         let viewController = CompositionParametersViewController(viewModel: viewModel)
         viewModel.view = viewController
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.modalPresentationStyle = .fullScreen
 
-        return viewController
+        return navigationController
     }
 }

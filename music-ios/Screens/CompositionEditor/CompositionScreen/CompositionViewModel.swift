@@ -14,6 +14,7 @@ protocol CompositionViewModelInput: AnyObject {
     func compositionParametersButtonTapped()
     func favouriteButtonTapped()
     func forkButtonTapped()
+    func chatButtonTapped()
     func createCombinationButtonTapped()
 }
 
@@ -154,7 +155,7 @@ extension CompositionViewModel: CompositionViewModelInput {
 
     func compositionParametersButtonTapped() {
         let viewController = compositionParametersScreen.getViewController()
-        view?.navigationController?.pushViewController(viewController, animated: true)
+        view?.present(viewController, animated: true)
     }
     
     func favouriteButtonTapped() {
@@ -164,7 +165,11 @@ extension CompositionViewModel: CompositionViewModelInput {
     func forkButtonTapped() {
         // TODO.
     }
-    
+
+    func chatButtonTapped() {
+        view?.present(ChatScreen(compositionId: compositionManager.compositionId).getViewController(), animated: true)
+    }
+
     func createCombinationButtonTapped() {
         showCreateCombinationAlert()
     }

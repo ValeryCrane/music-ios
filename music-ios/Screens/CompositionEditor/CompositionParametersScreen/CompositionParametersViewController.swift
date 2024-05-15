@@ -38,6 +38,13 @@ final class CompositionParametersViewController: UIViewController {
         return tableView
     }()
 
+    private lazy var closeButtonItem: UIBarButtonItem = .init(
+        image: .init(systemName: "xmark"),
+        style: .plain,
+        target: self,
+        action: #selector(onCloseButtonPressed(_:))
+    )
+
     private lazy var historyButtonItem: UIBarButtonItem = .init(
         image: .init(systemName: "clock.arrow.circlepath"),
         style: .plain,
@@ -61,6 +68,7 @@ final class CompositionParametersViewController: UIViewController {
 
         title = "Параметры"
         view.backgroundColor = .imp.backgroundColor
+        navigationItem.leftBarButtonItem = closeButtonItem
         navigationItem.rightBarButtonItem = historyButtonItem
 
         view.addSubview(tableView)
@@ -81,6 +89,11 @@ final class CompositionParametersViewController: UIViewController {
     @objc
     private func onAddEditorButtonTapped(_ sender: AddRowTableFooterView) {
         viewModel.addEditorButtonTapped()
+    }
+
+    @objc
+    private func onCloseButtonPressed(_ sender: UIBarButtonItem) {
+        viewModel.closeButtonTapped()
     }
 }
 

@@ -39,6 +39,17 @@ final class EffectsManager {
         applyEffects()
     }
 
+    deinit {
+        audioEngineManager.detachNode(delayAudioUnit)
+        audioEngineManager.detachNode(distortionAudioUnit)
+        audioEngineManager.detachNode(reverbAudioUnit)
+        audioEngineManager.detachNode(mixerNode)
+    }
+
+    func getEffects() -> [EffectType: [EffectPropertyType: Float]] {
+        return effects.value
+    }
+
     func update(effectPropertyType: EffectPropertyType, value: Float) {
         apply(value: value, to: effectPropertyType)
         renderDelegate?.effectsManagerDidUpdateComposition(self)

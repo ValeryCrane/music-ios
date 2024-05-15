@@ -9,14 +9,12 @@ extension CompositionMiniatureView {
 }
 
 struct CompositionMiniatureView: View {
-    
-    private let title: String
+
+    private let miniature: CompositionMiniature
     private let playState: PlayState
     private let onPlayButtonTap: () -> Void
-    
-    @Binding
-    private var isFavourite: Bool?
-    
+    private let onFavouriteButtonTap: () -> Void
+
     @ViewBuilder
     var playButtonContent: some View {
         switch playState {
@@ -35,12 +33,10 @@ struct CompositionMiniatureView: View {
     
     @ViewBuilder
     var favouriteButtonContent: some View {
-        if let isFavourite = isFavourite {
-            Image(systemName: isFavourite ? "heart.fill": "heart")
-                .resizable()
-                .fontWeight(.bold)
-                .foregroundStyle(Color(uiColor: .imp.primary))
-        }
+        Image(systemName: miniature.isFavourite ? "heart.fill": "heart")
+            .resizable()
+            .fontWeight(.bold)
+            .foregroundStyle(Color(uiColor: .imp.primary))
     }
     
     var body: some View {
@@ -48,7 +44,7 @@ struct CompositionMiniatureView: View {
             Color(uiColor: .imp.lightGray)
             VStack {
                 HStack {
-                    Text(title)
+                    Text(miniature.name)
                         .titleFont()
                         .lineLimit(2)
                         .padding(16)
@@ -61,7 +57,7 @@ struct CompositionMiniatureView: View {
                 Spacer()
                 HStack {
                     Button(action: {
-                        isFavourite?.toggle()
+                        onFavouriteButtonTap()
                     }, label: {
                         favouriteButtonContent
                     })
@@ -93,24 +89,24 @@ struct CompositionMiniatureView: View {
     }
     
     init(
-        title: String,
+        miniature: CompositionMiniature,
         playState: PlayState,
         onPlayButtonTap: @escaping () -> Void,
-        isFavourite: Binding<Bool?> = .constant(nil)
+        onFavouriteButtonTap: @escaping () -> Void
     ) {
-        self.title = title
+        self.miniature = miniature
         self.playState = playState
         self.onPlayButtonTap = onPlayButtonTap
-        self._isFavourite = isFavourite
+        self.onFavouriteButtonTap = onFavouriteButtonTap
     }
 }
 
 #Preview {
     CompositionMiniatureView(
-        title: "My favourite track",
-        playState: .paused,
+        miniature: .init(id: 1, name: "Композиция", isFavourite: true),
+        playState: .playing,
         onPlayButtonTap: {},
-        isFavourite: .constant(false)
+        onFavouriteButtonTap: {}
     )
     .frame(maxWidth: 170)
 }

@@ -45,7 +45,7 @@ final class BeatRecordCollectionViewCell: UICollectionViewCell {
     }
     
     func stop() {
-        animator?.stopAnimation(false)
+        animator?.stopAnimation(true)
     }
     
     func reset() {
